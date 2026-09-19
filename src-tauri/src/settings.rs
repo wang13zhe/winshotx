@@ -30,6 +30,7 @@ pub enum Language {
     Sistema,
     Es,
     En,
+    Zh,
 }
 
 

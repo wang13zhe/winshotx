@@ -39,6 +39,7 @@ export function BarraRapida({ settings, patch, version, recienActualizado, onTou
     { value: "sistema", label: t("Automático") },
     { value: "es", label: "ES" },
     { value: "en", label: "EN" },
+    { value: "zh", label: "中" },
   ];
 
   // Lo que pasa al soltar el ratón, que es el ajuste que más se cambia de todos: se

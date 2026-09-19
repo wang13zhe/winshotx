@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { EN } from "./textos-en";
+import { ZH } from "./textos-zh";  // ← 新增
 
 /**
  * Los textos de la aplicacion en dos idiomas.
@@ -14,24 +15,27 @@ import { EN } from "./textos-en";
  * diccionario sale en espannol, que es peor que traducido pero mucho mejor que vacio.
  */
 
-export type Idioma = "sistema" | "es" | "en";
+export type Idioma = "sistema" | "es" | "en" | "zh";  // ← 改动：加上 "zh"
 
 const CLAVE = "winshotx.idioma";
 
 /** El idioma de Windows, que es el que trae el navegador de dentro de la ventana. */
-function delSistema(): "es" | "en" {
+function delSistema(): "es" | "en" | "zh" {  // ← 改动：返回类型加上 "zh"
   const suyo = navigator.language ?? "en";
-  return suyo.toLowerCase().startsWith("es") ? "es" : "en";
+  const bajo = suyo.toLowerCase();
+  if (bajo.startsWith("es")) return "es";
+  if (bajo.startsWith("zh")) return "zh";  // ← 新增：识别中文系统
+  return "en";
 }
 
-function resolver(idioma: Idioma): "es" | "en" {
+function resolver(idioma: Idioma): "es" | "en" | "zh" {  // ← 改动：返回类型加上 "zh"
   return idioma === "sistema" ? delSistema() : idioma;
 }
 
 function leerGuardado(): Idioma {
   try {
     const valor = localStorage.getItem(CLAVE);
-    return valor === "es" || valor === "en" ? valor : "sistema";
+    return valor === "es" || valor === "en" || valor === "zh" ? valor : "sistema";  // ← 改动：接受 "zh"
   } catch {
     return "sistema";
   }
@@ -40,7 +44,7 @@ function leerGuardado(): Idioma {
 // Igual que el tema: se recuerda en el navegador para que la primera pintada ya salga en
 // el idioma bueno, sin esperar al viaje hasta Rust y sin que las frases cambien delante.
 let elegido: Idioma = leerGuardado();
-let activo: "es" | "en" = resolver(elegido);
+let activo: "es" | "en" | "zh" = resolver(elegido);  // ← 改动：类型加上 "zh"
 
 const oyentes = new Set<() => void>();
 
@@ -69,7 +73,13 @@ export function aplicarIdioma(idioma: Idioma) {
  * frase cosida a cachos solo se puede traducir bien por casualidad.
  */
 export function t(es: string, vars?: Record<string, string | number>): string {
-  const texto = activo === "es" ? es : (EN[es] ?? es);
+  // ← 改动：加入 zh 分支，按当前语言选择字典
+  const texto =
+    activo === "es"
+      ? es
+      : activo === "zh"
+        ? (ZH[es] ?? es)
+        : (EN[es] ?? es);
   if (!vars) return texto;
   return Object.entries(vars).reduce(
     (frase, [clave, valor]) => frase.split(`{${clave}}`).join(String(valor)),
@@ -77,7 +87,7 @@ export function t(es: string, vars?: Record<string, string | number>): string {
   );
 }
 
-export function idiomaActivo(): "es" | "en" {
+export function idiomaActivo(): "es" | "en" | "zh" {  // ← 改动：返回类型加上 "zh"
   return activo;
 }
 

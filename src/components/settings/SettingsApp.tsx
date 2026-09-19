@@ -170,11 +170,12 @@ const TEMAS: { value: Theme; label: string }[] = [
   { value: "oscuro", label: "Oscuro" },
 ];
 
-/** Los dos idiomas que habla hoy. Anadir uno mas es una linea aqui y un archivo mas. */
+/** Los idiomas que habla hoy. Anadir uno mas es una linea aqui y un archivo mas. */
 const IDIOMAS: { value: Language; label: string }[] = [
   { value: "sistema", label: "Automático" },
   { value: "es", label: "Español" },
   { value: "en", label: "Inglés" },
+  { value: "zh", label: "中文" },  // ← 就加这一行
 ];
 
 /** Tres opciones y ninguna más: un campo de números aquí solo sirve para escribir 47. */

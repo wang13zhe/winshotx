@@ -25,6 +25,11 @@ docs/TRAMPAS-zh.md
 # Lo que se compila es el .ts; estos se quedan en local por si hay que retocar algo.
 docs/base-es-en.json
 docs/lang-*.json
+# Los lotes de revision: 30 entradas por archivo, para que un revisor (humano o no)
+# pueda con ellos sin leerse el diccionario entero. Se generan y se tiran.
+docs/lote-*.json
+docs/riesgo.json
+docs/lotes.json
 docs/_build_*.py
 docs/_check_*.py
 docs/_gen_*.py

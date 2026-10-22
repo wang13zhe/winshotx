@@ -103,7 +103,10 @@ export function ExportPanel({
   });
   const [useFfmpeg, setUseFfmpeg] = useState(false);
   const [quality, setQuality] = useState(80);
-  const [fps, setFps] = useState(Math.min(session.fps, 30));
+  // Por defecto, los mismos que se grabaron. Estaba clavado a 30 y grabando a 60 el
+  // video salia a la mitad sin decirlo: el deslizador ponia 30, el archivo pedia 30, y
+  // nadie habia elegido eso.
+  const [fps, setFps] = useState(Math.min(fpsMax, Math.max(15, session.fps)));
   const [width, setWidth] = useState(session.region.width);
   const [height, setHeight] = useState(session.region.height);
   const [locked, setLocked] = useState(true);

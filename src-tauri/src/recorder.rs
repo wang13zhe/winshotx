@@ -409,6 +409,24 @@ pub fn start(app: &AppHandle, region: Rect, options: RecordOptions) -> Result<Se
         }
 
         session.frames = cache.finish(last_ts, session.fps)?;
+        // Si el ritmo real se parece al pedido se calla; si no, lo dice. Sin esto, grabar a
+        // 60 y acabar con un video de 15 fps es un misterio para quien lo grabo: el editor
+        // ensenna los fotogramas que hay, y no hay nada que diga cuantos faltaron.
+        //
+        // No es un error: WGC solo entrega fotograma cuando la pantalla CAMBIA, asi que
+        // una ventana quieta da pocos y la grabacion sigue siendo correcta. Lo que se
+        // quiere saber es si se parece a lo pedido.
+        {
+            let segundos = (last_ts as f64 / 1000.0).max(0.001);
+            let real = session.frames.len() as f64 / segundos;
+            let pedido = f64::from(session.fps.max(1));
+            if real < pedido * 0.5 {
+                eprintln!(
+                    "[winshotx] se pidieron {pedido:.0} fps y se guardaron {} fotogramas en {segundos:.1} s ({real:.1} fps de media). Windows solo manda fotograma cuando la pantalla cambia, asi que una pantalla quieta da pocos.",
+                    session.frames.len()
+                );
+            }
+        }
         let anotaciones = muestreador.terminar();
         session.clics = anotaciones.clics;
         session.teclas = anotaciones.teclas;

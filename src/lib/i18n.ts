@@ -28,21 +28,31 @@ export type Idioma =
   | "pt-br"
   | "pl";
 
-/** Los idiomas que hay, con el nombre que se ensena en el selector. */
-export const IDIOMAS: { valor: Idioma; nombre: string }[] = [
-  { valor: "sistema", nombre: "Sistema" },
-  { valor: "es", nombre: "Espanol" },
-  { valor: "en", nombre: "English" },
-  { valor: "zh", nombre: "中文（简体）" },
-  { valor: "zh-tw", nombre: "中文（繁體）" },
-  { valor: "de", nombre: "Deutsch" },
-  { valor: "fr", nombre: "Francais" },
-  { valor: "it", nombre: "Italiano" },
-  { valor: "ja", nombre: "日本語" },
-  { valor: "ko", nombre: "한국어" },
-  { valor: "ru", nombre: "Русский" },
-  { valor: "pt-br", nombre: "Portugues (Brasil)" },
-  { valor: "pl", nombre: "Polski" },
+/**
+ * Los idiomas que hay, con el nombre que se ensena en el selector.
+ *
+ * El nombre de cada idioma va en ESE idioma y NO pasa por `t`: es como lo busca quien lo
+ * necesita, y traducirlo seria buscar «Chino» en una interfaz que esta en chino. La unica
+ * excepcion es «Sistema», que si es una frase de la aplicacion — por eso lleva `propio`
+ * en falso y los demas en cierto.
+ *
+ * Vive aqui y no en la pantalla de ajustes porque la barra de abajo tambien lo usa, y dos
+ * listas de idiomas se desincronizan el dia que se aniade uno.
+ */
+export const IDIOMAS: { valor: Idioma; nombre: string; propio: boolean }[] = [
+  { valor: "sistema", nombre: "Automático", propio: false },
+  { valor: "es", nombre: "Español", propio: true },
+  { valor: "en", nombre: "English", propio: true },
+  { valor: "zh", nombre: "中文（简体）", propio: true },
+  { valor: "zh-tw", nombre: "中文（繁體）", propio: true },
+  { valor: "de", nombre: "Deutsch", propio: true },
+  { valor: "fr", nombre: "Français", propio: true },
+  { valor: "it", nombre: "Italiano", propio: true },
+  { valor: "ja", nombre: "日本語", propio: true },
+  { valor: "ko", nombre: "한국어", propio: true },
+  { valor: "ru", nombre: "Русский", propio: true },
+  { valor: "pt-br", nombre: "Português (Brasil)", propio: true },
+  { valor: "pl", nombre: "Polski", propio: true },
 ];
 
 const CLAVE = "winshotx.idioma";

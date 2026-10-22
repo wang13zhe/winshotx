@@ -408,7 +408,10 @@ describe("la barra de abajo", () => {
 
   it("y el idioma, que además se cambia en el acto", async () => {
     await abrirAjustes();
-    fireEvent.click(within(barra()).getByRole("button", { name: "EN" }));
+    // La barra ya no lleva un botón por idioma: con doce no caben en 44 px de alto, así
+    // que abre una lista. Primero se abre, después se elige.
+    fireEvent.click(within(barra()).getByRole("button", { name: "Idioma" }));
+    fireEvent.click(await screen.findByRole("option", { name: "English" }));
 
     // Sin recargar nada: la propia barra ya está en inglés.
     await waitFor(() => expect(within(barra()).getByText("When you let go")).toBeInTheDocument());

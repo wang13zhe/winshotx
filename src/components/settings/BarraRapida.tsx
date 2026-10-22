@@ -1,8 +1,9 @@
 import { Compass, Monitor, Moon, Sun } from "lucide-react";
 import { Segmented } from "../ui/Segmented";
-import { aplicarIdioma, useT } from "../../lib/i18n";
+import { Desplegable } from "../ui/Desplegable";
+import { IDIOMAS, aplicarIdioma, useT } from "../../lib/i18n";
 import { aplicarTema } from "../../lib/tema";
-import type { CaptureFlow, Language, Settings, Theme } from "../../lib/types";
+import type { CaptureFlow, Settings, Theme } from "../../lib/types";
 import { EstadoActualizacion, useActualizacion } from "./Actualizacion";
 
 interface Props {
@@ -35,12 +36,13 @@ export function BarraRapida({ settings, patch, version, recienActualizado, onTou
     { value: "oscuro", label: t("Oscuro"), icono: <Moon className="size-3.5" /> },
   ];
 
-  const idiomas: { value: Language; label: string }[] = [
-    { value: "sistema", label: t("Automático") },
-    { value: "es", label: "ES" },
-    { value: "en", label: "EN" },
-    { value: "zh", label: "中" },
-  ];
+  // Los doce idiomas, no solo los cuatro de antes. La barra ensena el que esta puesto y
+  // abre la lista al pulsarlo: en fila no caben, y con doce el que faltaba no tenia forma
+  // de ponerse desde aqui.
+  const idiomas = IDIOMAS.map((o) => ({
+    value: o.valor,
+    label: o.propio ? o.nombre : t(o.nombre),
+  }));
 
   // Lo que pasa al soltar el ratón, que es el ajuste que más se cambia de todos: se
   // enciende la barra para elegir, o se apaga cuando durante un rato solo se quiere copiar.
@@ -67,12 +69,12 @@ export function BarraRapida({ settings, patch, version, recienActualizado, onTou
           patch({ theme: v });
         }}
       />
-      <Segmented
-        compacto
-        ajustado
+      <Desplegable
         etiqueta={t("Idioma")}
         value={settings.language}
         options={idiomas}
+        ancho="w-40"
+        haciaArriba
         onChange={(v) => {
           aplicarIdioma(v);
           patch({ language: v });

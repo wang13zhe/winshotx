@@ -55,7 +55,7 @@ import {
 import { CAFE, FALLOS, REPO, WEB, comoSeLee } from "../../lib/enlaces";
 import { formatBytes } from "../../lib/format";
 import { aplicarTema } from "../../lib/tema";
-import { aplicarIdioma, useT } from "../../lib/i18n";
+import { IDIOMAS, aplicarIdioma, useT } from "../../lib/i18n";
 import {
   EVENTS,
   type CacheStats,
@@ -65,10 +65,10 @@ import {
   type Screen,
   type Settings,
   type Theme,
-  type Language,
   type ShortcutStatus,
 } from "../../lib/types";
 import { Segmented } from "../ui/Segmented";
+import { Desplegable } from "../ui/Desplegable";
 import { Switch } from "../ui/Switch";
 import { Row, RowButton, Section } from "./Section";
 import { SettingsHeader, type SeccionId } from "./SettingsHeader";
@@ -182,29 +182,6 @@ const TEMAS: { value: Theme; label: string }[] = [
   { value: "oscuro", label: "Oscuro" },
 ];
 
-/**
- * Los idiomas que habla hoy. Anadir uno mas es una linea aqui y un archivo mas.
- *
- * El nombre de cada idioma va en ESE idioma y NO pasa por `t`: es como lo busca quien lo
- * necesita, y traducirlo seria buscar «Chino» en una interfaz que esta en chino. La
- * unica excepcion es «Sistema», que si es una frase de la aplicacion.
- */
-const IDIOMAS: { value: Language; label: string; propio?: boolean }[] = [
-  { value: "sistema", label: "Automático" },
-  { value: "es", label: "Español", propio: true },
-  { value: "en", label: "English", propio: true },
-  { value: "zh", label: "中文（简体）", propio: true },
-  { value: "zh-tw", label: "中文（繁體）", propio: true },
-  { value: "de", label: "Deutsch", propio: true },
-  { value: "fr", label: "Français", propio: true },
-  { value: "it", label: "Italiano", propio: true },
-  { value: "ja", label: "日本語", propio: true },
-  { value: "ko", label: "한국어", propio: true },
-  { value: "ru", label: "Русский", propio: true },
-  { value: "pt-br", label: "Português (Brasil)", propio: true },
-  { value: "pl", label: "Polski", propio: true },
-];
-
 /** Tres opciones y ninguna más: un campo de números aquí solo sirve para escribir 47. */
 const ESPERAS = [
   { value: 0, label: "Sin espera" },
@@ -227,8 +204,8 @@ export function SettingsApp({ onVerBienvenida, arrancarTour = false }: SettingsA
   const esperas = ESPERAS.map((o) => ({ ...o, label: t(o.label) }));
   // Los nombres propios de cada idioma no se traducen: van como se escriben en ese idioma.
   const idiomas = IDIOMAS.map((o) => ({
-    ...o,
-    label: o.propio ? o.label : t(o.label),
+    value: o.valor,
+    label: o.propio ? o.nombre : t(o.nombre),
   }));
   // Que seccion se esta viendo. Es estado de la pantalla y no un ajuste: no tiene sentido
   // guardarlo en disco ni que sobreviva a cerrar la ventana.
@@ -1103,9 +1080,11 @@ export function SettingsApp({ onVerBienvenida, arrancarTour = false }: SettingsA
                     explicacion={t("Doce idiomas, o el de Windows si winshotx lo habla. Cambia al momento y no hace falta reiniciar nada.")}
                     hint={settings.language === "sistema" ? t("el de Windows") : undefined}
                     control={
-                      <Segmented
+                      <Desplegable
                         value={settings.language}
                         options={idiomas}
+                        etiqueta={t("Idioma")}
+                        ancho="w-full max-w-72"
                         onChange={(v) => {
                           // Igual que el tema: se cambia el idioma en el acto y se guarda
                           // despues. Los textos se repintan solos, sin recargar la ventana

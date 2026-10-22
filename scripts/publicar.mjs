@@ -17,7 +17,9 @@ const raiz = process.cwd();
 const paquete = JSON.parse(readFileSync(join(raiz, "package.json"), "utf8"));
 const version = paquete.version;
 const tag = `v${version}`;
-const repo = "Mun1to/winshotx";
+// El fork. Publicar en el repo de upstream haria que el actualizador ofreciera a los
+// usuarios de esta rama la version de alla, que no lleva los cambios de aqui.
+const repo = "wang13zhe/winshotx";
 
 // package.json manda, pero Cargo.toml lleva la suya y de ella salen el instalador y el
 // numero que ve el actualizador. Si se separan, se publica una version con el nombre de otra.

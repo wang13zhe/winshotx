@@ -44,7 +44,7 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDg2QUQwMTlBQ0IwNTc4MjAKUldRZ2VBWExtZ0d0aGlLcjRxMWFvSzJBYU04UVhxWitZR2FUS2tnL1ViTTU5bGxCeW1WeElWSnkK",
       "endpoints": [
-        "https://github.com/Mun1to/winshotx/releases/latest/download/latest.json"
+        "https://github.com/wang13zhe/winshotx/releases/latest/download/latest.json"
       ],
       "windows": {
         "installMode": "passive"

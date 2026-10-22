@@ -63,8 +63,8 @@ if (local) {
 } else {
   const tag = args.find((a) => !a.startsWith("--")) ?? "latest";
   const base = tag === "latest"
-    ? "https://github.com/Mun1to/winshotx/releases/latest/download"
-    : `https://github.com/Mun1to/winshotx/releases/download/${tag}`;
+    ? "https://github.com/wang13zhe/winshotx/releases/latest/download"
+    : `https://github.com/wang13zhe/winshotx/releases/download/${tag}`;
   const latest = await (await fetch(`${base}/latest.json`)).json();
   const plat = latest.platforms["windows-x86_64"];
   console.log(`Version publicada: ${latest.version} (${latest.pub_date})`);

@@ -1,0 +1,156 @@
+{
+  "lang": "ru",
+  "nombre": "ruso",
+  "items": [
+    {
+      "es": "Los fotogramas por segundo del anillo. 15 es suficiente para ver qué pasó y es el que menos molesta al ordenador; 60 se ve suave pero escribe cuatro veces más, y esto está corriendo toda la tarde.",
+      "en": "The ring's frames per second. 15 is enough to see what happened and is the one that bothers the machine least; 60 looks smooth but writes four times as much, and this is running all afternoon.",
+      "actual": "Кадров в секунду у кольца. 15 хватает, чтобы понять, что произошло, и меньше всего нагружает компьютер; 60 выглядит плавно, но записывает вчетверо больше, а это работает весь день."
+    },
+    {
+      "es": "La tecla que rescata. Guarda los últimos segundos y te los abre en el editor **sin dejar de grabar**, así que puedes seguir y volver a rescatar dentro de un rato.",
+      "en": "The key that rescues. It saves the last few seconds and opens them in the editor **without stopping the recording**, so you can carry on and rescue again in a while.",
+      "actual": "Клавиша, которая спасает ситуацию. Сохраняет последние секунды и открывает их в редакторе **не прекращая запись**, так что можно продолжить и через некоторое время спасти снова."
+    },
+    {
+      "es": "Al parar una grabación, abrirla para recortarla y exportarla. Apagado, el vídeo o el GIF se guarda solo en tu carpeta, entero y tal cual se grabó, y tú sigues a lo tuyo. Lo que rescatas de los últimos segundos abre el editor igualmente: ahí todavía no hay ningún archivo hecho.",
+      "en": "When a recording stops, open it to trim and export. Turned off, the video or GIF is saved on its own to your folder, whole and just as it was recorded, and you get back to what you were doing. What you rescue from the last few seconds opens the editor either way: there is no file made yet at that point.",
+      "actual": "Когда запись заканчивается, открывать её, чтобы обрезать и экспортировать. Если выключено, видео или GIF сам сохраняется в вашу папку целиком и точно таким, каким записан, а вы возвращаетесь к своим делам. То, что спасено из последних секунд, открывает редактор в любом случае: файла там пока ещё нет."
+    },
+    {
+      "es": "Windows le tiene asignada la Herramienta de Recortes, y esto se la quita para dársela a winshotx. Si la tecla no responde, hay que cerrar sesión una vez para que Windows la suelte del todo.",
+      "en": "Windows has the Snipping Tool on that key, and this takes it away and gives it to winshotx. If the key does not respond, you have to sign out once for Windows to let go of it completely.",
+      "actual": "Windows назначила на эту клавишу «Ножницы», а эта настройка забирает её и отдаёт winshotx. Если клавиша не реагирует, нужно один раз выйти из системы и войти снова, чтобы Windows её полностью отпустила."
+    },
+    {
+      "es": "La otra tecla de captura de Windows. Cogerla cuesta Win+S, la búsqueda, porque las dos se registran juntas; y si el Explorador sigue abriendo lo suyo, con Aplicar se reinicia y la suelta.",
+      "en": "The other Windows capture key. Taking it costs you Win+S, the search, because the two register together; and if Explorer keeps opening its own thing, Apply restarts it and it lets go.",
+      "actual": "Другая клавиша снимка Windows. Забрать её — потерять Win+S, поиск, потому что обе регистрируются вместе. А если Проводник продолжает открывать своё, кнопка «Применить» перезапустит его, и клавиша освободится."
+    },
+    {
+      "es": "Desactivar sus teclas no la calla del todo: sigue saliendo desde el menú de inicio y desde otras teclas. Quitarla es lo único definitivo, y se puede volver a instalar desde la Microsoft Store cuando quieras.",
+      "en": "Turning its keys off does not silence it: it still opens from the Start menu and from other keys. Removing it is the only thing that settles it, and it can be installed again from the Microsoft Store whenever you want.",
+      "actual": "Отключить её клавиши — не значит заставить её замолчать: она всё равно открывается из меню «Пуск» и по другим сочетаниям. Удаление — единственный окончательный способ, и поставить её обратно можно в любой момент из Microsoft Store."
+    },
+    {
+      "es": "Donde caen las capturas y los vídeos que guardas. El nombre lo pone winshotx con la fecha y la hora, y si ya existiera uno igual no lo pisa nunca.",
+      "en": "Where the screenshots and videos you save end up. winshotx names them with the date and the time, and it never overwrites one that already exists.",
+      "actual": "Куда попадают снимки и видео, которые вы сохраняете. Имя файлу даёт winshotx по дате и времени, и если такой файл уже есть, он его никогда не перезапишет."
+    },
+    {
+      "es": "Los fotogramas en crudo de lo que has grabado, que es lo que permite volver a exportar sin perder calidad. Vaciarlo no toca ni una captura guardada: solo tira lo que quedó a medias en el editor.",
+      "en": "The raw frames of what you have recorded, which is what lets you export again without losing quality. Emptying it does not touch a single saved capture: it only drops what was left half done in the editor.",
+      "actual": "Необработанные кадры того, что вы записали, — именно они позволяют экспортировать снова без потери качества. Очистка не трогает ни одного сохранённого снимка: она удаляет только то, что осталось недоделанным в редакторе."
+    },
+    {
+      "es": "Claro, oscuro, o lo que diga Windows y cambiar con él. Es solo el color de estas ventanas; lo que capturas no cambia.",
+      "en": "Light, dark, or whatever Windows says and change along with it. It is only the colour of these windows; what you capture does not change.",
+      "actual": "Светлая, тёмная или как в Windows и вместе с ней. Это только цвет этих окон; на то, что вы снимаете, это не влияет."
+    },
+    {
+      "es": "Las cuatro pantallas del primer día, otra vez: lo que hace cada tecla y qué elegir. Dura menos de un minuto y no cambia ningún ajuste.",
+      "en": "The four screens from your first day, again: what each key does and what to choose. It takes less than a minute and changes no setting.",
+      "actual": "Четыре экрана первого дня, ещё раз: что делает каждая клавиша и что выбрать. Занимает меньше минуты и не меняет ни одной настройки."
+    },
+    {
+      "es": "Recorre esta pantalla parándose en cada bloque y contando para qué sirve. Es la vía rápida para ver lo que hay aquí sin ir abriendo cosas a ver qué pasa.",
+      "en": "Walks this screen stopping at every block and saying what it is for. It is the quick way to see what is here without opening things to find out.",
+      "actual": "Проходит по этому экрану, останавливаясь на каждом блоке и рассказывая, зачем он. Быстрый способ посмотреть, что тут есть, не открывая всё подряд наугад."
+    },
+    {
+      "es": "winshotx se abre solo al encender el ordenador y se queda en la bandeja, sin ventana. Sin esto hay que abrirlo a mano cada vez, y las teclas de captura no funcionan mientras no esté abierto.",
+      "en": "winshotx opens on its own when you turn the computer on and sits in the tray, with no window. Without this you have to open it by hand every time, and the capture keys do nothing while it is closed.",
+      "actual": "winshotx сам запускается при включении компьютера и сидит в трее, без окна. Без этого его придётся открывать руками каждый раз, а клавиши снимка не работают, пока он закрыт."
+    },
+    {
+      "es": "Pulsa la combinación · las que Windows se reserva no llegan hasta aquí",
+      "en": "Press the combination · the ones Windows keeps never reach here",
+      "actual": "Нажмите сочетание · те, что Windows оставила за собой, сюда не доходят"
+    },
+    {
+      "es": "No hay más pantallas ni menús escondidos: lo que se puede cambiar está repartido aquí, y cada una cabe entera sin bajar.",
+      "en": "There are no other screens or hidden menus: everything you can change lives here, and each section fits without scrolling.",
+      "actual": "Других экранов и спрятанных меню нет: всё, что можно поменять, разложено здесь, и каждый раздел виден целиком, без прокрутки."
+    },
+    {
+      "es": "Congela la pantalla para que recortes con calma. Y puedes pedirle que espere 3 o 5 segundos: es la única forma de fotografiar un menú abierto, porque al pulsar el atajo se cierra.",
+      "en": "It freezes the screen so you can crop without hurrying. You can also ask it to wait 3 or 5 seconds: that is the only way to shoot an open menu, because pressing the shortcut closes it.",
+      "actual": "Замораживает экран, чтобы вы спокойно выделили область. Можно ещё попросить подождать 3 или 5 секунд: это единственный способ снять открытое меню, потому что при нажатии сочетания оно закрывается."
+    },
+    {
+      "es": "Con «Se copia sola» la imagen va al portapapeles y se acabó, cero clics. Con «Sale la barra» eliges cada vez entre copiar, guardar, editar o grabar.",
+      "en": "With «Copy it for me» the image goes to the clipboard and that is that, no clicks. With «Show the bar» you choose each time between copy, save, edit or record.",
+      "actual": "С «Копировать сразу» картинка уходит в буфер обмена, и на этом всё, ноль кликов. С «Показывать панель» вы каждый раз выбираете: скопировать, сохранить, изменить или записать."
+    },
+    {
+      "es": "El recorte se graba en GIF o en vídeo. Tiene su propio atajo, y el mismo que empieza la grabación es el que la termina.",
+      "en": "The crop records to GIF or video. It has its own shortcut, and the one that starts the recording is the one that ends it.",
+      "actual": "Выделенная область записывается в GIF или в видео. У записи своё сочетание клавиш, и то, что начинает запись, её же и заканчивает."
+    },
+    {
+      "es": "Impr Pant es gratis. Win+Mayús+S cuesta perder Win+S, la búsqueda, y la fila te lo dice antes de que pulses nada.",
+      "en": "Print Screen is free. Win+Shift+S costs you Win+S, the search, and the row tells you before you press anything.",
+      "actual": "Impr Pant достаётся бесплатно. Win+Shift+S стоит потери Win+S, поиска, и строка скажет вам об этом до того, как вы что-нибудь нажмёте."
+    },
+    {
+      "es": "La carpeta a la que van las capturas y los vídeos que guardas. El nombre lo pone winshotx con la fecha y la hora, y nunca pisa uno que ya exista.",
+      "en": "The folder the shots and videos you save go to. winshotx names them with the date and the time, and it never overwrites one that is already there.",
+      "actual": "Папка, куда попадают снимки и видео, которые вы сохраняете. Имя файлу даёт winshotx по дате и времени, и уже существующий файл он никогда не перезапишет."
+    },
+    {
+      "es": "winshotx es gratis, sin cuentas y sin anuncios, y lo hago yo solo. Si te ahorra tiempo, un café es lo que lo mantiene en pie. Y si no, una estrella en GitHub o contar un fallo ayudan igual.",
+      "en": "winshotx is free, with no accounts and no ads, and I build it on my own. If it saves you time, a coffee is what keeps it going. If not, a star on GitHub or a bug report helps just as much.",
+      "actual": "winshotx бесплатный, без аккаунтов и без рекламы, и делаю его я один. Если он экономит ваше время, чашка кофе — это то, что поддерживает его на плаву. А если нет, звёздочка на GitHub или рассказ об ошибке помогают не меньше."
+    },
+    {
+      "es": "Vive en la bandeja del sistema, junto al reloj. No hay ventana que dejar abierta: se llama con una tecla, hace lo suyo y desaparece.",
+      "en": "It lives in the system tray, next to the clock. There is no window to leave open: you call it with a key, it does its job and it is gone.",
+      "actual": "Он живёт в системном трее, рядом с часами. Оставлять открытым окно не нужно: вы зовёте его клавишей, он делает своё дело и исчезает."
+    },
+    {
+      "es": "Estas son las dos teclas con las que se llama. Pulsa el campo y teclea la combinación que quieras si prefieres otras.",
+      "en": "These are the two keys that call it. Click the field and type any combination you prefer.",
+      "actual": "Это две клавиши, которыми его вызывают. Нажмите на поле и наберите то сочетание, которое хотите, если предпочитаете другие."
+    },
+    {
+      "es": "Todo se queda en tu ordenador: sin cuenta, sin nube y sin nada que subir.",
+      "en": "Everything stays on your computer: no account, no cloud, nothing uploaded.",
+      "actual": "Всё остаётся на вашем компьютере: без аккаунта, без облака и без загрузок куда-либо."
+    },
+    {
+      "es": "Esta la tiene otra aplicación. Prueba con otra.",
+      "en": "Another app has this one. Try a different one.",
+      "actual": "Это сочетание занято другой программой. Попробуйте другое."
+    },
+    {
+      "es": "Las dos formas usan el mismo atajo y la misma selección. Lo que cambia es lo que pasa al soltar el ratón, y se puede cambiar cuando quieras desde los ajustes.",
+      "en": "Both ways use the same shortcut and the same selection. What changes is what happens when you let go, and you can switch whenever you like in the settings.",
+      "actual": "Оба способа используют одно и то же сочетание клавиш и одно и то же выделение. Меняется только то, что происходит при отпускании мыши, и это можно изменить в любой момент в настройках."
+    },
+    {
+      "es": "La opción completa: de esa barra salen el editor, el GIF y el vídeo.",
+      "en": "The full option: the editor, the GIF and the video all come out of that bar.",
+      "actual": "Полный вариант: из этой панели открываются редактор, GIF и видео."
+    },
+    {
+      "es": "Para pegar en un chat sin pensar. El atajo de grabar sigue sacando la barra.",
+      "en": "To paste into a chat without thinking. The recording shortcut still brings up the bar.",
+      "actual": "Чтобы вставить в чат, не думая ни о чём. Сочетание для записи по-прежнему вызывает панель."
+    },
+    {
+      "es": "Copiar, guardar, editar o grabar",
+      "en": "Copy, save, edit or record",
+      "actual": "Копировать, сохранить, изменить или записать"
+    },
+    {
+      "es": "En Windows, la tecla Impr Pant abre la Herramienta de Recortes. Si quieres, winshotx se queda con ella y responde a ese mismo dedo, sin aprender ningún atajo nuevo.",
+      "en": "On Windows, the Print Screen key opens the Snipping Tool. If you want, winshotx takes it and answers to that same finger, with no new shortcut to learn.",
+      "actual": "В Windows клавиша Impr Pant открывает «Ножницы». Если хотите, winshotx заберёт её себе и будет отзываться на то же нажатие — новое сочетание учить не придётся."
+    },
+    {
+      "es": "Apaga el ajuste de Windows que le da esa tecla a la Herramienta de Recortes y se la pasa a winshotx. No te quita nada más.",
+      "en": "It turns off the Windows setting that gives that key to the Snipping Tool and hands it to winshotx. It takes nothing else from you.",
+      "actual": "Выключает настройку Windows, которая отдаёт эту клавишу «Ножницам», и передаёт её winshotx. Больше у вас ничего не отнимается."
+    }
+  ]
+}

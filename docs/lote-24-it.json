@@ -1,0 +1,131 @@
+{
+  "lang": "it",
+  "nombre": "italiano",
+  "items": [
+    {
+      "es": "En Windows, la tecla Impr Pant abre la Herramienta de Recortes. Si quieres, winshotx se queda con ella y responde a ese mismo dedo, sin aprender ningún atajo nuevo.",
+      "en": "On Windows, the Print Screen key opens the Snipping Tool. If you want, winshotx takes it and answers to that same finger, with no new shortcut to learn.",
+      "actual": "Su Windows, il tasto Stamp apre lo Strumento di ritaglio. Se vuoi, winshotx lo prende e risponde a quel mismo dito, senza nuove scorciatoie da imparare."
+    },
+    {
+      "es": "Apaga el ajuste de Windows que le da esa tecla a la Herramienta de Recortes y se la pasa a winshotx. No te quita nada más.",
+      "en": "It turns off the Windows setting that gives that key to the Snipping Tool and hands it to winshotx. It takes nothing else from you.",
+      "actual": "Disattiva l'impostazione di Windows che assegna quel tasto allo Strumento di ritaglio e lo passa a winshotx. Non ti toglie nient'altro."
+    },
+    {
+      "es": "La Herramienta de Recortes se queda con Impr Pant y winshotx se llama con su atajo.",
+      "en": "The Snipping Tool keeps Print Screen and winshotx answers to its own shortcut.",
+      "actual": "Lo Strumento di ritaglio tiene Stamp e winshotx risponde alla sua scorciatoia."
+    },
+    {
+      "es": "Impr Pant no ha caído: hay otro programa que la tiene cogida.",
+      "en": "Print Screen did not come across: another program is holding it.",
+      "actual": "Stamp non è passato: c'è un altro programma che lo tiene."
+    },
+    {
+      "es": "Si Windows sigue abriendo la Herramienta de Recortes con Impr Pant, cierra sesión y vuelve a entrar.",
+      "en": "If Windows keeps opening the Snipping Tool with Print Screen, sign out and back in.",
+      "actual": "Se Windows continua ad aprire lo Strumento di ritaglio con Stamp, disconnettiti e ricollegati."
+    },
+    {
+      "es": "Sin cambios. Puedes activarlo más adelante en Ajustes, en “Teclas de Windows”.",
+      "en": "Nothing changed. You can turn it on later in Settings, under “Windows keys”.",
+      "actual": "Nessuna modifica. Puoi attivarlo più avanti in Impostazioni, in «Tasti di Windows»."
+    },
+    {
+      "es": "Esa la atiende Windows antes que cualquier programa y solo se le quita apagando la S de sus atajos, lo que apaga también Win + S, la búsqueda. Por eso va aparte, en Ajustes → Teclas de Windows, y no entra aquí de propina.",
+      "en": "Windows answers that one before any program, and the only way to take it is to switch off the S in its own shortcuts, which also switches off Win + S, the search. That is why it sits apart, in Settings → Windows keys, and does not come along for the ride here.",
+      "actual": "Windows risponde a quello prima di qualsiasi programma, e l'unico modo per prenderlo è spegnere la S nelle sue scorciatoie, il che spegne anche Win + S, la ricerca. Per questo sta in disparte, in Impostazioni → Tasti di Windows, e non viene incluso qui per piacere."
+    },
+    {
+      "es": "Esto es lo que queda configurado. Todo se cambia después desde el icono de la bandeja.",
+      "en": "This is how it is set up. You can change all of it later from the tray icon.",
+      "actual": "Ecco com'è configurato. Tutto si cambia dopo dall'icona nell'area di notifica."
+    },
+    {
+      "es": "Pulsa el atajo cuando quieras. Con el botón derecho en el icono de la bandeja se abren los ajustes.",
+      "en": "Press the shortcut whenever you like. Right-click the tray icon to open the settings.",
+      "actual": "Premi la scorciatoia quando vuoi. Con il tasto destro sull'icona nell'area di notifica si aprono le impostazioni."
+    },
+    {
+      "es": "La caché sin pérdida está ocupando mucho disco: para y exporta",
+      "en": "The lossless cache is taking up a lot of disk: stop and export",
+      "actual": "La cache senza perdita occupa molto disco: ferma ed esporta"
+    },
+    {
+      "es": "Otra vez para tirar la grabación",
+      "en": "Once more to throw the recording away",
+      "actual": "Ancora una volta per buttare via la registrazione"
+    },
+    {
+      "es": "Se puede recortar y exportar igual: lo que no va a funcionar es el play",
+      "en": "You can still crop it and export it: the only thing off is playing it",
+      "actual": "Puoi comunque ritagliare ed esportare: a non funzionare sarà solo la riproduzione"
+    },
+    {
+      "es": "Lo que se dibuja encima",
+      "en": "Drawn on top",
+      "actual": "Quello che viene disegnato sopra"
+    },
+    {
+      "es": "La vista previa ya enseña todo esto: lo que ves es lo que sale.",
+      "en": "The preview already shows all of this: what you see is what you get.",
+      "actual": "L'anteprima mostra già tutto questo: quello che vedi è quello che ottieni."
+    },
+    {
+      "es": "esta grabación se hizo sin audio",
+      "en": "this recording was made without sound",
+      "actual": "questa registrazione è stata fatta senza audio"
+    },
+    {
+      "es": "Al soltar, elegir qué hacer con el recorte · B",
+      "en": "On release, choose what to do with the crop · B",
+      "actual": "Al rilascio, scegli cosa fare del ritaglio · B"
+    },
+    {
+      "es": "Dejarla como está",
+      "en": "Leave it alone",
+      "actual": "Lasciala stare"
+    },
+    {
+      "es": "Es la flecha estándar, no la que tengas puesta.",
+      "en": "It is the standard arrow, not the one you have set.",
+      "actual": "È la freccia standard, non quella che hai impostato tu."
+    },
+    {
+      "es": "Esta grabación ya lleva el cursor de Windows dentro: vas a ver dos.",
+      "en": "This recording already has the Windows cursor baked in: you will see two.",
+      "actual": "Questa registrazione contiene già il puntatore di Windows: ne vedrai due."
+    },
+    {
+      "es": "tu voz, para narrar lo que se está grabando",
+      "en": "your voice, to narrate what you record",
+      "actual": "la tua voce, per commentare quello che stai registrando"
+    },
+    {
+      "es": "solo con Ctrl, Alt o Win: lo que escribes no sale",
+      "en": "only Ctrl, Alt or Win: typing never shows",
+      "actual": "solo con Ctrl, Alt o Win: quello che scrivi non compare"
+    },
+    {
+      "es": "No he encontrado datos personales en esta imagen",
+      "en": "No personal data found in this image",
+      "actual": "Nessun dato personale trovato in questa immagine"
+    },
+    {
+      "es": "Gratis, sin cuentas y sin anuncios, con licencia MIT. Lo hago yo solo, y ni las capturas ni los vídeos salen nunca de tu ordenador: aquí no hay servidor al que mandarlos.",
+      "en": "Free, no accounts, no ads, MIT licensed. I build it on my own, and neither the shots nor the videos ever leave your computer: there is no server here to send them to.",
+      "actual": "Gratis, senza account, senza pubblicità, con licenza MIT. Lo costruisco da solo, e né le catture né i video lasciano mai il tuo computer: qui non c'è un server a cui mandarli."
+    },
+    {
+      "es": "Es la única forma de apoyar winshotx: no hay versión de pago, ni anuncios, ni datos que vender. Se paga una vez, la cantidad la pones tú, y no hace falta cuenta.",
+      "en": "It is the only way to support winshotx: there is no paid version, no ads and no data to sell. You pay once, you choose how much, and no account is needed.",
+      "actual": "È l'unico modo per sostenere winshotx: non esiste una versione a pagamento, né pubblicità, né dati da vendere. Si paga una volta, quanto vuoi tu, e non serve un account."
+    },
+    {
+      "es": "Ayuda igual que un café y es gratis: una estrella hace que lo encuentre más gente, y un fallo contado con lo que estabas haciendo es lo que hace que se arregle.",
+      "en": "It helps as much as a coffee and it costs nothing: a star makes more people find it, and a bug reported with what you were doing is what gets it fixed.",
+      "actual": "Aiuta quanto un caffè e non costa nulla: una stella fa trovare l'app a più persone, e un bug segnalato descrivendo quello che stavi facendo è ciò che permette di correggerlo."
+    }
+  ]
+}

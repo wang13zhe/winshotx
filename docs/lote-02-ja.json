@@ -1,0 +1,151 @@
+{
+  "lang": "ja",
+  "nombre": "japones",
+  "items": [
+    {
+      "es": "Desactivar sus teclas no la calla del todo: sigue saliendo desde el menú de inicio y desde otras teclas. Quitarla es lo único definitivo, y se puede volver a instalar desde la Microsoft Store cuando quieras.",
+      "en": "Turning its keys off does not silence it: it still opens from the Start menu and from other keys. Removing it is the only thing that settles it, and it can be installed again from the Microsoft Store whenever you want.",
+      "actual": "キーを無効にしても完全には止まりません。スタートメニューや他のキーからは今も開きます。削除するのが唯一の確実な方法で、Microsoft Store からいつでも入れ直せます。"
+    },
+    {
+      "es": "Donde caen las capturas y los vídeos que guardas. El nombre lo pone winshotx con la fecha y la hora, y si ya existiera uno igual no lo pisa nunca.",
+      "en": "Where the screenshots and videos you save end up. winshotx names them with the date and the time, and it never overwrites one that already exists.",
+      "actual": "保存したキャプチャや動画の置き場所。名前は winshotx が日付と時刻から付け、同名のファイルがあっても上書きしません。"
+    },
+    {
+      "es": "Los fotogramas en crudo de lo que has grabado, que es lo que permite volver a exportar sin perder calidad. Vaciarlo no toca ni una captura guardada: solo tira lo que quedó a medias en el editor.",
+      "en": "The raw frames of what you have recorded, which is what lets you export again without losing quality. Emptying it does not touch a single saved capture: it only drops what was left half done in the editor.",
+      "actual": "録画した内容の生フレーム。これがあるので品質を落とさず再書き出しできます。空にしても保存済みのキャプチャには一切触れず、エディターで中途半端に残ったものだけを捨てます。"
+    },
+    {
+      "es": "Claro, oscuro, o lo que diga Windows y cambiar con él. Es solo el color de estas ventanas; lo que capturas no cambia.",
+      "en": "Light, dark, or whatever Windows says and change along with it. It is only the colour of these windows; what you capture does not change.",
+      "actual": "ライト、ダーク、または Windows の設定に合わせて切り替え。変わるのはこのウィンドウの色だけで、キャプチャする内容は変わりません。"
+    },
+    {
+      "es": "Las cuatro pantallas del primer día, otra vez: lo que hace cada tecla y qué elegir. Dura menos de un minuto y no cambia ningún ajuste.",
+      "en": "The four screens from your first day, again: what each key does and what to choose. It takes less than a minute and changes no setting.",
+      "actual": "初日の 4 画面をもう一度。各キーの役割と何を選ぶか。1 分もかからず、設定は何も変わりません。"
+    },
+    {
+      "es": "Recorre esta pantalla parándose en cada bloque y contando para qué sirve. Es la vía rápida para ver lo que hay aquí sin ir abriendo cosas a ver qué pasa.",
+      "en": "Walks this screen stopping at every block and saying what it is for. It is the quick way to see what is here without opening things to find out.",
+      "actual": "この画面を各ブロックで止まりながら、何のためのものかを説明します。あれこれ開いて確かめなくても、ここに何があるか分かる近道です。"
+    },
+    {
+      "es": "winshotx se abre solo al encender el ordenador y se queda en la bandeja, sin ventana. Sin esto hay que abrirlo a mano cada vez, y las teclas de captura no funcionan mientras no esté abierto.",
+      "en": "winshotx opens on its own when you turn the computer on and sits in the tray, with no window. Without this you have to open it by hand every time, and the capture keys do nothing while it is closed.",
+      "actual": "電源を入れると winshotx が自動で起動し、ウィンドウなしでタスクトレイに常駐します。これがないと毎回手動で開く必要があり、開いていないとキャプチャキーは動きません。"
+    },
+    {
+      "es": "No hay más pantallas ni menús escondidos: lo que se puede cambiar está repartido aquí, y cada una cabe entera sin bajar.",
+      "en": "There are no other screens or hidden menus: everything you can change lives here, and each section fits without scrolling.",
+      "actual": "ほかに隠れた画面やメニューはありません。変更できるものはすべてここにあり、各セクションはスクロールなしで収まります。"
+    },
+    {
+      "es": "Congela la pantalla para que recortes con calma. Y puedes pedirle que espere 3 o 5 segundos: es la única forma de fotografiar un menú abierto, porque al pulsar el atajo se cierra.",
+      "en": "It freezes the screen so you can crop without hurrying. You can also ask it to wait 3 or 5 seconds: that is the only way to shoot an open menu, because pressing the shortcut closes it.",
+      "actual": "画面を固めるので、落ち着いて切り抜けます。3 秒か 5 秒待たせることもできます。開いたメニューを撮る唯一の方法です。ショートカットを押すと閉じてしまうからです。"
+    },
+    {
+      "es": "Con «Se copia sola» la imagen va al portapapeles y se acabó, cero clics. Con «Sale la barra» eliges cada vez entre copiar, guardar, editar o grabar.",
+      "en": "With «Copy it for me» the image goes to the clipboard and that is that, no clicks. With «Show the bar» you choose each time between copy, save, edit or record.",
+      "actual": "「自動でコピー」なら画像はクリップボードに入って終わり、クリック 0 回。「バーを出す」なら毎回コピー・保存・編集・録画から選べます。"
+    },
+    {
+      "es": "El recorte se graba en GIF o en vídeo. Tiene su propio atajo, y el mismo que empieza la grabación es el que la termina.",
+      "en": "The crop records to GIF or video. It has its own shortcut, and the one that starts the recording is the one that ends it.",
+      "actual": "切り抜いた範囲を GIF か動画で録ります。専用のショートカットがあり、録画を始めたキーがそのまま終了キーになります。"
+    },
+    {
+      "es": "Impr Pant es gratis. Win+Mayús+S cuesta perder Win+S, la búsqueda, y la fila te lo dice antes de que pulses nada.",
+      "en": "Print Screen is free. Win+Shift+S costs you Win+S, the search, and the row tells you before you press anything.",
+      "actual": "Impr Pant は無料で済みます。Win+Shift+S は Win+S（検索）を失う代償があり、その行が押す前に教えてくれます。"
+    },
+    {
+      "es": "La carpeta a la que van las capturas y los vídeos que guardas. El nombre lo pone winshotx con la fecha y la hora, y nunca pisa uno que ya exista.",
+      "en": "The folder the shots and videos you save go to. winshotx names them with the date and the time, and it never overwrites one that is already there.",
+      "actual": "保存したキャプチャや動画が入るフォルダー。名前は winshotx が日付と時刻から付け、既存のファイルは決して上書きしません。"
+    },
+    {
+      "es": "winshotx es gratis, sin cuentas y sin anuncios, y lo hago yo solo. Si te ahorra tiempo, un café es lo que lo mantiene en pie. Y si no, una estrella en GitHub o contar un fallo ayudan igual.",
+      "en": "winshotx is free, with no accounts and no ads, and I build it on my own. If it saves you time, a coffee is what keeps it going. If not, a star on GitHub or a bug report helps just as much.",
+      "actual": "winshotx は無料で、アカウントも広告もなく、私ひとりで作っています。時間の節約になっているなら、コーヒー 1 杯が支えになります。そうでなければ、GitHub のスターや不具合の報告でも同じだけ助かります。"
+    },
+    {
+      "es": "Vive en la bandeja del sistema, junto al reloj. No hay ventana que dejar abierta: se llama con una tecla, hace lo suyo y desaparece.",
+      "en": "It lives in the system tray, next to the clock. There is no window to leave open: you call it with a key, it does its job and it is gone.",
+      "actual": "時計の隣のタスクトレイに常駐します。開いたままにするウィンドウはありません。キーで呼べば仕事をして消えます。"
+    },
+    {
+      "es": "Estas son las dos teclas con las que se llama. Pulsa el campo y teclea la combinación que quieras si prefieres otras.",
+      "en": "These are the two keys that call it. Click the field and type any combination you prefer.",
+      "actual": "呼び出すのはこの 2 つのキーです。別の組み合わせがよければ、欄をクリックしてそのまま入力してください。"
+    },
+    {
+      "es": "Todo se queda en tu ordenador: sin cuenta, sin nube y sin nada que subir.",
+      "en": "Everything stays on your computer: no account, no cloud, nothing uploaded.",
+      "actual": "すべてあなたのパソコン内で完結します。アカウントもクラウドもなく、アップロードするものはありません。"
+    },
+    {
+      "es": "Las dos formas usan el mismo atajo y la misma selección. Lo que cambia es lo que pasa al soltar el ratón, y se puede cambiar cuando quieras desde los ajustes.",
+      "en": "Both ways use the same shortcut and the same selection. What changes is what happens when you let go, and you can switch whenever you like in the settings.",
+      "actual": "どちらも同じショートカットと同じ範囲選択を使います。違うのはマウスを離した後の動作だけで、設定からいつでも変更できます。"
+    },
+    {
+      "es": "En Windows, la tecla Impr Pant abre la Herramienta de Recortes. Si quieres, winshotx se queda con ella y responde a ese mismo dedo, sin aprender ningún atajo nuevo.",
+      "en": "On Windows, the Print Screen key opens the Snipping Tool. If you want, winshotx takes it and answers to that same finger, with no new shortcut to learn.",
+      "actual": "Windows では Impr Pant キーで Snipping Tool が開きます。よければ winshotx がそのキーを引き受け、新しいショートカットを覚えなくても同じ指で使えます。"
+    },
+    {
+      "es": "Apaga el ajuste de Windows que le da esa tecla a la Herramienta de Recortes y se la pasa a winshotx. No te quita nada más.",
+      "en": "It turns off the Windows setting that gives that key to the Snipping Tool and hands it to winshotx. It takes nothing else from you.",
+      "actual": "そのキーを Snipping Tool に与えている Windows の設定をオフにし、winshotx に渡します。ほかのものは何も取りません。"
+    },
+    {
+      "es": "La Herramienta de Recortes se queda con Impr Pant y winshotx se llama con su atajo.",
+      "en": "The Snipping Tool keeps Print Screen and winshotx answers to its own shortcut.",
+      "actual": "Snipping Tool が Impr Pant を持ち、winshotx は自分のショートカットで呼び出します。"
+    },
+    {
+      "es": "Si Windows sigue abriendo la Herramienta de Recortes con Impr Pant, cierra sesión y vuelve a entrar.",
+      "en": "If Windows keeps opening the Snipping Tool with Print Screen, sign out and back in.",
+      "actual": "Impr Pant で Windows がまだ Snipping Tool を開く場合は、サインアウトして入り直してください。"
+    },
+    {
+      "es": "Win + Mayús + S es otra historia.",
+      "en": "Win + Shift + S is another story.",
+      "actual": "Win + Shift + S は別の話です。"
+    },
+    {
+      "es": "Esa la atiende Windows antes que cualquier programa y solo se le quita apagando la S de sus atajos, lo que apaga también Win + S, la búsqueda. Por eso va aparte, en Ajustes → Teclas de Windows, y no entra aquí de propina.",
+      "en": "Windows answers that one before any program, and the only way to take it is to switch off the S in its own shortcuts, which also switches off Win + S, the search. That is why it sits apart, in Settings → Windows keys, and does not come along for the ride here.",
+      "actual": "これはどのプログラムよりも先に Windows が処理します。外すには Windows 側のショートカットで S をオフにするしかなく、それで Win + S（検索）もオフになります。だからこれは別扱いで、設定 →「Windows のキー」にあり、ここでついでに済ませることはできません。"
+    },
+    {
+      "es": "Pulsa el atajo cuando quieras. Con el botón derecho en el icono de la bandeja se abren los ajustes.",
+      "en": "Press the shortcut whenever you like. Right-click the tray icon to open the settings.",
+      "actual": "好きなときにショートカットを押してください。トレイアイコンを右クリックすると設定が開きます。"
+    },
+    {
+      "es": "Dejarla como está",
+      "en": "Leave it alone",
+      "actual": "そのままにする"
+    },
+    {
+      "es": "Gratis, sin cuentas y sin anuncios, con licencia MIT. Lo hago yo solo, y ni las capturas ni los vídeos salen nunca de tu ordenador: aquí no hay servidor al que mandarlos.",
+      "en": "Free, no accounts, no ads, MIT licensed. I build it on my own, and neither the shots nor the videos ever leave your computer: there is no server here to send them to.",
+      "actual": "無料、アカウント不要、広告なし、MIT ライセンス。私ひとりで作っていて、キャプチャも動画もあなたのパソコンから出ることはありません。送る先のサーバーがそもそもありません。"
+    },
+    {
+      "es": "Es la única forma de apoyar winshotx: no hay versión de pago, ni anuncios, ni datos que vender. Se paga una vez, la cantidad la pones tú, y no hace falta cuenta.",
+      "en": "It is the only way to support winshotx: there is no paid version, no ads and no data to sell. You pay once, you choose how much, and no account is needed.",
+      "actual": "winshotx を支援する唯一の方法です。有料版も広告も、売るデータもありません。1 回だけの支払いで金額はあなた次第、アカウントも不要です。"
+    },
+    {
+      "es": "Ayuda igual que un café y es gratis: una estrella hace que lo encuentre más gente, y un fallo contado con lo que estabas haciendo es lo que hace que se arregle.",
+      "en": "It helps as much as a coffee and it costs nothing: a star makes more people find it, and a bug reported with what you were doing is what gets it fixed.",
+      "actual": "コーヒーと同じくらい役立ち、しかも無料です。スターが増えれば見つけてくれる人も増えます。何をしていたときに起きたかを添えた不具合報告が、修正につながります。"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "lang": "ja",
+  "nombre": "japones",
+  "items": [
+    {
+      "es": "Doce idiomas, o el de Windows si winshotx lo habla. Cambia al momento y no hace falta reiniciar nada.",
+      "en": "Twelve languages, or the one Windows uses if winshotx speaks it. It changes right away, nothing needs restarting.",
+      "actual": "12 か国語、または winshotx が対応していれば Windows の言語。すぐ切り替わり、再起動は不要です。"
+    },
+    {
+      "es": "La misma captura, pero al soltar el ratón se abre el editor en vez de la barra de siempre. Para la captura que hay que trabajar: señalar algo con una flecha, tapar un dato o recortar antes de mandarla.",
+      "en": "The same capture, but letting go of the mouse opens the editor instead of the usual toolbar. For the shot you have to work on: point at something with an arrow, cover up a detail, or crop before you send it.",
+      "actual": "同じキャプチャですが、マウスを離すと通常のバーではなくエディターが開きます。手を加えたいキャプチャ向けです。矢印で指す、情報を隠す、送る前に切り抜くといった作業に。"
+    },
+    {
+      "es": "winshotx hace las fotos con la captura moderna de Windows, que sí ve lo que dibuja la tarjeta gráfica. Esta versión de Windows no la admite, así que van por la de siempre y una ventana acelerada puede salir con trozos en negro. No hay nada que puedas tocar, y las grabaciones no se ven afectadas.",
+      "en": "winshotx takes photos with the modern Windows capture, which does see what the graphics card draws. This version of Windows does not support it, so they go through the old one and an accelerated window can come out with black patches. There is nothing for you to change, and recordings are not affected.",
+      "actual": "winshotx は Windows の新しいキャプチャで撮影するので、グラフィックカードが描く内容も写ります。このバージョンの Windows は対応しておらず従来の方式で撮影するため、アクセラレーションされたウィンドウは黒い部分が写ることがあります。設定できる項目はなく、録画には影響しません。"
+    },
+    {
+      "es": "Un clic de cámara al capturar, como el de una réflex. Sirve para saber que la captura ha salido sin mirar la pantalla. Viene apagado: en una reunión o grabando un tutorial, un sonido que no esperas es peor que ninguno.",
+      "en": "A camera click when you capture, like an SLR. It tells you the shot went through without looking at the screen. It comes off: in a meeting or while recording a tutorial, a sound you did not expect is worse than none.",
+      "actual": "撮影時にカメラのシャッター音が鳴ります。画面を見なくても撮れたか分かります。初期設定はオフです。会議中やチュートリアル収録中に不意の音が鳴るのは、無音より困るからです。"
+    },
+    {
+      "es": "Grabar siempre lo último",
+      "en": "Always be recording",
+      "actual": "常に録り続ける"
+    },
+    {
+      "es": "esta combinación midió el 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento",
+      "en": "this combination measured 22% of a core with a quiet desktop, and up to 60% with the screen moving",
+      "actual": "この組み合わせでは、静止したデスクトップで単核の 22%、画面が動くと最大 60% を占めました"
+    },
+    {
+      "es": "ya es de winshotx",
+      "en": "it belongs to winshotx now",
+      "actual": "もう winshotx のものです"
+    },
+    {
+      "es": "de winshotx, o pulsa Aplicar si Windows la sigue abriendo",
+      "en": "winshotx has it, or press Apply if Windows keeps opening",
+      "actual": "winshotx のものになります。Windows がまだ開く場合は「適用」を押してください"
+    },
+    {
+      "es": "Reinicia el Explorador para que Windows suelte la tecla. La barra de tareas parpadea un segundo y no se cierra nada más.",
+      "en": "Restarts Explorer so Windows lets the key go. The taskbar blinks for a second and nothing else closes.",
+      "actual": "Windows にキーを手放させるためエクスプローラーを再起動します。タスクバーが 1 秒ほど点滅しますが、ほかに閉じるものはありません。"
+    },
+    {
+      "es": "quitarla es lo único que la calla del todo",
+      "en": "removing it is the only way to silence it",
+      "actual": "完全に止めるには削除するしかありません"
+    },
+    {
+      "es": "Congela la pantalla en el momento de pulsarla y te deja recortar encima de esa foto quieta: lo que se mueva debajo ya no te estorba. Windows se reserva algunas combinaciones para él y esas no llegan hasta aquí.",
+      "en": "Freezes the screen the moment you press it and lets you crop over that still picture, so whatever moves underneath stops getting in the way. Windows keeps some combinations for itself and those never reach here.",
+      "actual": "押した瞬間に画面を固め、その静止画の上で切り抜けます。下で動いているものに邪魔されません。Windows が自分用に確保している組み合わせもあり、それはここには届きません。"
+    },
+    {
+      "es": "La pantalla se congela justo al pulsar el atajo, así que un menú abierto se cierra antes de que dé tiempo a fotografiarlo. Con 3 o 5 segundos, pulsas primero, abres el menú y la foto se toma sola cuando ya está delante.",
+      "en": "The screen freezes the instant you press the shortcut, so an open menu closes before you can shoot it. With 3 or 5 seconds you press first, open the menu, and the shot is taken on its own once it is there.",
+      "actual": "ショートカットを押した瞬間に画面が固まるので、開いているメニューは撮る前に閉じてしまいます。3 秒か 5 秒にすれば、先に押してからメニューを開き、それが表示されたところで自動的に撮影されます。"
+    },
+    {
+      "es": "Los iconos se esconden solo durante el disparo, no mientras eliges el recorte, y vuelven aunque la captura falle. Sirve para fotografiar el fondo de pantalla o una ventana con el escritorio detrás sin que salgan tus archivos.",
+      "en": "The icons hide only for the shot itself, not while you pick the crop, and they come back even if the capture fails. It is for shooting the wallpaper, or a window with the desktop behind it, without your files showing.",
+      "actual": "アイコンが隠れるのは撮影のあいだだけで、範囲を選んでいるあいだは隠れません。キャプチャに失敗しても元に戻ります。壁紙や、デスクトップを背景にしたウィンドウを、自分のファイルを写さずに撮るための機能です。"
+    },
+    {
+      "es": "Si el puntero del ratón sale dentro de la captura. Para señalar un botón viene bien; para una captura limpia sobra, y hay que acordarse antes de disparar porque después ya no se puede quitar. Solo afecta a las fotos: en las grabaciones el puntero nunca va cocido, se anota por dónde va y el editor lo dibuja al exportar con su misma imagen, del tamaño que quieras.",
+      "en": "Whether the mouse pointer shows up inside the screenshot. Good for pointing at a button; for a clean capture it is in the way, and you have to remember before shooting because it cannot be removed afterwards. Screenshots only: in recordings the pointer is never baked in, its path is noted and the editor draws it when exporting with its very own image, at whatever size you want.",
+      "actual": "マウスカーソルをキャプチャに写すかどうか。ボタンを指すときは便利ですが、きれいに撮りたいときは邪魔になります。撮影後には消せないので、撮る前に決めておく必要があります。影響するのは写真だけです。録画ではカーソルを焼き込まず、通った位置を記録しておき、書き出し時にエディターがカーソル画像を使い、好みのサイズで描き込みます。"
+    },
+    {
+      "es": "Mientras arrastras, una lupa de 6 aumentos con retícula te enseña el píxel exacto que hay bajo el cursor y su color en hexadecimal. Con la tecla C te llevas ese color al portapapeles sin capturar nada.",
+      "en": "While you drag, a 6x magnifier with a crosshair shows the exact pixel under the cursor and its colour in hex. Press C and that colour goes to the clipboard without capturing anything.",
+      "actual": "ドラッグ中は 6 倍の拡大鏡と十字線で、カーソル下のピクセルとその色（16 進）を確認できます。C キーを押すと、キャプチャせずにその色をクリップボードへコピーできます。"
+    },
+    {
+      "es": "Con la barra sales a decidir: copiar, guardar, editar, anclar encima de todo o leer el texto. Sin ella el recorte se va directo al portapapeles y el overlay desaparece, que es un clic menos cuando siempre haces lo mismo.",
+      "en": "With the bar you get to decide: copy, save, edit, pin it on top of everything or read the text in it. Without it the crop goes straight to the clipboard and the overlay is gone, which is one click less when you always do the same thing.",
+      "actual": "バーがあれば、コピー・保存・編集・最前面への固定・テキストの読み取りを選べます。バーがなければ切り抜いた範囲はそのままクリップボードに入り、オーバーレイも消えます。いつも同じ操作をする人には 1 クリック分の節約です。"
+    },
+    {
+      "es": "Guardar deja el archivo en tu carpeta, y con esto además lo deja pegable. Es para cuando quieres las dos cosas a la vez: el archivo para luego y la imagen para pegarla ahora mismo en un chat.",
+      "en": "Saving leaves the file in your folder, and this also leaves it ready to paste. It is for when you want both: the file for later and the image to paste into a chat right now.",
+      "actual": "保存するとファイルがフォルダーに残り、さらに貼り付けもできる状態になります。ファイルも画像も両方ほしいとき用です。あとで使うファイルと、すぐチャットに貼る画像が同時に手に入ります。"
+    },
+    {
+      "es": "Recortas igual que para una captura, pero en vez de una foto sale un vídeo. El mismo atajo lo termina, así que no hace falta ir a buscar ningún botón mientras grabas.",
+      "en": "You crop the same way as for a screenshot, but what comes out is a video. The same shortcut ends it, so you never have to go looking for a button while recording.",
+      "actual": "キャプチャと同じように範囲を選びますが、写真ではなく動画が出てきます。同じショートカットで終了するので、録画中にボタンを探す必要はありません。"
+    },
+    {
+      "es": "Cuántas veces por segundo se mira la pantalla. 30 vale para casi todo; 60 es para movimiento rápido y cuesta el doble de disco y de máquina. El editor puede bajarlo después, pero lo que no se grabó no se inventa.",
+      "en": "How many times a second the screen is looked at. 30 is enough for almost everything; 60 is for fast movement and costs twice the disk and the machine. The editor can lower it afterwards, but what was not recorded cannot be invented.",
+      "actual": "1 秒間に何回画面を見るか。30 でほぼ足ります。60 は速い動き向けで、ディスクもマシンも 2 倍かかります。エディターで後から下げられますが、録れなかったものは作れません。"
+    },
+    {
+      "es": "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.",
+      "en": "Records whatever comes out of the speakers, inside the same video: the voice on a call, the audio of a video, an app's alert. It does not record your microphone, that is the row below.",
+      "actual": "スピーカーから出る音を同じ動画に入れます。通話の声、動画の音声、アプリの通知音など。マイクは録りません。それは下の行です。"
+    },
+    {
+      "es": "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.",
+      "en": "Your voice, mixed with the system sound into the same track. It is what you need to explain something while you show it, and it can only be decided before recording.",
+      "actual": "あなたの声をシステム音と混ぜて同じトラックに入れます。見せながら説明するときに必要なもので、録画前にしか選べません。"
+    },
+    {
+      "es": "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.",
+      "en": "winshotx records the screen all the time and drops the old, so what just happened is still there even though you never pressed record. And it costs: measured on a machine with three screens, at 60 frames and native resolution it takes 22% of a core with a quiet desktop, and up to 60% with the screen moving. Turned off, the whole of winshotx uses 2.9%.",
+      "actual": "winshotx は常に画面を録り続けて古い部分を捨てるので、録画ボタンを押していなくても直近の出来事は残っています。その代償もあります。3 画面の環境で 60 フレーム・ネイティブ解像度の場合、静止したデスクトップで単核の 22%、画面が動くと最大 60% を占めました。オフなら winshotx 全体で 2.9% です。"
+    },
+    {
+      "es": "Cuánto tiempo hacia atrás se puede rescatar. Más segundos es más memoria y más disco dando vueltas, y hasta que no pase ese tiempo desde que lo encendiste, lo que guardes durará menos de lo que pone aquí.",
+      "en": "How far back you can rescue. More seconds is more memory and more disk going around, and until that much time has passed since you turned it on, what you save will be shorter than what it says here.",
+      "actual": "どこまでさかのぼって救出できるか。秒数を増やすほどメモリとディスクを使います。オンにしてからその時間が経つまでは、保存できる長さはここに表示されたより短くなります。"
+    },
+    {
+      "es": "El anillo vigila UNA pantalla y no puede cambiar a mitad, porque mudarse se llevaría por delante lo grabado. Al elegir una, su número aparece un par de segundos en esa misma pantalla para que sepas cuál es.",
+      "en": "The ring watches ONE screen and cannot switch halfway, because moving would take what is already recorded with it. When you pick one, its number appears on that very screen for a couple of seconds so you know which it is.",
+      "actual": "この仕組みが見るのは 1 つの画面だけで、途中では切り替えられません。切り替えると録画済みの内容が失われるからです。画面を選ぶと、その画面に番号が 2 秒ほど表示されるので、どれか分かります。"
+    },
+    {
+      "es": "A qué tamaño se guarda lo que va entrando. Bajarlo de la resolución nativa ocupa mucho menos y se nota poco en pantalla, y aquí abajo tienes lo que puede llegar a ocupar en disco con lo que hayas elegido.",
+      "en": "The size everything is stored at. Below the native resolution it takes far less room and you hardly notice it on screen, and the line under here is how much it can end up taking on disk with what you picked.",
+      "actual": "取り込む映像をどのサイズで保存するか。ネイティブ解像度より下げると容量はずっと減り、画面ではほとんど気づきません。下の行には、選んだ設定でディスクを最大どれだけ使うかが出ます。"
+    },
+    {
+      "es": "Los fotogramas por segundo del anillo. 15 es suficiente para ver qué pasó y es el que menos molesta al ordenador; 60 se ve suave pero escribe cuatro veces más, y esto está corriendo toda la tarde.",
+      "en": "The ring's frames per second. 15 is enough to see what happened and is the one that bothers the machine least; 60 looks smooth but writes four times as much, and this is running all afternoon.",
+      "actual": "常時録画のフレームレート。15 でも何が起きたか分かり、マシンへの負担が一番少ない設定です。60 はなめらかですが 4 倍書き込むうえ、午後じゅう動き続けます。"
+    },
+    {
+      "es": "La tecla que rescata. Guarda los últimos segundos y te los abre en el editor **sin dejar de grabar**, así que puedes seguir y volver a rescatar dentro de un rato.",
+      "en": "The key that rescues. It saves the last few seconds and opens them in the editor **without stopping the recording**, so you can carry on and rescue again in a while.",
+      "actual": "救出するキー。直近の数秒を保存してエディターで開きます。**録画は止まりません** ので、そのまま続けて、しばらくしてからまた救出できます。"
+    },
+    {
+      "es": "Al parar una grabación, abrirla para recortarla y exportarla. Apagado, el vídeo o el GIF se guarda solo en tu carpeta, entero y tal cual se grabó, y tú sigues a lo tuyo. Lo que rescatas de los últimos segundos abre el editor igualmente: ahí todavía no hay ningún archivo hecho.",
+      "en": "When a recording stops, open it to trim and export. Turned off, the video or GIF is saved on its own to your folder, whole and just as it was recorded, and you get back to what you were doing. What you rescue from the last few seconds opens the editor either way: there is no file made yet at that point.",
+      "actual": "録画を停止したとき、トリミングと書き出しのために開くかどうか。オフなら動画や GIF はそのままフォルダーに丸ごと保存され、作業を続けられます。直近の救出はどちらでもエディターで開きます。その時点ではまだファイルができていないからです。"
+    },
+    {
+      "es": "Windows le tiene asignada la Herramienta de Recortes, y esto se la quita para dársela a winshotx. Si la tecla no responde, hay que cerrar sesión una vez para que Windows la suelte del todo.",
+      "en": "Windows has the Snipping Tool on that key, and this takes it away and gives it to winshotx. If the key does not respond, you have to sign out once for Windows to let go of it completely.",
+      "actual": "Windows はこのキーに Snipping Tool を割り当てています。これを外して winshotx に渡します。キーが反応しない場合は、Windows が完全に手放すまで一度サインアウトが必要です。"
+    },
+    {
+      "es": "La otra tecla de captura de Windows. Cogerla cuesta Win+S, la búsqueda, porque las dos se registran juntas; y si el Explorador sigue abriendo lo suyo, con Aplicar se reinicia y la suelta.",
+      "en": "The other Windows capture key. Taking it costs you Win+S, the search, because the two register together; and if Explorer keeps opening its own thing, Apply restarts it and it lets go.",
+      "actual": "もう 1 つの Windows のキャプチャキー。これを取ると Win+S（検索）が使えなくなります。2 つは一緒に登録されるためです。エクスプローラーがまだ独自の動作をする場合は、「適用」で再起動して手放させます。"
+    }
+  ]
+}

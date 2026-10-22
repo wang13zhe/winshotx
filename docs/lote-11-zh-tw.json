@@ -1,0 +1,156 @@
+{
+  "lang": "zh-tw",
+  "nombre": "chino tradicional",
+  "items": [
+    {
+      "es": "La misma captura, pero al soltar el ratón se abre el editor en vez de la barra de siempre. Para la captura que hay que trabajar: señalar algo con una flecha, tapar un dato o recortar antes de mandarla.",
+      "en": "The same capture, but letting go of the mouse opens the editor instead of the usual toolbar. For the shot you have to work on: point at something with an arrow, cover up a detail, or crop before you send it.",
+      "actual": "同樣是截圖，但放開滑鼠後直接開啟編輯器，而不是平常那條工具列。適合需要處理的截圖：用箭頭指出重點、遮住敏感資料，或送出前先裁切。"
+    },
+    {
+      "es": "winshotx hace las fotos con la captura moderna de Windows, que sí ve lo que dibuja la tarjeta gráfica. Esta versión de Windows no la admite, así que van por la de siempre y una ventana acelerada puede salir con trozos en negro. No hay nada que puedas tocar, y las grabaciones no se ven afectadas.",
+      "en": "winshotx takes photos with the modern Windows capture, which does see what the graphics card draws. This version of Windows does not support it, so they go through the old one and an accelerated window can come out with black patches. There is nothing for you to change, and recordings are not affected.",
+      "actual": "winshotx 使用 Windows 的新式擷取，能看到顯示卡實際繪製的內容。這個 Windows 版本不支援，所以改走舊方式，啟用加速的視窗可能出現黑色區塊。這部分你沒辦法調整，錄影不受影響。"
+    },
+    {
+      "es": "Un clic de cámara al capturar, como el de una réflex. Sirve para saber que la captura ha salido sin mirar la pantalla. Viene apagado: en una reunión o grabando un tutorial, un sonido que no esperas es peor que ninguno.",
+      "en": "A camera click when you capture, like an SLR. It tells you the shot went through without looking at the screen. It comes off: in a meeting or while recording a tutorial, a sound you did not expect is worse than none.",
+      "actual": "截圖時發出像單眼相機的快門聲，不用看螢幕就知道截好了。預設關閉：開會或錄教學時，突然冒出來的聲音比沒有聲音更糟。"
+    },
+    {
+      "es": "Grabar siempre lo último",
+      "en": "Always be recording",
+      "actual": "持續錄製最近片段"
+    },
+    {
+      "es": "ya es de winshotx",
+      "en": "it belongs to winshotx now",
+      "actual": "現在屬於 winshotx"
+    },
+    {
+      "es": "quitarla es lo único que la calla del todo",
+      "en": "removing it is the only way to silence it",
+      "actual": "只有移除它才能完全安靜"
+    },
+    {
+      "es": "Congela la pantalla en el momento de pulsarla y te deja recortar encima de esa foto quieta: lo que se mueva debajo ya no te estorba. Windows se reserva algunas combinaciones para él y esas no llegan hasta aquí.",
+      "en": "Freezes the screen the moment you press it and lets you crop over that still picture, so whatever moves underneath stops getting in the way. Windows keeps some combinations for itself and those never reach here.",
+      "actual": "按下時畫面會凍結，讓你可以在這張靜止畫面上慢慢框選：下面再怎麼動都不會干擾。Windows 自己保留了一些組合鍵，那些不會傳到這裡。"
+    },
+    {
+      "es": "La pantalla se congela justo al pulsar el atajo, así que un menú abierto se cierra antes de que dé tiempo a fotografiarlo. Con 3 o 5 segundos, pulsas primero, abres el menú y la foto se toma sola cuando ya está delante.",
+      "en": "The screen freezes the instant you press the shortcut, so an open menu closes before you can shoot it. With 3 or 5 seconds you press first, open the menu, and the shot is taken on its own once it is there.",
+      "actual": "按下快速鍵的瞬間畫面就凍結，所以已經開啟的選單會在拍到之前關掉。設成 3 或 5 秒時，你先按鍵、再開啟選單，畫面到位後會自動拍下。"
+    },
+    {
+      "es": "Los iconos se esconden solo durante el disparo, no mientras eliges el recorte, y vuelven aunque la captura falle. Sirve para fotografiar el fondo de pantalla o una ventana con el escritorio detrás sin que salgan tus archivos.",
+      "en": "The icons hide only for the shot itself, not while you pick the crop, and they come back even if the capture fails. It is for shooting the wallpaper, or a window with the desktop behind it, without your files showing.",
+      "actual": "圖示只在截圖那一刻隱藏，框選時不會隱藏，而且就算截圖失敗也會回來。適合拍桌布，或拍一個後面有桌面的視窗，又不想讓你的檔案入鏡。"
+    },
+    {
+      "es": "Si el puntero del ratón sale dentro de la captura. Para señalar un botón viene bien; para una captura limpia sobra, y hay que acordarse antes de disparar porque después ya no se puede quitar. Solo afecta a las fotos: en las grabaciones el puntero nunca va cocido, se anota por dónde va y el editor lo dibuja al exportar con su misma imagen, del tamaño que quieras.",
+      "en": "Whether the mouse pointer shows up inside the screenshot. Good for pointing at a button; for a clean capture it is in the way, and you have to remember before shooting because it cannot be removed afterwards. Screenshots only: in recordings the pointer is never baked in, its path is noted and the editor draws it when exporting with its very own image, at whatever size you want.",
+      "actual": "滑鼠游標要不要出現在截圖裡。用來指某個按鈕很方便；想要乾淨的截圖就多餘了，而且要在截圖前先決定，事後拿不掉。只影響照片：錄影時游標不會燒進畫面，只會記下軌跡，匯出時由編輯器用同一張游標圖、依你要的大小畫上去。"
+    },
+    {
+      "es": "Mientras arrastras, una lupa de 6 aumentos con retícula te enseña el píxel exacto que hay bajo el cursor y su color en hexadecimal. Con la tecla C te llevas ese color al portapapeles sin capturar nada.",
+      "en": "While you drag, a 6x magnifier with a crosshair shows the exact pixel under the cursor and its colour in hex. Press C and that colour goes to the clipboard without capturing anything.",
+      "actual": "拖曳時，6 倍放大鏡加十字準線會顯示游標底下那個像素和它的十六進位色碼。按 C 就能把這個顏色複製到剪貼簿，不用截圖。"
+    },
+    {
+      "es": "Con la barra sales a decidir: copiar, guardar, editar, anclar encima de todo o leer el texto. Sin ella el recorte se va directo al portapapeles y el overlay desaparece, que es un clic menos cuando siempre haces lo mismo.",
+      "en": "With the bar you get to decide: copy, save, edit, pin it on top of everything or read the text in it. Without it the crop goes straight to the clipboard and the overlay is gone, which is one click less when you always do the same thing.",
+      "actual": "有工具列你就能決定：複製、儲存、編輯、釘在最上層或讀取文字。沒有工具列時，框選內容直接進剪貼簿，遮罩也跟著消失，每次做同樣的事就少按一下。"
+    },
+    {
+      "es": "Guardar deja el archivo en tu carpeta, y con esto además lo deja pegable. Es para cuando quieres las dos cosas a la vez: el archivo para luego y la imagen para pegarla ahora mismo en un chat.",
+      "en": "Saving leaves the file in your folder, and this also leaves it ready to paste. It is for when you want both: the file for later and the image to paste into a chat right now.",
+      "actual": "儲存會把檔案放進你的資料夾，加上這個還會讓它可以直接貼上。適合兩個都要的時候：檔案留著以後用，圖片現在就貼進聊天室。"
+    },
+    {
+      "es": "Cuántas veces por segundo se mira la pantalla. 30 vale para casi todo; 60 es para movimiento rápido y cuesta el doble de disco y de máquina. El editor puede bajarlo después, pero lo que no se grabó no se inventa.",
+      "en": "How many times a second the screen is looked at. 30 is enough for almost everything; 60 is for fast movement and costs twice the disk and the machine. The editor can lower it afterwards, but what was not recorded cannot be invented.",
+      "actual": "每秒看畫面幾次。30 幾乎什麼都夠用；60 適合快速移動，但磁碟和效能都要加倍。編輯器之後可以降，但沒錄到的東西變不出來。"
+    },
+    {
+      "es": "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.",
+      "en": "Records whatever comes out of the speakers, inside the same video: the voice on a call, the audio of a video, an app's alert. It does not record your microphone, that is the row below.",
+      "actual": "把喇叭播放的聲音一起錄進同一段影片：通話的聲音、影片的聲音、程式的提示音。不會錄你的麥克風，那是下面那一列。"
+    },
+    {
+      "es": "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.",
+      "en": "winshotx records the screen all the time and drops the old, so what just happened is still there even though you never pressed record. And it costs: measured on a machine with three screens, at 60 frames and native resolution it takes 22% of a core with a quiet desktop, and up to 60% with the screen moving. Turned off, the whole of winshotx uses 2.9%.",
+      "actual": "winshotx 會一直錄著螢幕並丟掉舊的，所以即使你沒按錄影，剛剛發生的事還在。代價是：在三螢幕、60 影格、原生解析度的機器上實測，桌面靜止時佔用單核 22%，畫面移動時最高到 60%。關掉之後，整個 winshotx 只用 2.9%。"
+    },
+    {
+      "es": "Cuánto tiempo hacia atrás se puede rescatar. Más segundos es más memoria y más disco dando vueltas, y hasta que no pase ese tiempo desde que lo encendiste, lo que guardes durará menos de lo que pone aquí.",
+      "en": "How far back you can rescue. More seconds is more memory and more disk going around, and until that much time has passed since you turned it on, what you save will be shorter than what it says here.",
+      "actual": "可以回溯多久。秒數越多，記憶體和磁碟就越操，而且在開啟後還沒滿這段時間之前，你存下來的會比這裡寫的短。"
+    },
+    {
+      "es": "El anillo vigila UNA pantalla y no puede cambiar a mitad, porque mudarse se llevaría por delante lo grabado. Al elegir una, su número aparece un par de segundos en esa misma pantalla para que sepas cuál es.",
+      "en": "The ring watches ONE screen and cannot switch halfway, because moving would take what is already recorded with it. When you pick one, its number appears on that very screen for a couple of seconds so you know which it is.",
+      "actual": "回放環只盯著一個螢幕，中途不能換，因為換了會把已經錄到的內容一起帶走。選了某個螢幕後，它的編號會在該螢幕上顯示幾秒，讓你知道是哪一個。"
+    },
+    {
+      "es": "A qué tamaño se guarda lo que va entrando. Bajarlo de la resolución nativa ocupa mucho menos y se nota poco en pantalla, y aquí abajo tienes lo que puede llegar a ocupar en disco con lo que hayas elegido.",
+      "en": "The size everything is stored at. Below the native resolution it takes far less room and you hardly notice it on screen, and the line under here is how much it can end up taking on disk with what you picked.",
+      "actual": "進來的畫面用多大的尺寸存。降到原生解析度以下可以省很多空間，螢幕上幾乎看不出來；下面這行則是依你選的設定，最多會佔用多少磁碟。"
+    },
+    {
+      "es": "Los fotogramas por segundo del anillo. 15 es suficiente para ver qué pasó y es el que menos molesta al ordenador; 60 se ve suave pero escribe cuatro veces más, y esto está corriendo toda la tarde.",
+      "en": "The ring's frames per second. 15 is enough to see what happened and is the one that bothers the machine least; 60 looks smooth but writes four times as much, and this is running all afternoon.",
+      "actual": "回放環的影格率。15 就夠看清發生什麼事，對電腦也最不打擾；60 看起來順，但寫入量是四倍，而這東西會跑一整個下午。"
+    },
+    {
+      "es": "La tecla que rescata. Guarda los últimos segundos y te los abre en el editor **sin dejar de grabar**, así que puedes seguir y volver a rescatar dentro de un rato.",
+      "en": "The key that rescues. It saves the last few seconds and opens them in the editor **without stopping the recording**, so you can carry on and rescue again in a while.",
+      "actual": "用來救回畫面的鍵。會儲存最近幾秒並在編輯器中開啟，**不會中斷錄影**，所以你可以繼續錄，過一會再救一次。"
+    },
+    {
+      "es": "Al parar una grabación, abrirla para recortarla y exportarla. Apagado, el vídeo o el GIF se guarda solo en tu carpeta, entero y tal cual se grabó, y tú sigues a lo tuyo. Lo que rescatas de los últimos segundos abre el editor igualmente: ahí todavía no hay ningún archivo hecho.",
+      "en": "When a recording stops, open it to trim and export. Turned off, the video or GIF is saved on its own to your folder, whole and just as it was recorded, and you get back to what you were doing. What you rescue from the last few seconds opens the editor either way: there is no file made yet at that point.",
+      "actual": "停止錄影時，自動開啟讓你裁切再匯出。關閉時，影片或 GIF 只會原樣存到你的資料夾，你可以繼續做自己的事。從最近幾秒救回的內容一樣會開啟編輯器：那時還沒有任何檔案產生。"
+    },
+    {
+      "es": "Windows le tiene asignada la Herramienta de Recortes, y esto se la quita para dársela a winshotx. Si la tecla no responde, hay que cerrar sesión una vez para que Windows la suelte del todo.",
+      "en": "Windows has the Snipping Tool on that key, and this takes it away and gives it to winshotx. If the key does not respond, you have to sign out once for Windows to let go of it completely.",
+      "actual": "Windows 把剪取工具綁在那個鍵上，這個動作會把它拿過來給 winshotx。如果按鍵沒反應，要登出一次讓 Windows 完全放開。"
+    },
+    {
+      "es": "La otra tecla de captura de Windows. Cogerla cuesta Win+S, la búsqueda, porque las dos se registran juntas; y si el Explorador sigue abriendo lo suyo, con Aplicar se reinicia y la suelta.",
+      "en": "The other Windows capture key. Taking it costs you Win+S, the search, because the two register together; and if Explorer keeps opening its own thing, Apply restarts it and it lets go.",
+      "actual": "Windows 的另一個截圖鍵。接管它的代價是 Win+S 搜尋，因為兩個是一起註冊的；如果檔案總管還是會開自己的東西，按套用會重新啟動它並放開。"
+    },
+    {
+      "es": "Desactivar sus teclas no la calla del todo: sigue saliendo desde el menú de inicio y desde otras teclas. Quitarla es lo único definitivo, y se puede volver a instalar desde la Microsoft Store cuando quieras.",
+      "en": "Turning its keys off does not silence it: it still opens from the Start menu and from other keys. Removing it is the only thing that settles it, and it can be installed again from the Microsoft Store whenever you want.",
+      "actual": "關掉它的快速鍵並不能讓它完全安靜：它還是會從開始功能表和其他按鍵跑出來。移除是唯一徹底的辦法，想裝回來隨時可以從 Microsoft Store 安裝。"
+    },
+    {
+      "es": "Donde caen las capturas y los vídeos que guardas. El nombre lo pone winshotx con la fecha y la hora, y si ya existiera uno igual no lo pisa nunca.",
+      "en": "Where the screenshots and videos you save end up. winshotx names them with the date and the time, and it never overwrites one that already exists.",
+      "actual": "你儲存的截圖和影片會放在這裡。檔名由 winshotx 用日期和時間命名，如果已經有同名檔案，絕對不會覆蓋。"
+    },
+    {
+      "es": "Los fotogramas en crudo de lo que has grabado, que es lo que permite volver a exportar sin perder calidad. Vaciarlo no toca ni una captura guardada: solo tira lo que quedó a medias en el editor.",
+      "en": "The raw frames of what you have recorded, which is what lets you export again without losing quality. Emptying it does not touch a single saved capture: it only drops what was left half done in the editor.",
+      "actual": "你錄過的原始影格，這是能重新匯出而不失真的關鍵。清空不會動到任何已存的截圖：只會丟掉編輯器裡做到一半的東西。"
+    },
+    {
+      "es": "Recorre esta pantalla parándose en cada bloque y contando para qué sirve. Es la vía rápida para ver lo que hay aquí sin ir abriendo cosas a ver qué pasa.",
+      "en": "Walks this screen stopping at every block and saying what it is for. It is the quick way to see what is here without opening things to find out.",
+      "actual": "走一遍這個畫面，每個區塊停下來說明它有什麼用。想快速看看這裡有什麼、又不想一個一個點開試，這是最快的方式。"
+    },
+    {
+      "es": "winshotx se abre solo al encender el ordenador y se queda en la bandeja, sin ventana. Sin esto hay que abrirlo a mano cada vez, y las teclas de captura no funcionan mientras no esté abierto.",
+      "en": "winshotx opens on its own when you turn the computer on and sits in the tray, with no window. Without this you have to open it by hand every time, and the capture keys do nothing while it is closed.",
+      "actual": "winshotx 會在開機時自動啟動並待在系統匣，沒有視窗。不開的話每次都要手動打開，而且沒開著的時候截圖快速鍵不會有作用。"
+    },
+    {
+      "es": "Congela la pantalla para que recortes con calma. Y puedes pedirle que espere 3 o 5 segundos: es la única forma de fotografiar un menú abierto, porque al pulsar el atajo se cierra.",
+      "en": "It freezes the screen so you can crop without hurrying. You can also ask it to wait 3 or 5 seconds: that is the only way to shoot an open menu, because pressing the shortcut closes it.",
+      "actual": "凍結畫面讓你慢慢框選。你也可以讓它等 3 或 5 秒：這是拍下已開啟選單的唯一辦法，因為一按快速鍵選單就關了。"
+    }
+  ]
+}

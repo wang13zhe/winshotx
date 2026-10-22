@@ -1,0 +1,101 @@
+{
+  "lang": "pt-br",
+  "nombre": "portugues",
+  "items": [
+    {
+      "es": "La Herramienta de Recortes se queda con Impr Pant y winshotx se llama con su atajo.",
+      "en": "The Snipping Tool keeps Print Screen and winshotx answers to its own shortcut.",
+      "actual": "A Ferramenta de Captura fica com o Impr Pant e o winshotx responde pelo atalho dele."
+    },
+    {
+      "es": "Impr Pant no ha caído: hay otro programa que la tiene cogida.",
+      "en": "Print Screen did not come across: another program is holding it.",
+      "actual": "Não deu para pegar o Impr Pant: tem outro programa segurando essa tecla."
+    },
+    {
+      "es": "Si Windows sigue abriendo la Herramienta de Recortes con Impr Pant, cierra sesión y vuelve a entrar.",
+      "en": "If Windows keeps opening the Snipping Tool with Print Screen, sign out and back in.",
+      "actual": "Se o Windows continuar abrindo a Ferramenta de Captura com o Impr Pant, saia da conta e entre de novo."
+    },
+    {
+      "es": "Sin cambios. Puedes activarlo más adelante en Ajustes, en “Teclas de Windows”.",
+      "en": "Nothing changed. You can turn it on later in Settings, under “Windows keys”.",
+      "actual": "Nada mudou. Você pode ativar isso depois nas Configurações, em “Teclas do Windows”."
+    },
+    {
+      "es": "Esa la atiende Windows antes que cualquier programa y solo se le quita apagando la S de sus atajos, lo que apaga también Win + S, la búsqueda. Por eso va aparte, en Ajustes → Teclas de Windows, y no entra aquí de propina.",
+      "en": "Windows answers that one before any program, and the only way to take it is to switch off the S in its own shortcuts, which also switches off Win + S, the search. That is why it sits apart, in Settings → Windows keys, and does not come along for the ride here.",
+      "actual": "Essa o Windows atende antes de qualquer programa, e a única forma de tirá-la é desligar o S dos atalhos dele, o que desliga também o Win + S, a busca. Por isso ela fica separada, em Configurações → Teclas do Windows, e não entra aqui de brinde."
+    },
+    {
+      "es": "Esto es lo que queda configurado. Todo se cambia después desde el icono de la bandeja.",
+      "en": "This is how it is set up. You can change all of it later from the tray icon.",
+      "actual": "Isto é o que fica configurado. Tudo pode ser mudado depois pelo ícone da bandeja."
+    },
+    {
+      "es": "Pulsa el atajo cuando quieras. Con el botón derecho en el icono de la bandeja se abren los ajustes.",
+      "en": "Press the shortcut whenever you like. Right-click the tray icon to open the settings.",
+      "actual": "Pressione o atalho quando quiser. Com o botão direito no ícone da bandeja você abre as configurações."
+    },
+    {
+      "es": "La caché sin pérdida está ocupando mucho disco: para y exporta",
+      "en": "The lossless cache is taking up a lot of disk: stop and export",
+      "actual": "O cache sem perdas está ocupando muito disco: pare e exporte"
+    },
+    {
+      "es": "Se puede recortar y exportar igual: lo que no va a funcionar es el play",
+      "en": "You can still crop it and export it: the only thing off is playing it",
+      "actual": "Dá para recortar e exportar do mesmo jeito: o que não vai funcionar é a reprodução"
+    },
+    {
+      "es": "La vista previa ya enseña todo esto: lo que ves es lo que sale.",
+      "en": "The preview already shows all of this: what you see is what you get.",
+      "actual": "A prévia já mostra tudo isto: o que você vê é o que sai."
+    },
+    {
+      "es": "Exportar y copiar al portapapeles",
+      "en": "Export and copy to the clipboard",
+      "actual": "Exportar e copiar para a área de transferência"
+    },
+    {
+      "es": "Al soltar, elegir qué hacer con el recorte · B",
+      "en": "On release, choose what to do with the crop · B",
+      "actual": "Ao soltar, escolher o que fazer com o recorte · B"
+    },
+    {
+      "es": "Dejarla como está",
+      "en": "Leave it alone",
+      "actual": "Deixá-la como está"
+    },
+    {
+      "es": "Es la flecha estándar, no la que tengas puesta.",
+      "en": "It is the standard arrow, not the one you have set.",
+      "actual": "É a seta padrão, não a que você tem configurada."
+    },
+    {
+      "es": "Esta grabación ya lleva el cursor de Windows dentro: vas a ver dos.",
+      "en": "This recording already has the Windows cursor baked in: you will see two.",
+      "actual": "Esta gravação já tem o cursor do Windows embutido: você vai ver dois."
+    },
+    {
+      "es": "solo con Ctrl, Alt o Win: lo que escribes no sale",
+      "en": "only Ctrl, Alt or Win: typing never shows",
+      "actual": "só com Ctrl, Alt ou Win: o que você digita não aparece"
+    },
+    {
+      "es": "Gratis, sin cuentas y sin anuncios, con licencia MIT. Lo hago yo solo, y ni las capturas ni los vídeos salen nunca de tu ordenador: aquí no hay servidor al que mandarlos.",
+      "en": "Free, no accounts, no ads, MIT licensed. I build it on my own, and neither the shots nor the videos ever leave your computer: there is no server here to send them to.",
+      "actual": "Grátis, sem contas e sem anúncios, com licença MIT. Sou eu sozinho que faço, e nem as capturas nem os vídeos saem nunca do seu computador: aqui não há servidor para onde mandá-los."
+    },
+    {
+      "es": "Es la única forma de apoyar winshotx: no hay versión de pago, ni anuncios, ni datos que vender. Se paga una vez, la cantidad la pones tú, y no hace falta cuenta.",
+      "en": "It is the only way to support winshotx: there is no paid version, no ads and no data to sell. You pay once, you choose how much, and no account is needed.",
+      "actual": "É a única forma de apoiar o winshotx: não há versão paga, nem anúncios, nem dados para vender. Você paga uma vez, o valor quem decide é você, e não precisa de conta."
+    },
+    {
+      "es": "Ayuda igual que un café y es gratis: una estrella hace que lo encuentre más gente, y un fallo contado con lo que estabas haciendo es lo que hace que se arregle.",
+      "en": "It helps as much as a coffee and it costs nothing: a star makes more people find it, and a bug reported with what you were doing is what gets it fixed.",
+      "actual": "Ajuda tanto quanto um café e é de graça: uma estrela faz com que mais gente o encontre, e um bug contado junto com o que você estava fazendo é o que faz ele ser corrigido."
+    }
+  ]
+}

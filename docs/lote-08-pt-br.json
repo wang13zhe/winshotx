@@ -1,0 +1,156 @@
+{
+  "lang": "pt-br",
+  "nombre": "portugues",
+  "items": [
+    {
+      "es": "Doce idiomas, o el de Windows si winshotx lo habla. Cambia al momento y no hace falta reiniciar nada.",
+      "en": "Twelve languages, or the one Windows uses if winshotx speaks it. It changes right away, nothing needs restarting.",
+      "actual": "Doze idiomas, ou o do Windows se o winshotx o falar. A troca é imediata, não precisa reiniciar nada."
+    },
+    {
+      "es": "La misma captura, pero al soltar el ratón se abre el editor en vez de la barra de siempre. Para la captura que hay que trabajar: señalar algo con una flecha, tapar un dato o recortar antes de mandarla.",
+      "en": "The same capture, but letting go of the mouse opens the editor instead of the usual toolbar. For the shot you have to work on: point at something with an arrow, cover up a detail, or crop before you send it.",
+      "actual": "A mesma captura, mas ao soltar o mouse abre o editor em vez da barra de sempre. Para a captura que dá trabalho: apontar algo com uma seta, cobrir um dado ou recortar antes de enviar."
+    },
+    {
+      "es": "da tiempo a abrir el menú que quieres fotografiar",
+      "en": "time enough to open the menu you want to shoot",
+      "actual": "dá tempo de abrir o menu que você quer fotografar"
+    },
+    {
+      "es": "Las fotos de ventanas con aceleración pueden salir con trozos en negro",
+      "en": "Photos of accelerated windows may come out with black patches",
+      "actual": "As fotos de janelas aceleradas podem sair com partes pretas"
+    },
+    {
+      "es": "winshotx hace las fotos con la captura moderna de Windows, que sí ve lo que dibuja la tarjeta gráfica. Esta versión de Windows no la admite, así que van por la de siempre y una ventana acelerada puede salir con trozos en negro. No hay nada que puedas tocar, y las grabaciones no se ven afectadas.",
+      "en": "winshotx takes photos with the modern Windows capture, which does see what the graphics card draws. This version of Windows does not support it, so they go through the old one and an accelerated window can come out with black patches. There is nothing for you to change, and recordings are not affected.",
+      "actual": "O winshotx tira as fotos com a captura moderna do Windows, que enxerga o que a placa de vídeo desenha. Esta versão do Windows não aceita isso, então as fotos vão pela captura de sempre e uma janela acelerada pode sair com partes pretas. Não há nada que você possa ajustar, e as gravações não são afetadas."
+    },
+    {
+      "es": "Un clic de cámara al capturar, como el de una réflex. Sirve para saber que la captura ha salido sin mirar la pantalla. Viene apagado: en una reunión o grabando un tutorial, un sonido que no esperas es peor que ninguno.",
+      "en": "A camera click when you capture, like an SLR. It tells you the shot went through without looking at the screen. It comes off: in a meeting or while recording a tutorial, a sound you did not expect is worse than none.",
+      "actual": "Um clique de câmera ao capturar, como o de uma reflex. Serve para você saber que a captura saiu sem olhar para a tela. Vem desligado: numa reunião ou gravando um tutorial, um som que você não espera é pior do que nenhum."
+    },
+    {
+      "es": "lo que suene por los altavoces, dentro del vídeo",
+      "en": "whatever the speakers play, in the video",
+      "actual": "o que tocar nos alto-falantes, dentro do vídeo"
+    },
+    {
+      "es": "Grabar siempre lo último",
+      "en": "Always be recording",
+      "actual": "Sempre gravando"
+    },
+    {
+      "es": "graba sin parar y tira lo viejo, para poder rescatar lo último",
+      "en": "records non-stop and drops the old, so you can rescue what just happened",
+      "actual": "grava sem parar e descarta o antigo, para você poder resgatar o mais recente"
+    },
+    {
+      "es": "primero hay que encenderlo aquí arriba",
+      "en": "turn it on above first",
+      "actual": "primeiro é preciso ligar isso aqui em cima"
+    },
+    {
+      "es": "esta combinación midió el 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento",
+      "en": "this combination measured 22% of a core with a quiet desktop, and up to 60% with the screen moving",
+      "actual": "esta combinação mediu 22% de um núcleo com a área de trabalho parada, e até 60% com a tela em movimento"
+    },
+    {
+      "es": "esta combinación midió el 17% de un núcleo con el escritorio quieto",
+      "en": "this combination measured 17% of a core with a quiet desktop",
+      "actual": "esta combinação mediu 17% de um núcleo com a área de trabalho parada"
+    },
+    {
+      "es": "abre el editor con lo último, sin dejar de grabar",
+      "en": "opens the editor with the last bit, and keeps recording",
+      "actual": "abre o editor com os últimos segundos, sem parar de gravar"
+    },
+    {
+      "es": "ya es de winshotx",
+      "en": "it belongs to winshotx now",
+      "actual": "agora é do winshotx"
+    },
+    {
+      "es": "de winshotx, o pulsa Aplicar si Windows la sigue abriendo",
+      "en": "winshotx has it, or press Apply if Windows keeps opening",
+      "actual": "do winshotx, ou clique em Aplicar se o Windows continuar abrindo"
+    },
+    {
+      "es": "Reinicia el Explorador para que Windows suelte la tecla. La barra de tareas parpadea un segundo y no se cierra nada más.",
+      "en": "Restarts Explorer so Windows lets the key go. The taskbar blinks for a second and nothing else closes.",
+      "actual": "Reinicia o Explorer para o Windows liberar a tecla. A barra de tarefas pisca por um segundo e nada mais fecha."
+    },
+    {
+      "es": "quitarla es lo único que la calla del todo",
+      "en": "removing it is the only way to silence it",
+      "actual": "removê-la é a única forma de silenciá-la de vez"
+    },
+    {
+      "es": "Congela la pantalla en el momento de pulsarla y te deja recortar encima de esa foto quieta: lo que se mueva debajo ya no te estorba. Windows se reserva algunas combinaciones para él y esas no llegan hasta aquí.",
+      "en": "Freezes the screen the moment you press it and lets you crop over that still picture, so whatever moves underneath stops getting in the way. Windows keeps some combinations for itself and those never reach here.",
+      "actual": "Congela a tela no momento em que você pressiona e deixa você recortar sobre essa foto parada: o que se mexer por baixo não atrapalha mais. O Windows reserva algumas combinações para si e elas nunca chegam até aqui."
+    },
+    {
+      "es": "La pantalla se congela justo al pulsar el atajo, así que un menú abierto se cierra antes de que dé tiempo a fotografiarlo. Con 3 o 5 segundos, pulsas primero, abres el menú y la foto se toma sola cuando ya está delante.",
+      "en": "The screen freezes the instant you press the shortcut, so an open menu closes before you can shoot it. With 3 or 5 seconds you press first, open the menu, and the shot is taken on its own once it is there.",
+      "actual": "A tela congela no instante em que você pressiona o atalho, então um menu aberto se fecha antes de dar tempo de fotografá-lo. Com 3 ou 5 segundos, você pressiona primeiro, abre o menu e a foto sai sozinha quando ele já está na frente."
+    },
+    {
+      "es": "Los iconos se esconden solo durante el disparo, no mientras eliges el recorte, y vuelven aunque la captura falle. Sirve para fotografiar el fondo de pantalla o una ventana con el escritorio detrás sin que salgan tus archivos.",
+      "en": "The icons hide only for the shot itself, not while you pick the crop, and they come back even if the capture fails. It is for shooting the wallpaper, or a window with the desktop behind it, without your files showing.",
+      "actual": "Os ícones se escondem só durante a captura, não enquanto você escolhe o recorte, e voltam mesmo se a captura falhar. Serve para fotografar o papel de parede, ou uma janela com a área de trabalho atrás, sem que seus arquivos apareçam."
+    },
+    {
+      "es": "Si el puntero del ratón sale dentro de la captura. Para señalar un botón viene bien; para una captura limpia sobra, y hay que acordarse antes de disparar porque después ya no se puede quitar. Solo afecta a las fotos: en las grabaciones el puntero nunca va cocido, se anota por dónde va y el editor lo dibuja al exportar con su misma imagen, del tamaño que quieras.",
+      "en": "Whether the mouse pointer shows up inside the screenshot. Good for pointing at a button; for a clean capture it is in the way, and you have to remember before shooting because it cannot be removed afterwards. Screenshots only: in recordings the pointer is never baked in, its path is noted and the editor draws it when exporting with its very own image, at whatever size you want.",
+      "actual": "Se o ponteiro do mouse aparece dentro da captura. Para apontar um botão, ajuda; para uma captura limpa, atrapalha, e você precisa lembrar antes de disparar porque depois não dá mais para tirar. Vale só para as fotos: nas gravações o ponteiro nunca é embutido — o caminho dele é anotado e o editor o desenha na exportação com a própria imagem dele, no tamanho que você quiser."
+    },
+    {
+      "es": "Mientras arrastras, una lupa de 6 aumentos con retícula te enseña el píxel exacto que hay bajo el cursor y su color en hexadecimal. Con la tecla C te llevas ese color al portapapeles sin capturar nada.",
+      "en": "While you drag, a 6x magnifier with a crosshair shows the exact pixel under the cursor and its colour in hex. Press C and that colour goes to the clipboard without capturing anything.",
+      "actual": "Enquanto você arrasta, uma lupa de 6 aumentos com retícula mostra o pixel exato sob o cursor e a cor dele em hexadecimal. Com a tecla C você leva essa cor para a área de transferência sem capturar nada."
+    },
+    {
+      "es": "Con la barra sales a decidir: copiar, guardar, editar, anclar encima de todo o leer el texto. Sin ella el recorte se va directo al portapapeles y el overlay desaparece, que es un clic menos cuando siempre haces lo mismo.",
+      "en": "With the bar you get to decide: copy, save, edit, pin it on top of everything or read the text in it. Without it the crop goes straight to the clipboard and the overlay is gone, which is one click less when you always do the same thing.",
+      "actual": "Com a barra você decide: copiar, salvar, editar, fixar por cima de tudo ou ler o texto. Sem ela, o recorte vai direto para a área de transferência e a seleção some da tela, o que é um clique a menos quando você sempre faz a mesma coisa."
+    },
+    {
+      "es": "Guardar deja el archivo en tu carpeta, y con esto además lo deja pegable. Es para cuando quieres las dos cosas a la vez: el archivo para luego y la imagen para pegarla ahora mismo en un chat.",
+      "en": "Saving leaves the file in your folder, and this also leaves it ready to paste. It is for when you want both: the file for later and the image to paste into a chat right now.",
+      "actual": "Salvar deixa o arquivo na sua pasta, e com isto ele também fica pronto para colar. É para quando você quer as duas coisas: o arquivo para depois e a imagem para colar agora mesmo num chat."
+    },
+    {
+      "es": "Recortas igual que para una captura, pero en vez de una foto sale un vídeo. El mismo atajo lo termina, así que no hace falta ir a buscar ningún botón mientras grabas.",
+      "en": "You crop the same way as for a screenshot, but what comes out is a video. The same shortcut ends it, so you never have to go looking for a button while recording.",
+      "actual": "Você recorta igual a uma captura, mas em vez de uma foto sai um vídeo. O mesmo atalho encerra, então não precisa procurar botão nenhum enquanto grava."
+    },
+    {
+      "es": "Cuántas veces por segundo se mira la pantalla. 30 vale para casi todo; 60 es para movimiento rápido y cuesta el doble de disco y de máquina. El editor puede bajarlo después, pero lo que no se grabó no se inventa.",
+      "en": "How many times a second the screen is looked at. 30 is enough for almost everything; 60 is for fast movement and costs twice the disk and the machine. The editor can lower it afterwards, but what was not recorded cannot be invented.",
+      "actual": "Quantas vezes por segundo a tela é capturada. 30 serve para quase tudo; 60 é para movimento rápido e custa o dobro de disco e de máquina. O editor pode baixar depois, mas o que não foi gravado não se inventa."
+    },
+    {
+      "es": "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.",
+      "en": "Records whatever comes out of the speakers, inside the same video: the voice on a call, the audio of a video, an app's alert. It does not record your microphone, that is the row below.",
+      "actual": "Grava o que toca nos alto-falantes, dentro do mesmo vídeo: a voz de uma chamada, o áudio de um vídeo, o alerta de um programa. Não grava seu microfone, isso é a linha de baixo."
+    },
+    {
+      "es": "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.",
+      "en": "Your voice, mixed with the system sound into the same track. It is what you need to explain something while you show it, and it can only be decided before recording.",
+      "actual": "Sua voz, misturada com o som do sistema na mesma faixa. É o que você precisa para explicar algo enquanto mostra, e só dá para decidir antes de gravar."
+    },
+    {
+      "es": "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.",
+      "en": "winshotx records the screen all the time and drops the old, so what just happened is still there even though you never pressed record. And it costs: measured on a machine with three screens, at 60 frames and native resolution it takes 22% of a core with a quiet desktop, and up to 60% with the screen moving. Turned off, the whole of winshotx uses 2.9%.",
+      "actual": "O winshotx grava a tela o tempo todo e vai descartando o antigo, então o que acabou de acontecer continua ali mesmo que você não tenha apertado gravar. E custa: medido num equipamento com três telas, a 60 quadros e resolução nativa, consome 22% de um núcleo com a área de trabalho parada, e até 60% com a tela em movimento. Desligado, o winshotx inteiro gasta 2,9%."
+    },
+    {
+      "es": "Cuánto tiempo hacia atrás se puede rescatar. Más segundos es más memoria y más disco dando vueltas, y hasta que no pase ese tiempo desde que lo encendiste, lo que guardes durará menos de lo que pone aquí.",
+      "en": "How far back you can rescue. More seconds is more memory and more disk going around, and until that much time has passed since you turned it on, what you save will be shorter than what it says here.",
+      "actual": "Até quanto tempo para trás dá para resgatar. Mais segundos é mais memória e mais disco rodando, e até passar esse tempo desde que você ligou, o que você salvar vai durar menos do que está escrito aqui."
+    }
+  ]
+}

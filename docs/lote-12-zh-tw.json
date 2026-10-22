@@ -1,0 +1,86 @@
+{
+  "lang": "zh-tw",
+  "nombre": "chino tradicional",
+  "items": [
+    {
+      "es": "Con «Se copia sola» la imagen va al portapapeles y se acabó, cero clics. Con «Sale la barra» eliges cada vez entre copiar, guardar, editar o grabar.",
+      "en": "With «Copy it for me» the image goes to the clipboard and that is that, no clicks. With «Show the bar» you choose each time between copy, save, edit or record.",
+      "actual": "選「自動複製」時，圖片直接進剪貼簿就結束了，零次點擊。選「顯示工具列」時，每次都能選複製、儲存、編輯或錄影。"
+    },
+    {
+      "es": "Impr Pant es gratis. Win+Mayús+S cuesta perder Win+S, la búsqueda, y la fila te lo dice antes de que pulses nada.",
+      "en": "Print Screen is free. Win+Shift+S costs you Win+S, the search, and the row tells you before you press anything.",
+      "actual": "Impr Pant 沒有代價。Win+Shift+S 的代價是失去 Win+S 搜尋，這一列會在你按任何東西之前先告訴你。"
+    },
+    {
+      "es": "La carpeta a la que van las capturas y los vídeos que guardas. El nombre lo pone winshotx con la fecha y la hora, y nunca pisa uno que ya exista.",
+      "en": "The folder the shots and videos you save go to. winshotx names them with the date and the time, and it never overwrites one that is already there.",
+      "actual": "你儲存的截圖和影片會進到這個資料夾。檔名由 winshotx 用日期和時間命名，絕不會覆蓋已經存在的檔案。"
+    },
+    {
+      "es": "winshotx es gratis, sin cuentas y sin anuncios, y lo hago yo solo. Si te ahorra tiempo, un café es lo que lo mantiene en pie. Y si no, una estrella en GitHub o contar un fallo ayudan igual.",
+      "en": "winshotx is free, with no accounts and no ads, and I build it on my own. If it saves you time, a coffee is what keeps it going. If not, a star on GitHub or a bug report helps just as much.",
+      "actual": "winshotx 免費、不用帳號、沒有廣告，而且是我一個人做的。如果它幫你省了時間，一杯咖啡就是它撐下去的力量。不方便的話，在 GitHub 給顆星星或回報一個問題也一樣有幫助。"
+    },
+    {
+      "es": "En Windows, la tecla Impr Pant abre la Herramienta de Recortes. Si quieres, winshotx se queda con ella y responde a ese mismo dedo, sin aprender ningún atajo nuevo.",
+      "en": "On Windows, the Print Screen key opens the Snipping Tool. If you want, winshotx takes it and answers to that same finger, with no new shortcut to learn.",
+      "actual": "在 Windows 裡，Impr Pant 鍵會開啟剪取工具。如果你願意，winshotx 可以接手，用同一根手指就有反應，不用學新的快速鍵。"
+    },
+    {
+      "es": "Apaga el ajuste de Windows que le da esa tecla a la Herramienta de Recortes y se la pasa a winshotx. No te quita nada más.",
+      "en": "It turns off the Windows setting that gives that key to the Snipping Tool and hands it to winshotx. It takes nothing else from you.",
+      "actual": "關掉 Windows 裡把那個鍵給剪取工具的設定，改交給 winshotx。不會拿走你其他東西。"
+    },
+    {
+      "es": "Win + Mayús + S es otra historia.",
+      "en": "Win + Shift + S is another story.",
+      "actual": "Win + Shift + S 又是另一回事。"
+    },
+    {
+      "es": "Esa la atiende Windows antes que cualquier programa y solo se le quita apagando la S de sus atajos, lo que apaga también Win + S, la búsqueda. Por eso va aparte, en Ajustes → Teclas de Windows, y no entra aquí de propina.",
+      "en": "Windows answers that one before any program, and the only way to take it is to switch off the S in its own shortcuts, which also switches off Win + S, the search. That is why it sits apart, in Settings → Windows keys, and does not come along for the ride here.",
+      "actual": "這個鍵 Windows 會在任何程式之前先處理，唯一拿掉的辦法是關掉它快速鍵裡的那個 S，但那也會一起關掉 Win + S 搜尋。所以它另外放在設定 → Windows 快速鍵，不在這裡順便處理。"
+    },
+    {
+      "es": "Esto es lo que queda configurado. Todo se cambia después desde el icono de la bandeja.",
+      "en": "This is how it is set up. You can change all of it later from the tray icon.",
+      "actual": "這是目前的設定。之後都可以從系統匣圖示更改。"
+    },
+    {
+      "es": "Se puede recortar y exportar igual: lo que no va a funcionar es el play",
+      "en": "You can still crop it and export it: the only thing off is playing it",
+      "actual": "一樣可以裁切和匯出，只是播不出來"
+    },
+    {
+      "es": "La vista previa ya enseña todo esto: lo que ves es lo que sale.",
+      "en": "The preview already shows all of this: what you see is what you get.",
+      "actual": "預覽裡已經看得到這些：看到什麼就匯出什麼。"
+    },
+    {
+      "es": "Dejarla como está",
+      "en": "Leave it alone",
+      "actual": "保持原樣"
+    },
+    {
+      "es": "Es la flecha estándar, no la que tengas puesta.",
+      "en": "It is the standard arrow, not the one you have set.",
+      "actual": "這是標準箭頭，不是你目前設定的那個。"
+    },
+    {
+      "es": "Gratis, sin cuentas y sin anuncios, con licencia MIT. Lo hago yo solo, y ni las capturas ni los vídeos salen nunca de tu ordenador: aquí no hay servidor al que mandarlos.",
+      "en": "Free, no accounts, no ads, MIT licensed. I build it on my own, and neither the shots nor the videos ever leave your computer: there is no server here to send them to.",
+      "actual": "免費、不用帳號、沒有廣告，MIT 授權。我自己一個人開發，而且截圖和影片從來不會離開你的電腦：這裡沒有伺服器可以傳。"
+    },
+    {
+      "es": "Es la única forma de apoyar winshotx: no hay versión de pago, ni anuncios, ni datos que vender. Se paga una vez, la cantidad la pones tú, y no hace falta cuenta.",
+      "en": "It is the only way to support winshotx: there is no paid version, no ads and no data to sell. You pay once, you choose how much, and no account is needed.",
+      "actual": "這是支持 winshotx 唯一的方式：沒有付費版、沒有廣告、沒有資料可以賣。付一次，金額由你決定，也不用帳號。"
+    },
+    {
+      "es": "Ayuda igual que un café y es gratis: una estrella hace que lo encuentre más gente, y un fallo contado con lo que estabas haciendo es lo que hace que se arregle.",
+      "en": "It helps as much as a coffee and it costs nothing: a star makes more people find it, and a bug reported with what you were doing is what gets it fixed.",
+      "actual": "跟請一杯咖啡一樣有幫助，而且免費：一顆星星能讓更多人找到它，把問題連同你當時在做什麼一起回報，才是它被修好的關鍵。"
+    }
+  ]
+}

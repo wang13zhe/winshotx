@@ -213,7 +213,7 @@ export const DE: Record<string, string> = {
   "Arrastras la región": "Du ziehst den Bereich",
   "Copiar, guardar, editar o grabar": "Kopieren, speichern, bearbeiten oder aufzeichnen",
   "Ya está en el portapapeles": "Ist bereits in der Zwischenablage",
-  "¿Le quitamos la tecla a la Herramienta de Recortes?": "Soll winshotx dem Snipping Tool die Taste abnehmen?",
+  "¿Le quitamos la tecla a la Herramienta de Recortes?": "Soll dem Snipping Tool die Taste abgenommen werden?",
   "En Windows, la tecla Impr Pant abre la Herramienta de Recortes. Si quieres, winshotx se queda con ella y responde a ese mismo dedo, sin aprender ningún atajo nuevo.": "Unter Windows öffnet die Taste Druck das Snipping Tool. Wenn du willst, übernimmt winshotx sie und reagiert auf denselben Finger – ganz ohne neues Tastenkürzel.",
   "Apaga el ajuste de Windows que le da esa tecla a la Herramienta de Recortes y se la pasa a winshotx. No te quita nada más.": "Es schaltet die Windows-Einstellung ab, die dem Snipping Tool diese Taste gibt, und übergibt sie an winshotx. Sonst nimmt es dir nichts.",
   "La Herramienta de Recortes se queda con Impr Pant y winshotx se llama con su atajo.": "Das Snipping Tool behält die Taste Druck, und winshotx reagiert auf sein eigenes Tastenkürzel.",

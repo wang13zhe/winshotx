@@ -1,12 +1,12 @@
 /**
  * 机械校验脚本（随仓库走，加语言后跑一遍）：
- *  - 条目数 / 键是否与 base-es-en.json 完全一致
+ *  - 条目数 / 键是否与英文目录完全一致
  *  - 占位符 {xxx} 是否都在且数量一致
  *  - winshotx 是否全部小写未被翻译
  *  - 保护词是否原样保留
  *  - 统计值与英文相同的条目（区分「正常：技术名/品牌名」和「异常：漏翻」）
  *
- * 用法：node scripts/_qa-i18n.mjs [--json]
+ * 用法：node scripts/ver-idiomas.mjs [--json]
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -120,7 +120,10 @@ function leerCatalogo(archivo) {
   return fuera;
 }
 
-const base = JSON.parse(fs.readFileSync(path.join(RAIZ, "docs/base-es-en.json"), "utf8"));
+// El catalogo ingles hace de base: sus claves son las frases originales en espanol y sus
+// valores son la referencia en ingles, asi que no hace falta llevar otro archivo aparte que
+// se desincronizaria.
+const base = leerCatalogo("src/lib/textos-en.ts");
 const clavesBase = Object.keys(base);
 
 const marcadores = (s) => (s.match(/\{[a-zA-Z_]+\}/g) ?? []).sort();

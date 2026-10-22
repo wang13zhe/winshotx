@@ -195,7 +195,7 @@ export const KO: Record<string, string> = {
   "winshotx es gratis, sin cuentas y sin anuncios, y lo hago yo solo. Si te ahorra tiempo, un café es lo que lo mantiene en pie. Y si no, una estrella en GitHub o contar un fallo ayudan igual.": "winshotx는 무료이고 계정도 광고도 없으며 혼자 만들고 있습니다. 시간을 아껴 주신다면 커피 한 잔이 이 프로젝트를 지탱합니다. 그게 아니어도 GitHub 스타 하나나 버그 제보도 똑같이 도움이 됩니다.",
   "winshotx ya está en marcha": "winshotx가 실행 중입니다",
   "Vive en la bandeja del sistema, junto al reloj. No hay ventana que dejar abierta: se llama con una tecla, hace lo suyo y desaparece.": "시계 옆 시스템 트레이에 있습니다. 열어 둘 창이 없습니다. 키 하나로 부르면 할 일을 하고 사라집니다.",
-  "Estas son las dos teclas con las que se llama. Pulsa el campo y teclea la combinación que quieras si prefieres otras.": "이 두 키로 winshotx를 부릅니다. 다른 조합을 원하시면 입력란을 누르고 원하는 조합을 입력하세요.",
+  "Estas son las dos teclas con las que se llama. Pulsa el campo y teclea la combinación que quieras si prefieres otras.": "이 두 키로 프로그램이 실행됩니다. 다른 조합을 원하시면 입력란을 누르고 원하는 조합을 입력하세요.",
   "Capturar una región": "영역 캡처",
   "Grabar en GIF o vídeo": "GIF 또는 영상으로 녹화",
   "Todo se queda en tu ordenador: sin cuenta, sin nube y sin nada que subir.": "모든 것이 내 컴퓨터에 남습니다. 계정도, 클라우드도, 업로드할 것도 없습니다.",

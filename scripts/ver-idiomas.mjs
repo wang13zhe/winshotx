@@ -183,6 +183,16 @@ for (const [lang, archivo] of Object.entries(ARCHIVOS)) {
     }
   }
 
+  // 5c. La tecla de Mayus se escribe "Shift" en cualquier idioma. "Mayus" es lo que
+  // lleva un teclado espanol; en uno japones, coreano, ruso o polaco no pone eso. El
+  // ingles de referencia del autor ya lo escribe "Shift" en todas las traducciones,
+  // asi que aqui tampoco puede quedar.
+  for (const [es, val] of Object.entries(cat)) {
+    if (val.includes("Mayús")) {
+      fallos.push(`la traduccion deja "Mayús", que solo lleva un teclado en espanol [${es}] -> ${val}`);
+    }
+  }
+
   // 5b. 品牌/技术名。`Alt` 是 `Alto`（高）的子串，排除掉再数。
   const valSinAltura = (s) => s.replaceAll("Alt", "");
   for (const [es, val] of Object.entries(cat)) {

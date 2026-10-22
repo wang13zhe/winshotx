@@ -17,6 +17,10 @@ docs/METAS.md
 # La traspaso de este fork: lleva rutas de esta maquina, donde estan las claves y como se
 # empuja. Es para quien recoja el proyecto aqui, no para el repositorio publico.
 交接文档.md
+# Las traducciones al chino de la arquitectura y de las trampas. Son de este fork y el
+# autor no las quiere en su repositorio, pero son el unico sitio donde estan escritas.
+docs/ARQUITECTURA-zh.md
+docs/TRAMPAS-zh.md
 # Las incidencias y lo que dice Munir de como se trabaja: interno, como el buzon.
 FEEDBACK.md
 docs/SEO-ESTADO.md

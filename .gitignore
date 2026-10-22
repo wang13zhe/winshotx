@@ -21,6 +21,13 @@ docs/METAS.md
 # autor no las quiere en su repositorio, pero son el unico sitio donde estan escritas.
 docs/ARQUITECTURA-zh.md
 docs/TRAMPAS-zh.md
+# Los JSON de donde salen los textos-*.ts: son el material de traduccion, no fuente.
+# Lo que se compila es el .ts; estos se quedan en local por si hay que retocar algo.
+docs/base-es-en.json
+docs/lang-*.json
+docs/_build_*.py
+docs/_check_*.py
+docs/_gen_*.py
 # Las incidencias y lo que dice Munir de como se trabaja: interno, como el buzon.
 FEEDBACK.md
 docs/SEO-ESTADO.md

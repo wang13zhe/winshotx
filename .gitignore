@@ -14,6 +14,9 @@ src-tauri/gen/
 # Documentos internos del taller: no viajan a un repositorio publico (regla P).
 AGENTS.md
 docs/METAS.md
+# La traspaso de este fork: lleva rutas de esta maquina, donde estan las claves y como se
+# empuja. Es para quien recoja el proyecto aqui, no para el repositorio publico.
+交接文档.md
 # Las incidencias y lo que dice Munir de como se trabaja: interno, como el buzon.
 FEEDBACK.md
 docs/SEO-ESTADO.md

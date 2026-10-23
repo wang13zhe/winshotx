@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { convertFileSrc } from "@tauri-apps/api/core";
 import { getCurrentWindow } from "@tauri-apps/api/window";
-import { Copy, Download, Type, X } from "lucide-react";
+import { Copy, Download, MousePointer2, Type, X } from "lucide-react";
 import { copyPinned, pinnedText, savePinned } from "../../lib/ipc";
 import { useT } from "../../lib/i18n";
 
@@ -26,6 +26,30 @@ export function PinWindow({ imagen }: { imagen: string }) {
   const [encima, setEncima] = useState(false);
   const [aviso, setAviso] = useState<{ texto: string; malo: boolean } | null>(null);
 
+  /**
+   * Cuanto se ve la captura. Uno es opaca y es como nace.
+   *
+   * Una captura anclada tapa lo que hay debajo, y cuando lo que hay debajo es justo lo que
+   * se estaba copiando de ella, no hay forma de mirar los dos a la vez. Bajarla con la
+   * rueda es mas rapido que arrastrarla a un lado y volverla a traer, y se recuerda
+   * mientras dure la ventana.
+   *
+   * El minimo no es cero: a cero la ventana sigue ahi, invisible y sin forma de recuperarla
+   * salvo cerrandola, que es peor que no poder ver lo de debajo.
+   */
+  const [opacidad, setOpacidad] = useState(1);
+
+  /**
+   * Con esto puesto, los clics atraviesan la captura y llegan a lo que hay debajo.
+   *
+   * Es lo que hace util una captura anclada mientras se trabaja: tener la referencia
+   * delante sin que estorbe al pulsar. Se enciende con un boton y se apaga igual, porque
+   * con el puesto la ventana ya no recibe clics y el boton tampoco: la unica salida seria
+   * cerrarla desde la bandeja. Por eso el atajo de teclado sigue funcionando, que si llega.
+   */
+  const [atravesable, setAtravesable] = useState(false);
+  const ventana = useRef(getCurrentWindow());
+
   const cerrar = () => void getCurrentWindow().close();
 
   /**
@@ -45,6 +69,35 @@ export function PinWindow({ imagen }: { imagen: string }) {
   const copiar = () => hacer(() => copyPinned(imagen), "Copiada");
   const guardar = () => hacer(() => savePinned(imagen), "Guardada");
   const leer = () => hacer(() => pinnedText(imagen), "Texto copiado");
+
+  /**
+   * La rueda baja y sube la opacidad de cinco en cinco por ciento.
+   *
+   * Con `preventDefault` para que no se vaya a la pagina de debajo, que no existe: sin el,
+   * el navegador del webview intenta desplazar algo que no se desplaza y el gesto se
+   * pierde a la mitad.
+   */
+  const alRodar = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const paso = e.deltaY > 0 ? -0.05 : 0.05;
+    setOpacidad((v) => Math.min(1, Math.max(0.15, Math.round((v + paso) * 100) / 100)));
+  };
+
+  /**
+   * Enciende o apaga que los clics atraviesen la ventana.
+   *
+   * El permiso se pide a la ventana de Tauri, que es la que lo sabe hacer; aqui solo se
+   * lleva la cuenta de si esta puesto, porque la ventana no lo puede preguntar despues.
+   */
+  const alternarAtravesable = async () => {
+    const siguiente = !atravesable;
+    try {
+      await ventana.current.setIgnoreCursorEvents(siguiente);
+      setAtravesable(siguiente);
+    } catch (e) {
+      setAviso({ texto: String(e), malo: true });
+    }
+  };
 
   useEffect(() => {
     if (!aviso) return;
@@ -68,11 +121,18 @@ export function PinWindow({ imagen }: { imagen: string }) {
         void guardar();
       } else if (tecla === "t" && !e.ctrlKey && !e.metaKey && !e.altKey) {
         void leer();
+      } else if (tecla === "x" && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // La unica forma de salir de «atravesable» sin cerrar la ventana. Se deja con una
+        // tecla suelta y no con Ctrl+X porque con los clics atravesando, el foco del
+        // teclado ya no esta aqui y solo llegan los atajos que registra el sistema.
+        void alternarAtravesable();
+      } else if (tecla === "0" && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        setOpacidad(1);
       }
     };
     window.addEventListener("keydown", alPulsar);
     return () => window.removeEventListener("keydown", alPulsar);
-  }, [imagen]);
+  }, [imagen, atravesable]);
 
   return (
     <div
@@ -80,7 +140,9 @@ export function PinWindow({ imagen }: { imagen: string }) {
       onPointerEnter={() => setEncima(true)}
       onPointerLeave={() => setEncima(false)}
       onDoubleClick={cerrar}
-      title={t("Arrastra para moverla · Esc para cerrarla")}
+      onWheel={alRodar}
+      title={t("Arrastra para moverla · rueda para ver a través · Esc para cerrarla")}
+      style={{ opacity: opacidad }}
       className="relative h-full w-full cursor-grab overflow-hidden bg-black active:cursor-grabbing"
     >
       <img
@@ -103,6 +165,12 @@ export function PinWindow({ imagen }: { imagen: string }) {
           onClick={() => void guardar()}
         />
         <Boton icono={Type} etiqueta={`${t("Copiar el texto")} · T`} onClick={() => void leer()} />
+        <Boton
+          icono={MousePointer2}
+          etiqueta={`${t("Dejar pasar los clics")} · X`}
+          onClick={() => void alternarAtravesable()}
+          activo={atravesable}
+        />
         <Boton icono={X} etiqueta={`${t("Cerrar")} · Esc`} onClick={cerrar} peligro />
       </div>
 
@@ -125,11 +193,14 @@ function Boton({
   etiqueta,
   onClick,
   peligro = false,
+  activo = false,
 }: {
   icono: typeof Copy;
   etiqueta: string;
   onClick: () => void;
   peligro?: boolean;
+  /** Puesto, el boton se pinta encendido: es un interruptor y no una accion de un tiro. */
+  activo?: boolean;
 }) {
   return (
     <button
@@ -137,8 +208,13 @@ function Boton({
       onClick={onClick}
       title={etiqueta}
       aria-label={etiqueta}
-      className={`flex size-6 items-center justify-center rounded-md bg-neutral-900/80 text-neutral-200 backdrop-blur-sm transition-colors ${
-        peligro ? "hover:bg-red-500 hover:text-white" : "hover:bg-neutral-700"
+      aria-pressed={activo}
+      className={`flex size-6 items-center justify-center rounded-md backdrop-blur-sm transition-colors ${
+        peligro
+          ? "bg-neutral-900/80 text-neutral-200 hover:bg-red-500 hover:text-white"
+          : activo
+            ? "bg-blue-500 text-white"
+            : "bg-neutral-900/80 text-neutral-200 hover:bg-neutral-700"
       }`}
     >
       <Icono className="size-3.5" />

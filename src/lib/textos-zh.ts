@@ -399,7 +399,7 @@ export const ZH: Record<string, string> = {
   Copiada: "已复制",
   Guardada: "已保存",
   "Texto copiado": "文字已复制",
-  "Arrastra para moverla · Esc para cerrarla": "拖动移动 · Esc 关闭",
+  "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "拖动移动 · 滚轮透视 · Esc 关闭",
 
   // 复制截图中的文字
   "Copiar el texto": "复制文字",
@@ -503,4 +503,10 @@ export const ZH: Record<string, string> = {
   "La misma captura, pero al soltar el ratón se abre el editor en vez de la barra de siempre. Para la captura que hay que trabajar: señalar algo con una flecha, tapar un dato o recortar antes de mandarla.": "同样的截图，但松开鼠标后直接打开编辑器，而不是平时那条工具栏。适合需要动手处理的截图：用箭头指出重点、遮住敏感信息，或者发出去之前先裁一下。",
   "esta combinación midió el 17% de un núcleo con el escritorio quieto": "此组合在桌面静止时测得约占一个核心的 17%",
   "esta combinación midió el 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento": "此组合在桌面静止时测得约占一个核心的 22%，画面移动时最高到 60%",
+  "Dejar pasar los clics": "让点击穿透",
+  "Tamaño máximo": "大小上限",
+  "Comprimir para enviarlo": "压缩后再发送",
+  "Comprimir": "压缩",
+  "Comprimiendo…": "压缩中…",
+  "que quepa en": "上限",
 };

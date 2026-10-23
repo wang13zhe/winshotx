@@ -408,7 +408,7 @@ export const EN: Record<string, string> = {
   Copiada: "Copied",
   Guardada: "Saved",
   "Texto copiado": "Text copied",
-  "Arrastra para moverla · Esc para cerrarla": "Drag to move it · Esc to close it",
+  "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "Drag to move it · scroll to see through · Esc to close it",
 
   // Copiar el texto de una captura
   "Copiar el texto": "Copy the text",
@@ -503,4 +503,10 @@ export const EN: Record<string, string> = {
   "El código": "The code",
   "abierto, con licencia MIT": "open, MIT licensed",
   "Contar un fallo": "Report a bug",
+  "Dejar pasar los clics": "Let clicks through",
+  "Tamaño máximo": "Maximum size",
+  "Comprimir para enviarlo": "Compress to send it",
+  "Comprimir": "Compress",
+  "Comprimiendo…": "Compressing…",
+  "que quepa en": "fit in",
 };

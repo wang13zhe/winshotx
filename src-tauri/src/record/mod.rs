@@ -1048,3 +1048,65 @@ mod tests {
         let _ = std::fs::remove_dir_all(&dir2);
     }
 }
+
+#[cfg(test)]
+mod medir_guardado {
+    use super::*;
+    use std::time::Instant;
+
+    /// Cuanto cuesta guardar un fotograma de 1080p en cada caso: entero, o solo la zona
+    /// que cambio. Es lo que corre mientras se graba, asi que manda en el consumo.
+    ///
+    /// `cargo test --release --lib medir_guardado -- --ignored --nocapture`
+    #[test]
+    #[ignore = "es una medicion, no una comprobacion"]
+    fn medir_guardado() {
+        let (ancho, alto) = (1920u32, 1080u32);
+        let dir = std::env::temp_dir().join("winshotx-medir-guardado");
+        let _ = std::fs::remove_dir_all(&dir);
+
+        // Una pantalla con grano, que es lo que se comprime peor.
+        let mut base = vec![0u8; (ancho * alto) as usize * 4];
+        let mut semilla: u32 = 0x1234_5678;
+        for pixel in base.chunks_exact_mut(4) {
+            semilla = semilla.wrapping_mul(1_664_525).wrapping_add(1_013_904_223);
+            pixel[0] = (semilla >> 16) as u8;
+            pixel[1] = (semilla >> 8) as u8;
+            pixel[2] = semilla as u8;
+            pixel[3] = 255;
+        }
+
+        // Caso 1: la pantalla cambia entera en cada fotograma (una partida).
+        let mut cache = FrameCache::new(&dir.join("entero")).unwrap();
+        let ahora = Instant::now();
+        for i in 0..30u32 {
+            let mut frame = base.clone();
+            let p = (i as usize * 7919) % (frame.len() - 4);
+            frame[p] = i as u8;
+            cache.push_rgba(&frame, ancho, alto, u64::from(i) * 33).unwrap();
+        }
+        let entero = ahora.elapsed().as_secs_f64() * 1000.0 / 30.0;
+
+        // Caso 2: solo se mueve el cursor, que es el caso normal de un escritorio.
+        let mut cache = FrameCache::new(&dir.join("cursor")).unwrap();
+        let mut frame = base.clone();
+        let ahora = Instant::now();
+        for i in 0..300u32 {
+            let x = 100 + i % 200;
+            let y = 100 + i % 100;
+            let p = ((y * ancho + x) * 4) as usize;
+            frame[p..p + 4].copy_from_slice(&[255, 0, 255, 255]);
+            cache.push_rgba(&frame, ancho, alto, u64::from(i) * 33).unwrap();
+        }
+        let solo_cursor = ahora.elapsed().as_secs_f64() * 1000.0 / 300.0;
+
+        let _ = std::fs::remove_dir_all(&dir);
+        println!("guardar un fotograma de {ancho}x{alto}:");
+        println!("  pantalla que cambia entera: {entero:.2} ms");
+        println!("  solo el cursor moviendose:  {solo_cursor:.2} ms");
+        println!(
+            "  a 15 por segundo eso es {:.1} % de un nucleo en el peor caso",
+            entero * 15.0 / 10.0
+        );
+    }
+}

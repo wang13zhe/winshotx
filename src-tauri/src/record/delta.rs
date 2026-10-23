@@ -437,3 +437,53 @@ mod tests {
         );
     }
 }
+
+#[cfg(test)]
+mod medir {
+    use super::*;
+    use std::time::Instant;
+
+    /// Cuanto cuesta encontrar las zonas cambiadas en una pantalla de verdad.
+    ///
+    /// `cargo test --release --lib medir_zonas -- --ignored --nocapture`
+    #[test]
+    #[ignore = "es una medicion, no una comprobacion"]
+    fn medir_zonas() {
+        let (ancho, alto) = (1920u32, 1080u32);
+        let mut a = vec![0u8; (ancho * alto) as usize * 4];
+        let mut semilla: u32 = 0x1234_5678;
+        for pixel in a.chunks_exact_mut(4) {
+            semilla = semilla.wrapping_mul(1_664_525).wrapping_add(1_013_904_223);
+            pixel[0] = (semilla >> 16) as u8;
+            pixel[1] = (semilla >> 8) as u8;
+            pixel[2] = semilla as u8;
+            pixel[3] = 255;
+        }
+        // Casi igual: dos cambios pequenos y lejanos, como el cursor y un icono.
+        let mut b = a.clone();
+        for (x, y) in [(100u32, 900u32), (1800, 100)] {
+            let p = ((y * ancho + x) * 4) as usize;
+            b[p..p + 4].copy_from_slice(&[255, 0, 255, 255]);
+        }
+
+        let veces = 20;
+        let ahora = Instant::now();
+        for _ in 0..veces {
+            let z = zonas_cambiadas(&a, &b, ancho, alto);
+            assert!(!z.is_empty());
+        }
+        println!(
+            "zonas_cambiadas a {ancho}x{alto}: {:.2} ms por fotograma",
+            ahora.elapsed().as_secs_f64() * 1000.0 / f64::from(veces)
+        );
+
+        let ahora = Instant::now();
+        for _ in 0..veces {
+            let _ = zona_cambiada(&a, &b, ancho, alto);
+        }
+        println!(
+            "zona_cambiada a {ancho}x{alto}: {:.2} ms por fotograma",
+            ahora.elapsed().as_secs_f64() * 1000.0 / f64::from(veces)
+        );
+    }
+}

@@ -149,6 +149,25 @@ export const exportMedia = (request: ExportRequest) =>
 
 export const ffmpegAvailable = () => invoke<boolean>("ffmpeg_available");
 
+/** Lo que se pide al comprimir un video ya escrito. O `megas` o `bitrateKbps`. */
+export type ComprimirRequest = {
+  path: string;
+  megas?: number | null;
+  bitrateKbps?: number | null;
+  destination?: string | null;
+  audioKbps?: number;
+  replace?: boolean;
+};
+
+export type ComprimirResult = {
+  path: string;
+  bytes: number;
+  originalBytes: number;
+};
+
+export const compressVideo = (request: ComprimirRequest) =>
+  invoke<ComprimirResult>("compress_video", { request });
+
 export const getSettings = () => invoke<Settings>("get_settings");
 
 export const setSettings = (settings: Settings) =>

@@ -264,6 +264,7 @@ pub fn run() {
             commands::ultimas_capturas,
             commands::copiar_captura,
             commands::ffmpeg_available,
+            commands::compress_video,
             commands::get_settings,
             commands::set_settings,
             commands::set_capture_flow,

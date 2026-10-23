@@ -1,7 +1,25 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { listen } from "@tauri-apps/api/event";
-import { Clipboard, Cpu, FolderDown, FolderOpen, Link2, Save, Sparkles, Unlink2, Zap } from "lucide-react";
-import { exportMedia, pickDirectory, pickSaveFile, revealInExplorer } from "../../lib/ipc";
+import {
+  Clipboard,
+  Cpu,
+  FolderDown,
+  FolderOpen,
+  Link2,
+  Minimize2,
+  Save,
+  Sparkles,
+  Unlink2,
+  Zap,
+} from "lucide-react";
+import {
+  compressVideo,
+  exportMedia,
+  pickDirectory,
+  pickSaveFile,
+  revealInExplorer,
+  type ComprimirResult,
+} from "../../lib/ipc";
 import { formatBytes } from "../../lib/format";
 import {
   EVENTS,
@@ -150,6 +168,13 @@ export function ExportPanel({
   const [result, setResult] = useState<ExportResult | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  /** Comprimir un video ya exportado: lo que pide quien tiene un tope de tamano. */
+  const [comprimir, setComprimir] = useState(false);
+  const [megas, setMegas] = useState(10);
+  const [comprimiendo, setComprimiendo] = useState(false);
+  const [comprimido, setComprimido] = useState<ComprimirResult | null>(null);
+  const [errorComprimir, setErrorComprimir] = useState<string | null>(null);
+
   useEffect(() => {
     onEstudio?.({ zoom, cursor, aros, teclas });
   }, [zoom, cursor, aros, teclas, onEstudio]);
@@ -253,6 +278,32 @@ export function ExportPanel({
       setError(String(e));
     } finally {
       setProgress(null);
+    }
+  };
+
+  /**
+   * Vuelve a comprimir el archivo que se acaba de exportar para que quepa en `megas`.
+   *
+   * Es una segunda pasada sobre el MP4 ya escrito y no otra exportacion: comprimir pide
+   * ffmpeg, y exportar no deberia depender de tenerlo. Asi, quien no lo tenga sigue
+   * exportando igual y solo se queda sin el boton de comprimir.
+   */
+  const comprimirAhora = async () => {
+    if (!result || comprimiendo) return;
+    setErrorComprimir(null);
+    setComprimido(null);
+    setComprimiendo(true);
+    try {
+      const res = await compressVideo({
+        path: result.path,
+        megas,
+        audioKbps: 128,
+      });
+      setComprimido(res);
+    } catch (e) {
+      setErrorComprimir(String(e));
+    } finally {
+      setComprimiendo(false);
     }
   };
 
@@ -701,6 +752,58 @@ export function ExportPanel({
                 {formatBytes(result.bytes)} · {t("abrir carpeta")}
               </span>
             </button>
+
+            {/* Comprimir solo tiene sentido con un video: un PNG no se recomprime, y un GIF
+                ya lleva su propia paleta. Y pide ffmpeg, asi que sin el no se ofrece. */}
+            {format === "mp4" && hasFfmpeg && (
+              <div className="rounded-lg border border-white/10 px-2.5 py-2">
+                {!comprimir ? (
+                  <button
+                    type="button"
+                    onClick={() => setComprimir(true)}
+                    className="flex w-full items-center gap-1.5 text-left text-[11px] text-neutral-300 transition-colors hover:text-white"
+                  >
+                    <Minimize2 className="size-3.5 shrink-0" />
+                    {t("Comprimir para enviarlo")}
+                  </button>
+                ) : (
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="shrink-0 text-[11px] text-neutral-400">{t("que quepa en")}</span>
+                      <NumberField
+                        label={t("Tamaño máximo")}
+                        suffix="MB"
+                        value={megas}
+                        min={1}
+                        max={2048}
+                        onChange={setMegas}
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      disabled={comprimiendo}
+                      onClick={() => void comprimirAhora()}
+                      className="w-full rounded-lg bg-white/10 px-2 py-1.5 text-[11px] font-medium text-white transition-colors hover:bg-white/20 disabled:opacity-50"
+                    >
+                      {comprimiendo ? t("Comprimiendo…") : t("Comprimir")}
+                    </button>
+                    {errorComprimir && (
+                      <p className="text-[10px] text-red-300">{errorComprimir}</p>
+                    )}
+                    {comprimido && (
+                      <button
+                        type="button"
+                        onClick={() => void revealInExplorer(comprimido.path)}
+                        className="w-full text-left text-[10px] text-emerald-300 transition-colors hover:text-emerald-200"
+                      >
+                        {formatBytes(comprimido.originalBytes)} → {formatBytes(comprimido.bytes)} ·{" "}
+                        {t("abrir carpeta")}
+                      </button>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
           </>
         )}
 

@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use tauri::{AppHandle, Manager, State};
 
 use crate::capture::{self, MonitorInfo, Rect, WindowRect};
@@ -740,6 +740,113 @@ pub async fn export_media(app: AppHandle, request: ExportRequest) -> Result<Expo
 pub async fn ffmpeg_available() -> bool {
     // Lanzar un proceso puede tardar; por eso vive fuera del hilo de la interfaz.
     ffmpeg::available()
+}
+
+/// Lo que se pide al comprimir un video que ya esta escrito.
+///
+/// O `megas` o `bitrateKbps`, no los dos: el primero dice cuanto tiene que ocupar y el
+/// segundo a que ritmo se codifica. Quien manda el segundo sabe lo que quiere; el primero
+/// es el que usa quien tiene un tope de tamanno y no quiere hacer cuentas.
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ComprimirRequest {
+    pub path: String,
+    pub megas: Option<f64>,
+    pub bitrate_kbps: Option<u32>,
+    /// A donde va el archivo comprimido. Vacio es al lado del original, con `-comprimido`.
+    #[serde(default)]
+    pub destination: Option<String>,
+    /// El sonido se copia tal cual si ya viene en AAC, y si no se recodifica a esto.
+    #[serde(default = "audio_por_defecto")]
+    pub audio_kbps: u32,
+    /// Si se reemplaza el original en vez de dejar los dos.
+    #[serde(default)]
+    pub replace: bool,
+}
+
+fn audio_por_defecto() -> u32 {
+    128
+}
+
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ComprimirResult {
+    pub path: String,
+    pub bytes: u64,
+    /// Lo que ocupaba antes, para poder decir cuanto se ha ganado.
+    pub original_bytes: u64,
+}
+
+/// Vuelve a comprimir un video para que quepa en lo que se pida.
+#[tauri::command]
+pub async fn compress_video(request: ComprimirRequest) -> Result<ComprimirResult> {
+    let origen = PathBuf::from(&request.path);
+    if !origen.is_file() {
+        return Err(AppError::Msg("ese archivo no existe".into()));
+    }
+    if !ffmpeg::available() {
+        return Err(AppError::Msg(
+            "para comprimir hace falta ffmpeg instalado y en el PATH".into(),
+        ));
+    }
+    let original_bytes = std::fs::metadata(&origen).map(|m| m.len()).unwrap_or(0);
+
+    let destino = match request.destination.as_deref().filter(|d| !d.trim().is_empty()) {
+        Some(d) => {
+            let ruta = PathBuf::from(d);
+            if let Some(carpeta) = ruta.parent() {
+                std::fs::create_dir_all(carpeta)?;
+            }
+            ruta
+        }
+        None => {
+            let carpeta = origen.parent().unwrap_or_else(|| std::path::Path::new("."));
+            let tallo = origen
+                .file_stem()
+                .and_then(|n| n.to_str())
+                .unwrap_or("video");
+            let extension = origen
+                .extension()
+                .and_then(|e| e.to_str())
+                .unwrap_or("mp4");
+            carpeta.join(format!("{tallo}-comprimido.{extension}"))
+        }
+    };
+
+    // Se comprime a un archivo temporal y solo se mueve encima cuando ha salido bien: si
+    // ffmpeg falla a mitad, el original tiene que seguir ahi. Y si el destino es el mismo
+    // que el origen, sin esto se lo comeria antes de leerlo.
+    let temporal = destino.with_extension(format!(
+        "{}.parcial",
+        destino.extension().and_then(|e| e.to_str()).unwrap_or("mp4")
+    ));
+    ffmpeg::comprimir(
+        &origen,
+        &temporal,
+        request.megas,
+        request.bitrate_kbps,
+        request.audio_kbps,
+    )
+    .inspect_err(|_| {
+        let _ = std::fs::remove_file(&temporal);
+    })?;
+
+    if request.replace {
+        std::fs::rename(&temporal, &origen)?;
+        let bytes = std::fs::metadata(&origen).map(|m| m.len()).unwrap_or(0);
+        return Ok(ComprimirResult {
+            path: origen.to_string_lossy().to_string(),
+            bytes,
+            original_bytes,
+        });
+    }
+    std::fs::rename(&temporal, &destino)?;
+    let bytes = std::fs::metadata(&destino).map(|m| m.len()).unwrap_or(0);
+    Ok(ComprimirResult {
+        path: destino.to_string_lossy().to_string(),
+        bytes,
+        original_bytes,
+    })
 }
 
 #[derive(Debug, Serialize)]

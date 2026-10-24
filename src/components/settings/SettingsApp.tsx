@@ -661,7 +661,7 @@ export function SettingsApp({ onVerBienvenida, arrancarTour = false }: SettingsA
                   <Row
                     icon={<Volume2 className="size-4" />}
                     label={t("Sonar al teclear")}
-                    explicacion={t("Un clic corto con cada tecla que pulses mientras grabas. Es para ti, que estás delante: no se queda en el vídeo, así que quien lo vea después no lo oye. Si además quieres que se vea pintado, eso es la fila de arriba.")}
+                    explicacion={t("Un clic corto con cada tecla que pulses mientras grabas. Suena por los altavoces, así que si también estás grabando el audio del sistema se cuela en la grabación como cualquier otro sonido del equipo. No se dibuja en la imagen: para eso está la fila de arriba.")}
                     control={
                       <Switch
                         checked={settings.keySound}

@@ -190,16 +190,17 @@ impl Anotador {
             if self.marcar_teclas {
                 self.atajo = Some(nuevo);
             }
-            // Suena aqui y no en el hilo de los fotogramas: el teclado se mira en el suyo,
-            // y es el unico sitio donde se sabe que se ha pulsado algo. Si esperase a que
-            // un fotograma lo llevase al escritor, el sonido llegaria con el retraso del
-            // fotograma y teclear sonaria a goteras.
-            //
-            // Suena tambien con la pastilla apagada, que es lo que se ha pedido: son dos
-            // ajustes distintos para dos publicos distintos.
-            if self.sonar_teclas {
-                crate::platform::sonido::tecla();
-            }
+        }
+        // El clic de tecla va por su cuenta y no dentro del bloque de arriba: ese solo
+        // salta con atajos, y quien escribe una frase sin un solo Ctrl no produciria
+        // ninguno. El aviso es un bool, asi que que tecla era no se guarda en ningun sitio.
+        //
+        // Suena aqui y no en el hilo de los fotogramas porque el teclado se mira en este, y
+        // es el unico sitio donde se sabe que ha pasado algo. Si esperase a que un fotograma
+        // lo llevase al escritor, teclear sonaria a goteras, con el retraso del fotograma
+        // encima.
+        if self.sonar_teclas && self.teclado.tecleo() {
+            crate::platform::sonido::tecla();
         }
     }
 

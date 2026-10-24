@@ -153,6 +153,12 @@ export const JA: Record<string, string> = {
   "Resaltar los clics": "クリックを目立たせる",
   "Mostrar las teclas": "キーを表示する",
   "Sonar al teclear": "タイプ時に音を出す",
+  "Un aro que se abre donde pulsas y se cierra solo. Enseña dónde se ha hecho clic sin que tengas que pararte a explicarlo, y se graba dentro del vídeo: quien lo ve después lo ve igual que tú.":
+    "押した場所で開いて、ひとりでに閉じる輪。立ち止まって説明しなくても、どこをクリックしたか分かります。映像にも記録されるので、あとで見る人にも同じように見えます。",
+  "Una pastilla con el atajo que acabas de pulsar, junto al cursor. Sirve para un tutorial: quien lo sigue ve «Ctrl+C» escrito en el vídeo en vez de tener que adivinar qué has tocado.":
+    "押したショートカットをカーソルのそばに小さな札で出します。チュートリアル向けです。見る人は「Ctrl+C」が映像に書いてあるのを読めばよく、何を押したか当てずっぽうにしなくて済みます。",
+  "Un clic corto con cada tecla que pulses mientras grabas. Suena por los altavoces, así que si también estás grabando el audio del sistema se cuela en la grabación como cualquier otro sonido del equipo. No se dibuja en la imagen: para eso está la fila de arriba.":
+    "録画中にキーを押すたびに短いカチッという音が鳴ります。スピーカーから出る音なので、システム音声も同時に録っている場合は、パソコンの他の音と同じように録画に入ります。映像には描かれません。それは上の行の設定です。",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "スピーカーから出る音を同じ動画に入れます。通話の声、動画の音声、アプリの通知音など。マイクは録りません。それは下の行です。",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "あなたの声をシステム音と混ぜて同じトラックに入れます。見せながら説明するときに必要なもので、録画前にしか選べません。",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.": "winshotx は常に画面を録り続けて古い部分を捨てるので、録画ボタンを押していなくても直近の出来事は残っています。ただしコストもあります。3 画面の環境で 60 フレーム・ネイティブ解像度の場合、静止したデスクトップで CPU 1 コアの 22%、画面が動くと最大 60% を占めました。オフなら winshotx 全体で 2.9% を使います。",

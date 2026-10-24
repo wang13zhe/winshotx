@@ -43,12 +43,48 @@ pub struct Vigilante {
     /// La última tecla principal que se vio pulsada, para no repetir el atajo en cada
     /// fotograma mientras se mantiene el dedo encima.
     ultima: Option<u16>,
+    /// La última tecla principal vista, para el clic de tecla. Va aparte de `ultima` porque
+    /// son dos preguntas distintas: «¿empieza un atajo?» y «¿se ha pulsado algo?». Compartir
+    /// el campo haría que una letra suelta borrase el estado del atajo y viceversa.
+    ultima_tecleada: Option<u16>,
 }
 
 impl Vigilante {
     /// Mira el teclado y devuelve el atajo si acaba de empezar uno.
     pub fn mirar(&mut self, ms: u64) -> Option<Atajo> {
         self.decidir(modificadores_pulsados(), tecla_principal(), ms)
+    }
+
+    /// Si se acaba de pulsar una tecla cualquiera, para el clic de tecla.
+    ///
+    /// **Devuelve un bool y nada mas, a proposito.** Lo que se quiere saber es si hubo una
+    /// pulsacion para que suene un clic; que tecla era no se guarda, no se escribe en las
+    /// anotaciones y no llega al video. Es la diferencia entre un teclado que suena y un
+    /// registrador de pulsaciones, y aqui solo hace falta lo primero.
+    ///
+    /// Va aparte de `mirar` y no dentro porque `mirar` contesta otra cosa: solo hay atajo
+    /// cuando hay modificador, y una letra suelta no lo es. Quien escribe una frase entera
+    /// sin un solo Ctrl no produce ni un atajo, y el clic tiene que sonar igualmente.
+    pub fn tecleo(&mut self) -> bool {
+        self.decidir_tecleo(tecla_principal())
+    }
+
+    /// La regla del clic, separada de la lectura del teclado como `decidir`.
+    ///
+    /// Los modificadores solos no cuentan como tecleo: `tecla_principal` ya devuelve `None`
+    /// cuando lo unico pulsado es Ctrl o Shift, asi que mantener el dedo en Ctrl no produce
+    /// un clic por cada vuelta del muestreador. Y una tecla mantenida tampoco: se recuerda
+    /// cual fue la ultima y solo se avisa cuando cambia.
+    fn decidir_tecleo(&mut self, principal: Option<u16>) -> bool {
+        let Some(codigo) = principal else {
+            self.ultima_tecleada = None;
+            return false;
+        };
+        if self.ultima_tecleada == Some(codigo) {
+            return false;
+        }
+        self.ultima_tecleada = Some(codigo);
+        true
     }
 
     /// La regla, separada de la lectura del teclado.
@@ -239,6 +275,61 @@ mod tests {
                 "la tecla {tecla:#x} ha salido en el video"
             );
         }
+    }
+
+    /// El clic de tecla si suena con una letra suelta, que es justo lo que el atajo no hace.
+    /// Sin esto el ajuste se llamaba «sonar al teclear» y solo sonaba al pulsar Ctrl.
+    #[test]
+    fn una_letra_suelta_suena_aunque_no_sea_un_atajo() {
+        let mut vigilante = Vigilante::default();
+        assert!(vigilante.decidir_tecleo(Some(A)));
+    }
+
+    /// Y una tecla mantenida suena UNA vez, no en cada vuelta del muestreador.
+    #[test]
+    fn mantener_la_tecla_no_repite_el_clic() {
+        let mut vigilante = Vigilante::default();
+        assert!(vigilante.decidir_tecleo(Some(A)));
+        for _ in 0..20 {
+            assert!(!vigilante.decidir_tecleo(Some(A)), "la tecla sigue sonando sola");
+        }
+        // Soltarla y volver a pulsarla si suena otra vez.
+        assert!(!vigilante.decidir_tecleo(None));
+        assert!(vigilante.decidir_tecleo(Some(A)));
+    }
+
+    /// Y escribir no se pierde: cada letra distinta suena.
+    #[test]
+    fn cada_letra_de_una_palabra_suena() {
+        let mut vigilante = Vigilante::default();
+        let palabra = [0x68u16, 0x6F, 0x6C, 0x61];
+        for tecla in palabra {
+            assert!(vigilante.decidir_tecleo(Some(tecla)), "la tecla {tecla:#x} no sono");
+        }
+    }
+
+    /// Los modificadores solos no son tecleo: si no, mantener Ctrl sonaria sin parar.
+    #[test]
+    fn el_modificador_solo_no_suena() {
+        let mut vigilante = Vigilante::default();
+        // `tecla_principal` devuelve None cuando lo unico pulsado es un modificador, que
+        // es lo que le llega aqui.
+        for _ in 0..10 {
+            assert!(!vigilante.decidir_tecleo(None));
+        }
+    }
+
+    /// Y el clic no se lleva por delante el estado del atajo: son dos preguntas distintas.
+    #[test]
+    fn el_clic_y_el_atajo_no_se_pisan() {
+        let mut vigilante = Vigilante::default();
+        // Una letra suelta suena y no es atajo.
+        assert!(vigilante.decidir_tecleo(Some(A)));
+        assert!(vigilante.decidir(Vec::new(), Some(A), 0).is_none());
+        // Y el mismo atajo sigue saliendo despues, que es lo que se romperia si las dos
+        // cosas compartieran el campo de «la ultima tecla».
+        let atajo = vigilante.decidir(ctrl(), Some(A), 100).expect("tendria que salir");
+        assert_eq!(atajo.texto, "Ctrl + A");
     }
 
     #[test]

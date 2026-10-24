@@ -171,6 +171,12 @@ export const ZH: Record<string, string> = {
   "Resaltar los clics": "高亮点击",
   "Mostrar las teclas": "显示按键",
   "Sonar al teclear": "打字时发出声音",
+  "Un aro que se abre donde pulsas y se cierra solo. Enseña dónde se ha hecho clic sin que tengas que pararte a explicarlo, y se graba dentro del vídeo: quien lo ve después lo ve igual que tú.":
+    "按下时张开、随即收拢的光环。不用停下来解释也能看出点在哪里，而且会录进画面里：事后看的人也和你看到的一样。",
+  "Una pastilla con el atajo que acabas de pulsar, junto al cursor. Sirve para un tutorial: quien lo sigue ve «Ctrl+C» escrito en el vídeo en vez de tener que adivinar qué has tocado.":
+    "光标旁边冒出一个小胶囊，写着刚按下的快捷键。做教程时有用：看的人直接看到「Ctrl+C」写在画面里，不用猜你按了什么。",
+  "Un clic corto con cada tecla que pulses mientras grabas. Suena por los altavoces, así que si también estás grabando el audio del sistema se cuela en la grabación como cualquier otro sonido del equipo. No se dibuja en la imagen: para eso está la fila de arriba.":
+    "录制时每按一个键响一声短促的咔哒。它从扬声器放出来，所以如果你同时也在录系统声音，它会像机器上的其他声音一样被录进去。它不会被画进画面：画进画面是上面那一行。",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "把扬声器发出的声音录进同一个视频：通话语音、视频声音、程序提示音。不会录制麦克风，那是下面一行的选项。",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "你的声音，与系统声音混合在同一轨道。适合一边演示一边讲解，只能在录制前决定。",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.":

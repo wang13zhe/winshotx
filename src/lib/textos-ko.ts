@@ -153,6 +153,12 @@ export const KO: Record<string, string> = {
   "Resaltar los clics": "클릭 강조",
   "Mostrar las teclas": "키 표시",
   "Sonar al teclear": "타자속소리",
+  "Un aro que se abre donde pulsas y se cierra solo. Enseña dónde se ha hecho clic sin que tengas que pararte a explicarlo, y se graba dentro del vídeo: quien lo ve después lo ve igual que tú.":
+    "누른 자리에서 열렸다가 저절로 닫히는 고리. 멈춰서 설명하지 않아도 어디를 클릭했는지 보이고, 영상에도 함께 기록되므로 나중에 보는 사람도 같은 것을 봅니다.",
+  "Una pastilla con el atajo que acabas de pulsar, junto al cursor. Sirve para un tutorial: quien lo sigue ve «Ctrl+C» escrito en el vídeo en vez de tener que adivinar qué has tocado.":
+    "방금 누른 단축키를 커서 옆에 작은 알약 모양으로 보여 줍니다. 튜토리얼용입니다. 보는 사람은 영상에 적힌 «Ctrl+C»를 읽으면 되고, 무엇을 눌렀는지 짐작할 필요가 없습니다.",
+  "Un clic corto con cada tecla que pulses mientras grabas. Suena por los altavoces, así que si también estás grabando el audio del sistema se cuela en la grabación como cualquier otro sonido del equipo. No se dibuja en la imagen: para eso está la fila de arriba.":
+    "녹화 중에 키를 누를 때마다 짧은 딸깍 소리가 납니다. 스피커로 나가는 소리라서 시스템 오디오도 함께 녹음하고 있다면 컴퓨터의 다른 소리처럼 녹화에 들어갑니다. 화면에 그려지지는 않습니다. 그것은 위쪽 줄의 설정입니다.",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "스피커로 나오는 소리를 같은 영상에 담습니다. 통화 상대의 목소리, 영상의 오디오, 프로그램 알림음 등입니다. 마이크는 녹음하지 않으며, 그건 아래 항목입니다.",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "내 목소리를 시스템 소리와 같은 트랙에 섞습니다. 보여 주면서 설명할 때 필요한 기능이고, 녹화 전에만 정할 수 있습니다.",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.": "winshotx는 화면을 계속 녹화하면서 오래된 부분을 버리므로, 녹화 버튼을 누르지 않았어도 방금 전 상황이 남아 있습니다. 대가는 있습니다. 화면 3대 환경에서 60프레임·기본 해상도로 측정했을 때 바탕 화면이 정지 상태에서 코어 1개의 22%, 화면이 움직일 때 최대 60%를 씁니다. 끄면 winshotx 전체가 2.9%를 씁니다.",

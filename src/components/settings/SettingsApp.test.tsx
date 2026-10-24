@@ -346,6 +346,43 @@ describe("los ultimos segundos, en «Grabar»", () => {
     ].filter((frase) => pantalla.includes(frase));
     expect(coladas).toEqual([]);
   });
+
+  /**
+   * Los dos interruptores de lo que se ve grabando. Estaban ya en Rust y en el grabador
+   * desde antes, pero sin interruptor: no habia forma de encenderlos desde la interfaz, y
+   * un ajuste que nadie puede tocar es lo mismo que no tenerlo.
+   */
+  describe("lo que se ve mientras se graba", () => {
+    it("vienen apagados, y cada uno explica lo que hace antes de encenderlo", async () => {
+      await irAGrabar();
+      // La explicacion va en el tooltip del icono, no en la fila: asi la fila cabe. Lo que
+      // se comprueba es que el interruptor exista, este apagado y lleve su texto.
+      for (const etiqueta of ["Resaltar los clics", "Mostrar las teclas"]) {
+        const interruptor = screen.getByRole("switch", { name: etiqueta });
+        expect(interruptor).toHaveAttribute("aria-checked", "false");
+      }
+      // Y que la fila se vea, que es lo unico que distingue un ajuste de otro.
+      expect(screen.getByText("Resaltar los clics")).toBeInTheDocument();
+      expect(screen.getByText("Mostrar las teclas")).toBeInTheDocument();
+    });
+
+    it("encenderlos viaja hasta Rust, que es quien los usa", async () => {
+      await irAGrabar();
+      const clics = screen.getByRole("switch", { name: "Resaltar los clics" });
+      expect(clics).toHaveAttribute("aria-checked", "false");
+      fireEvent.click(clics);
+      expect(clics).toHaveAttribute("aria-checked", "true");
+
+      await waitFor(() => {
+        const guardados = llamadas.filter((l) => l.comando === "set_settings");
+        // Rust recibe los ajustes enteros, no el trozo que ha cambiado: el que decide que
+        // guardar es el comando, no la interfaz.
+        expect(guardados.at(-1)?.args).toMatchObject({
+          settings: expect.objectContaining({ highlightClicks: true }),
+        });
+      });
+    });
+  });
 });
 
 /**

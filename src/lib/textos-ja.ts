@@ -148,6 +148,10 @@ export const JA: Record<string, string> = {
   "Guardar deja el archivo en tu carpeta, y con esto además lo deja pegable. Es para cuando quieres las dos cosas a la vez: el archivo para luego y la imagen para pegarla ahora mismo en un chat.": "保存するとファイルがフォルダーに残ります。さらに貼り付けもできるようになるので、あとで使うファイルと、すぐチャットに貼る画像の両方が手に入ります。",
   "Recortas igual que para una captura, pero en vez de una foto sale un vídeo. El mismo atajo lo termina, así que no hace falta ir a buscar ningún botón mientras grabas.": "キャプチャと同じように範囲を選びますが、写真ではなく動画が出てきます。同じショートカットで終了するので、録画中にボタンを探す必要はありません。",
   "Cuántas veces por segundo se mira la pantalla. 30 vale para casi todo; 60 es para movimiento rápido y cuesta el doble de disco y de máquina. El editor puede bajarlo después, pero lo que no se grabó no se inventa.": "1 秒間に何回画面を見るか。30 でほぼ足ります。60 は速い動き向けで、ディスクもマシンへの負担も 2 倍になります。エディターで後から下げられますが、録れなかったものは作れません。",
+
+  // 录制时的点击与按键提示
+  "Resaltar los clics": "クリックを目立たせる",
+  "Mostrar las teclas": "キーを表示する",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "スピーカーから出る音を同じ動画に入れます。通話の声、動画の音声、アプリの通知音など。マイクは録りません。それは下の行です。",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "あなたの声をシステム音と混ぜて同じトラックに入れます。見せながら説明するときに必要なもので、録画前にしか選べません。",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.": "winshotx は常に画面を録り続けて古い部分を捨てるので、録画ボタンを押していなくても直近の出来事は残っています。ただしコストもあります。3 画面の環境で 60 フレーム・ネイティブ解像度の場合、静止したデスクトップで CPU 1 コアの 22%、画面が動くと最大 60% を占めました。オフなら winshotx 全体で 2.9% を使います。",

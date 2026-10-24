@@ -166,6 +166,10 @@ export const ZH: Record<string, string> = {
   "Guardar deja el archivo en tu carpeta, y con esto además lo deja pegable. Es para cuando quieres las dos cosas a la vez: el archivo para luego y la imagen para pegarla ahora mismo en un chat.": "保存会把文件放进你的文件夹，同时此项还会让它可粘贴。适合两者都要的场景：文件留着以后用，图片马上粘贴到聊天窗口。",
   "Recortas igual que para una captura, pero en vez de una foto sale un vídeo. El mismo atajo lo termina, así que no hace falta ir a buscar ningún botón mientras grabas.": "框选方式和截图一样，但输出的是视频。同一个快捷键结束录制，录屏时不用去找按钮。",
   "Cuántas veces por segundo se mira la pantalla. 30 vale para casi todo; 60 es para movimiento rápido y cuesta el doble de disco y de máquina. El editor puede bajarlo después, pero lo que no se grabó no se inventa.": "每秒采集屏幕的次数。30 帧几乎够用；60 帧适合快速运动，但磁盘和性能开销翻倍。编辑器可以之后降帧，但没录到的内容无法凭空生成。",
+
+  // 录制时的点击与按键提示
+  "Resaltar los clics": "高亮点击",
+  "Mostrar las teclas": "显示按键",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "把扬声器发出的声音录进同一个视频：通话语音、视频声音、程序提示音。不会录制麦克风，那是下面一行的选项。",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "你的声音，与系统声音混合在同一轨道。适合一边演示一边讲解，只能在录制前决定。",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.":

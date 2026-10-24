@@ -21,6 +21,7 @@ import {
   Info,
   Mic,
   MousePointer2,
+  MousePointerClick,
   Palette,
   Power,
   Scissors,
@@ -630,6 +631,30 @@ export function SettingsApp({ onVerBienvenida, arrancarTour = false }: SettingsA
                         value={settings.fps}
                         options={FPS_OPTIONS}
                         onChange={(v) => patch({ fps: v })}
+                      />
+                    }
+                  />
+                  <Row
+                    icon={<MousePointerClick className="size-4" />}
+                    label={t("Resaltar los clics")}
+                    explicacion={t("Un aro que se abre donde pulsas y se cierra solo. Enseña dónde se ha hecho clic sin que tengas que pararte a explicarlo, y se graba dentro del vídeo: quien lo ve después lo ve igual que tú.")}
+                    control={
+                      <Switch
+                        checked={settings.highlightClicks}
+                        onChange={(v) => patch({ highlightClicks: v })}
+                        label={t("Resaltar los clics")}
+                      />
+                    }
+                  />
+                  <Row
+                    icon={<Keyboard className="size-4" />}
+                    label={t("Mostrar las teclas")}
+                    explicacion={t("Una pastilla con el atajo que acabas de pulsar, junto al cursor. Sirve para un tutorial: quien lo sigue ve «Ctrl+C» escrito en el vídeo en vez de tener que adivinar qué has tocado.")}
+                    control={
+                      <Switch
+                        checked={settings.highlightKeys}
+                        onChange={(v) => patch({ highlightKeys: v })}
+                        label={t("Mostrar las teclas")}
                       />
                     }
                   />

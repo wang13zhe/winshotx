@@ -330,6 +330,12 @@ export const RU: Record<string, string> = {
   "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "Тащите, чтобы переместить · колесо — видеть сквозь · Esc — закрыть",
   "Copiar el texto": "Скопировать текст",
   "No he encontrado texto en esa captura.": "На этом снимке текста не нашлось.",
+
+  // 长截图 / captura larga
+  "Captura larga": "Длинный снимок",
+  "fotos": "кадров",
+  "Terminar": "Готово",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "Прокручивайте, чтобы сшить ещё · Enter — шаг · Esc — завершить",
   copiado: "скопировано",
   "Acercarse a los clics": "Приближать клики",
   "sin zoom": "без приближения",

@@ -405,6 +405,12 @@ export const ZH: Record<string, string> = {
   "Copiar el texto": "复制文字",
   "No he encontrado texto en esa captura.": "未在截图中找到文字。",
 
+  // 长截图
+  "Captura larga": "长截图",
+  fotos: "张",
+  Terminar: "完成",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "滚动拼接更多 · 回车走一步 · Esc 完成",
+
   // 光标下的颜色
   copiado: "已复制",
 

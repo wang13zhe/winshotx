@@ -330,6 +330,12 @@ export const PL: Record<string, string> = {
   "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "Przeciągnij, aby przesunąć · kółko, aby prześwitywać · Esc, aby zamknąć",
   "Copiar el texto": "Kopiuj tekst",
   "No he encontrado texto en esa captura.": "Nie znalazłem tekstu na tym zrzucie.",
+
+  // 长截图 / captura larga
+  "Captura larga": "Długi zrzut",
+  "fotos": "zrzutów",
+  "Terminar": "Zakończ",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "Przewijaj, aby zszywać więcej · Enter to krok · Esc kończy",
   copiado: "skopiowano",
   "Acercarse a los clics": "Przybliżaj kliknięcia",
   "sin zoom": "bez zoomu",

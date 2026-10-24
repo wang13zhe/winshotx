@@ -328,6 +328,12 @@ export const KO: Record<string, string> = {
   "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "끌어서 옮기기 · 휠로 투명하게 · Esc로 닫기",
   "Copiar el texto": "텍스트 복사",
   "No he encontrado texto en esa captura.": "이 캡처에서 텍스트를 찾지 못했습니다.",
+
+  // 长截图 / captura larga
+  "Captura larga": "긴 캡처",
+  "fotos": "장",
+  "Terminar": "완료",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "스크롤로 이어 붙이기 · Enter는 한 걸음 · Esc로 완료",
   copiado: "복사됨",
   "Acercarse a los clics": "클릭 지점 확대",
   "sin zoom": "확대 없음",

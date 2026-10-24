@@ -389,8 +389,11 @@ mod tests {
         assert_eq!(sesion.paso(ventana(&doc, 0, 200)), 0);
         assert_eq!(sesion.imagen().height(), 200, "quieta no crece");
         assert_eq!(sesion.capturas(), 1, "y no cuenta como foto cosida");
-        // Y se puede seguir: lo cosido hasta aqui sigue valiendo.
-        assert!(sesion.paso(ventana(&doc, 100, 200)) > 0);
+        // Y se puede seguir: lo cosido hasta aqui sigue valiendo. El salto es de 80 filas
+        // y no de 100 a proposito: la franja son 120, asi que hace falta que el nuevo
+        // visor solape con el anterior (80 < 120) para que haya algo que casar.
+        assert!(sesion.paso(ventana(&doc, 80, 200)) > 0);
+        assert_eq!(sesion.imagen().height(), 280);
     }
 
     /// Si la ventana cambia de tamaño a mitad, esa foto se descarta en lugar de inventarse

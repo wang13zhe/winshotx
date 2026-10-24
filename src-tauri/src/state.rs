@@ -90,6 +90,14 @@ pub struct AppState {
     /// toca copiar la imagen o empezar a grabar.
     pub intent: RwLock<OverlayIntent>,
     pub recording: Mutex<Option<RecordingState>>,
+    /// La captura larga en curso, si la hay. Vive aqui y no en el hilo que la dispara
+    /// porque la sesion dura lo que dura el barrido: son varias fotos separadas en el
+    /// tiempo, y entre una y la siguiente solo este sitio se acuerda de lo cosido.
+    ///
+    /// Es un `Option` y no una estructura suelta para poder distinguir «no ha empezado»
+    /// de «ha empezado y aun no ha cosido nada»: preguntar por el estado de una captura
+    /// que no existe es un error de la interfaz, no una captura vacia.
+    pub larga: Mutex<Option<crate::capture::larga::EnCurso>>,
     /// El anillo de los ultimos segundos, si esta encendido. Va aparte de `recording`
     /// porque puede convivir con una grabacion normal: son dos capturas distintas y quien
     /// esta grabando un tutorial no tiene por que perder lo que el anillo ya tenia.
@@ -134,6 +142,7 @@ impl AppState {
             registered: RwLock::new(Vec::new()),
             intent: RwLock::new(OverlayIntent::Capture),
             recording: Mutex::new(None),
+            larga: Mutex::new(None),
             replay: Mutex::new(None),
             last_region: RwLock::new(None),
             temp_root,

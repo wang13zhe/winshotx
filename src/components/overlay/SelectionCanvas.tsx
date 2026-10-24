@@ -10,6 +10,9 @@ import {
   cronoMarca,
   freezeBytes,
   freezePng,
+  longCaptureCancel,
+  longCaptureFinish,
+  longCaptureStart,
   openSettings,
   overlayBootstrap,
   overlayListo,
@@ -37,6 +40,7 @@ import {
 import { BootScreen } from "./BootScreen";
 import { DimensionBadge } from "./DimensionBadge";
 import { FloatingToolbar } from "./FloatingToolbar";
+import { LongCaptureBar } from "./LongCaptureBar";
 import { Magnifier } from "./Magnifier";
 import { ModeBar, SELECTOR_BARRA } from "./ModeBar";
 import { ScreenPicker } from "./ScreenPicker";
@@ -497,6 +501,72 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
     [selection, capturarRegion],
   );
 
+  // -------------------------------------------------------------------------
+  // Captura larga
+  // -------------------------------------------------------------------------
+
+  /**
+   * La accion con la que se cerrara el barrido. Se decide al empezar y no al acabar:
+   * quien pulsa «captura larga» desde la barra ya ha dicho antes si queria copiar, guardar
+   * o editar, y volver a preguntarselo al final seria preguntarselo dos veces.
+   */
+  const [accionLarga, setAccionLarga] = useState<
+    "copy" | "save" | "save_as" | "edit" | "pin" | null
+  >(null);
+  const accionLargaRef = useRef(accionLarga);
+  accionLargaRef.current = accionLarga;
+
+  const enLarga = accionLarga !== null;
+
+  /**
+   * Abre el barrido sobre la zona elegida.
+   *
+   * La primera foto la hace Rust: si la zona no se puede fotografiar, el error sale aqui
+   * y el usuario sigue con el overlay como estaba, en vez de quedarse en un modo a medias
+   * del que no hay salida.
+   */
+  const empezarLarga = useCallback(
+    async (action: "copy" | "save" | "save_as" | "edit" | "pin") => {
+      if (!selection) return;
+      setBusy(true);
+      setError(null);
+      try {
+        await longCaptureStart(toPhysical(selection));
+        setAccionLarga(action);
+      } catch (e) {
+        setError(String(e));
+      } finally {
+        setBusy(false);
+      }
+    },
+    [selection, toPhysical],
+  );
+
+  /** Cierra el barrido y se lleva la imagen cosida. */
+  const terminarLarga = useCallback(async () => {
+    const action = accionLargaRef.current;
+    if (!action) return;
+    setBusy(true);
+    try {
+      await longCaptureFinish(action);
+      setAccionLarga(null);
+    } catch (e) {
+      setError(String(e));
+    } finally {
+      setBusy(false);
+    }
+  }, []);
+
+  /** Tira el barrido. La zona elegida se queda: se vuelve a la barra de siempre. */
+  const cancelarLarga = useCallback(async () => {
+    setAccionLarga(null);
+    try {
+      await longCaptureCancel();
+    } catch {
+      // Si Rust ya no tenia sesion, da igual: el estado de aqui es el que manda.
+    }
+  }, []);
+
   /**
    * Perfil al vuelo: se suelta el raton y ya esta, sin barra y sin un solo clic mas. En
    * foto eso es la imagen en el portapapeles; en video o GIF, la grabacion arrancando.
@@ -593,6 +663,13 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
       switch (e.key) {
         case "Escape":
           e.preventDefault();
+          // En un barrido, Escape no se va: para y guarda lo cosido. Cerrar el overlay
+          // aqui tiraria a la basura un barrido de veinte fotos con un dedo, y quien ha
+          // llegado hasta abajo quiere llevarse la imagen, no empezar de nuevo.
+          if (accionLargaRef.current) {
+            void terminarLarga();
+            return;
+          }
           // Un solo Escape se sale, haya recorte hecho o no. Antes el primero borraba el
           // recorte y hacia falta otro para cerrar: quien pulsa Escape encima de una
           // captura quiere irse, y el recorte se rehace arrastrando otra vez, sin tener
@@ -601,6 +678,10 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
           return;
         case "Enter":
           e.preventDefault();
+          // En un barrido, Enter da un paso mas. Es el mismo gesto que la rueda para quien
+          // no quiere soltar el raton, y cerrar el barrido por accidente con Enter seria
+          // perderlo.
+          if (accionLargaRef.current) return;
           // Enter hace lo que diga la barra de arriba: copiar la foto, o empezar a grabar.
           if (modo !== "still") {
             if (selectionRef.current) void grabarRegion(selectionRef.current, modo);
@@ -632,6 +713,11 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
       } else if (key === "s" && e.ctrlKey) {
         e.preventDefault();
         void runStill("save");
+      } else if (accionLargaRef.current) {
+        // Barriendo, ninguna letra hace nada: lo unico que se puede pulsar es Esc, que
+        // cierra, y la rueda, que cose. Cualquier otra tecla se come para que un golpe de
+        // raton encima del teclado no se lleve el barrido por delante.
+        return;
       } else if (key === "a" && e.ctrlKey) {
         e.preventDefault();
         const todo = { x: 0, y: 0, width: window.innerWidth, height: window.innerHeight };
@@ -1028,7 +1114,7 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
       )}
 
       <AnimatePresence>
-        {active && mode.kind === "idle" && !alVuelo && !alEditor && (
+        {active && mode.kind === "idle" && !alVuelo && !alEditor && !enLarga && (
           <FloatingToolbar
             key="toolbar"
             left={clamp(active.x + active.width / 2, 190, window.innerWidth - 190)}
@@ -1042,6 +1128,7 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
             onEdit={() => void runStill("edit")}
             onPin={() => void runStill("pin")}
             onText={() => void runStill("text")}
+            onLong={() => void empezarLarga("save")}
             onRecord={() => {
               if (selection && modo !== "still") void grabarRegion(selection, modo);
             }}
@@ -1049,6 +1136,22 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
           />
         )}
       </AnimatePresence>
+
+      {/*
+        La barra del barrido. Ocupa el sitio de la otra a proposito: mientras se cose, la
+        unica decision que hay que poder tomar es parar o seguir, y tener las dos barras a
+        la vista invita a pulsar la que no toca.
+      */}
+      {enLarga && active && (
+        <LongCaptureBar
+          left={clamp(active.x + active.width / 2, 190, window.innerWidth - 190)}
+          top={sitioBarra?.top ?? 24}
+          flipped={sitioBarra?.volteada ?? false}
+          action={accionLarga!}
+          onFinish={() => void terminarLarga()}
+          onCancel={() => void cancelarLarga()}
+        />
+      )}
 
       {/*
         El color copiado. Va donde los errores y con la misma forma, porque es lo mismo:

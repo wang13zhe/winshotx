@@ -37,6 +37,33 @@ export const captureStill = (region: Rect, action: StillAction) =>
 export const captureAllScreens = (action: StillAction) =>
   invoke<StillResult>("capture_all_screens", { action });
 
+/** Lo que ha traido un paso del barrido de la captura larga. */
+export interface PasoLarga {
+  /** Filas nuevas de esta foto. Cero = no se ha movido nada, y no es un error. */
+  anadidas: number;
+  /** Alto cosido hasta ahora, para ensenar el progreso. */
+  alto: number;
+  /** Fotos cosidas, contando la primera. */
+  capturas: number;
+}
+
+/**
+ * Abre una captura larga sobre esa region. La primera foto se hace aqui dentro: si la
+ * zona no se puede fotografiar, se sabe antes de empezar a barrer.
+ */
+export const longCaptureStart = (region: Rect) =>
+  invoke<PasoLarga>("long_capture_start", { region });
+
+/** Cose una foto mas, de la misma region con la que se abrio. */
+export const longCaptureStep = () => invoke<PasoLarga>("long_capture_step");
+
+/** Cierra el barrido y deja la imagen donde toca. */
+export const longCaptureFinish = (action: StillAction) =>
+  invoke<StillResult>("long_capture_finish", { action });
+
+/** Tira el barrido sin guardar nada. */
+export const longCaptureCancel = () => invoke<void>("long_capture_cancel");
+
 /** Respaldo del fondo del overlay cuando el protocolo asset no responde. */
 /** La pantalla congelada de este monitor, en PNG. Es el camino normal. */
 export const freezePng = (monitorId: number) =>

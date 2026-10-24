@@ -1,4 +1,15 @@
-import { Check, Circle, Copy, Download, FolderOpen, Pencil, Pin, Type, X } from "lucide-react";
+import {
+  Check,
+  Circle,
+  Copy,
+  Download,
+  FolderOpen,
+  Pencil,
+  Pin,
+  ScrollText,
+  Type,
+  X,
+} from "lucide-react";
 import type { CaptureMode } from "../../lib/types";
 import { GlassPanel } from "../ui/GlassPanel";
 import { IconButton } from "../ui/IconButton";
@@ -21,6 +32,11 @@ interface Props {
   onPin: () => void;
   /** Lee el texto de la captura y lo copia, sin la imagen. */
   onText: () => void;
+  /**
+   * Captura larga: la zona se queda fija y se va cosiendo lo que se desplace por debajo.
+   * Solo tiene sentido en foto, asi que no se ofrece cuando arriba se eligio grabar.
+   */
+  onLong: () => void;
   onRecord: () => void;
   onCancel: () => void;
 }
@@ -44,6 +60,7 @@ export function FloatingToolbar({
   onEdit,
   onPin,
   onText,
+  onLong,
   onRecord,
   onCancel,
 }: Props) {
@@ -99,6 +116,14 @@ export function FloatingToolbar({
               label={t("Copiar el texto")}
               shortcut="T"
               onClick={onText}
+              disabled={busy}
+            />
+            <span className="mx-0.5 h-5 w-px bg-white/10" />
+            <IconButton
+              icon={ScrollText}
+              label={t("Captura larga")}
+              shortcut="L"
+              onClick={onLong}
               disabled={busy}
             />
           </>

@@ -414,6 +414,12 @@ export const EN: Record<string, string> = {
   "Copiar el texto": "Copy the text",
   "No he encontrado texto en esa captura.": "I found no text in that shot.",
 
+  // 长截图 / captura larga
+  "Captura larga": "Long shot",
+  "fotos": "shots",
+  "Terminar": "Finish",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "Scroll to stitch more · Enter takes a step · Esc finishes",
+
   // El color bajo el cursor
   copiado: "copied",
 

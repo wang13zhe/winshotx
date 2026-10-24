@@ -329,6 +329,12 @@ export const PT_BR: Record<string, string> = {
   "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "Arraste para movê-la · roda para ver através · Esc para fechá-la",
   "Copiar el texto": "Copiar o texto",
   "No he encontrado texto en esa captura.": "Não encontrei texto nessa captura.",
+
+  // 长截图 / captura larga
+  "Captura larga": "Captura longa",
+  "fotos": "fotos",
+  "Terminar": "Concluir",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "Role para costurar mais · Enter dá um passo · Esc conclui",
   copiado: "copiado",
   "Acercarse a los clics": "Dar zoom nos cliques",
   "sin zoom": "sem zoom",

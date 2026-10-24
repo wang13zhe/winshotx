@@ -162,8 +162,94 @@ pub async fn capture_all_screens(app: AppHandle, action: String) -> Result<Still
     entregar(&app, image, region, &action)
 }
 
-/// Que se hace con una imagen ya recortada: copiarla, guardarla o abrirla en el editor.
-/// Lo comparten la captura de una region y la de todas las pantallas, que solo se
+// ---------------------------------------------------------------------------
+// Captura larga: una foto por cada paso del barrido, cosidas al final
+// ---------------------------------------------------------------------------
+
+/// Lo que la interfaz necesita saber de un paso del barrido.
+#[derive(Debug, Clone, serde::Serialize)]
+pub struct PasoLarga {
+    /// Filas que ha traido esta foto. Cero quiere decir que no se ha movido nada, y no es
+    /// un error: alguien que baja la rueda a tirones deja fotos sin nada nuevo.
+    pub anadidas: u32,
+    /// Alto de la imagen cosida hasta ahora, para poder ir ensenando el progreso.
+    pub alto: u32,
+    /// Cuantas fotos se han cosido, contando la primera.
+    pub capturas: u32,
+}
+
+/// Abre una captura larga sobre esa region.
+///
+/// La primera foto se hace aqui y no en el primer `paso`: si la region elegida no se
+/// puede fotografiar, el usuario se entera antes de empezar a bajar, no despues de
+/// haber barrido media pagina y ver que no se guarda nada.
+#[tauri::command]
+pub async fn long_capture_start(app: AppHandle, region: Rect) -> Result<PasoLarga> {
+    let primera = capture::captura_de_region(region)?;
+    let state = app.state::<AppState>();
+    let mut sesion = state.larga.lock();
+    *sesion = Some(crate::capture::larga::EnCurso::nueva(region, primera));
+    Ok(PasoLarga {
+        anadidas: 0,
+        alto: sesion.as_ref().map(|s| s.imagen().height()).unwrap_or(0),
+        capturas: 1,
+    })
+}
+
+/// Cose una foto mas del barrido.
+///
+/// Se fotografia la MISMA region con la que se abrio la sesion y no una que venga de
+/// fuera: entre foto y foto el usuario ha movido el raton, y si se dejase elegir zona
+/// otra vez cada paso se coseria un recorte distinto en cada escalon.
+#[tauri::command]
+pub async fn long_capture_step(app: AppHandle) -> Result<PasoLarga> {
+    let state = app.state::<AppState>();
+    let mut sesion = state.larga.lock();
+    let sesion = sesion
+        .as_mut()
+        .ok_or_else(|| AppError::Msg("no hay ninguna captura larga abierta".into()))?;
+    // Se fotografia antes de soltar el candado de la sesion, pero la foto en si no lo
+    // necesita: solo lo necesita la escritura. Se hace dentro igualmente para que dos
+    // pasos simultaneos no se pisen el uno al otro en el disco.
+    let nueva = capture::captura_de_region(sesion.region)?;
+    let anadidas = sesion.paso(nueva);
+    Ok(PasoLarga {
+        anadidas,
+        alto: sesion.imagen().height(),
+        capturas: sesion.capturas(),
+    })
+}
+
+/// Cierra el barrido y deja la imagen donde toca: copiada, guardada o en el editor.
+///
+/// Pasa por `entregar`, que es lo mismo que usa una captura normal: la larga no deja de
+/// ser una imagen, y duplicar aqui el «copiar / guardar / abrir» seria otra copia mas
+/// que mantener.
+#[tauri::command]
+pub async fn long_capture_finish(app: AppHandle, action: String) -> Result<StillResult> {
+    let (image, region) = {
+        let state = app.state::<AppState>();
+        let mut sesion = state.larga.lock();
+        let sesion = sesion
+            .take()
+            .ok_or_else(|| AppError::Msg("no hay ninguna captura larga abierta".into()))?;
+        (sesion.imagen().clone(), sesion.region)
+    };
+    entregar(&app, image, region, &action)
+}
+
+/// Tira el barrido a la basura sin guardar nada.
+///
+/// Hace falta poder hacerlo: si se ha elegido una region que no era y ya se ha empezado
+/// a coser, la unica salida limpia es cerrar la sesion y volver a empezar.
+#[tauri::command]
+pub async fn long_capture_cancel(app: AppHandle) -> Result<()> {
+    let state = app.state::<AppState>();
+    let mut sesion = state.larga.lock();
+    *sesion = None;
+    Ok(())
+}
+
 /// diferencian en como consiguen la imagen.
 fn entregar(
     app: &AppHandle,

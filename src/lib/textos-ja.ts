@@ -328,6 +328,12 @@ export const JA: Record<string, string> = {
   "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "ドラッグで移動 · ホイールで透過 · Esc で閉じる",
   "Copiar el texto": "テキストをコピー",
   "No he encontrado texto en esa captura.": "そのキャプチャにテキストは見つかりませんでした。",
+
+  // 长截图 / captura larga
+  "Captura larga": "ロングキャプチャ",
+  "fotos": "枚",
+  "Terminar": "完了",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "スクロールで継ぎ足す · Enterで1歩 · Escで完了",
   copiado: "コピー済み",
   "Acercarse a los clics": "クリックを拡大",
   "sin zoom": "ズームなし",

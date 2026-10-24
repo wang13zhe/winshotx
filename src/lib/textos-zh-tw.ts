@@ -328,6 +328,12 @@ export const ZH_TW: Record<string, string> = {
   "Arrastra para moverla · rueda para ver a través · Esc para cerrarla": "拖曳可移動 · 滾輪可透視 · Esc 可關閉",
   "Copiar el texto": "複製文字",
   "No he encontrado texto en esa captura.": "這張截圖裡找不到文字。",
+
+  // 长截图 / captura larga
+  "Captura larga": "長截圖",
+  "fotos": "張",
+  "Terminar": "完成",
+  "Desplaza para coser más · Enter da un paso · Esc termina": "滾動拼接更多 · Enter 走一步 · Esc 完成",
   copiado: "已複製",
   "Acercarse a los clics": "點擊時放大",
   "sin zoom": "不放大",

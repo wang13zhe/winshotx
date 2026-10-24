@@ -1,5 +1,6 @@
 #[cfg(test)]
 mod bench_freeze;
+pub mod larga;
 #[cfg(windows)]
 mod wgc;
 use std::sync::Arc;
@@ -351,6 +352,31 @@ pub fn crop_from_freeze(freezes: &[Freeze], region: Rect) -> Result<image::RgbaI
         return Err(AppError::Msg("la selección queda fuera de la pantalla".into()));
     }
     Ok(image::imageops::crop_imm(image.as_ref(), local_x, local_y, width, height).to_image())
+}
+
+/// Una foto EN VIVO de esa region, para la captura larga.
+///
+/// A diferencia de `crop_from_freeze`, que recorta una pantalla ya congelada, esta vuelve a
+/// fotografiar: el contenido se tiene que poder desplazar entre una foto y la siguiente, y
+/// sobre una imagen congelada el desplazamiento no se veria nunca.
+///
+/// Solo congela la pantalla que contiene el recorte y no todas: esto se llama varias veces
+/// seguidas mientras alguien baja la rueda, y con tres monitores fotografiar los tres cada
+/// vez seria pagar dos tercios de la espera por pantallas que no se estan mirando.
+pub fn captura_de_region(region: Rect) -> Result<image::RgbaImage> {
+    let monitores = xcap::Monitor::all().map_err(|e| AppError::Msg(e.to_string()))?;
+    let (cx, cy) = region.center();
+    let mut elegido = None;
+    for (index, monitor) in monitores.iter().enumerate() {
+        let info = describir(index, monitor)?;
+        if info.contains(cx, cy) {
+            elegido = Some(index);
+            break;
+        }
+    }
+    let index = elegido.ok_or_else(|| AppError::Msg("no hay ninguna pantalla en esa zona".into()))?;
+    let freezes = freeze_monitors(&[index])?;
+    crop_from_freeze(&freezes, region)
 }
 
 /// El rectangulo que contiene todas las pantallas: el escritorio virtual entero.

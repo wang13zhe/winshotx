@@ -428,3 +428,45 @@ describe("la pantalla entera con la barra puesta", () => {
     );
   });
 });
+
+/**
+ * La captura larga.
+ *
+ * La region que se cose la fija Rust cuando empieza el barrido, y desde ahi no cambia. Lo
+ * que se comprueba aqui es que la interfaz no deje mover el recorte por su cuenta: con el
+ * marco en un sitio y la region en otro, el usuario barreria una zona y se encontraria con
+ * la imagen de otra.
+ */
+describe("la captura larga", () => {
+  /** Las asas de redimensionar, que son los divs con cursor de resize. */
+  function asas(contenedor: HTMLElement): Element[] {
+    return Array.from(contenedor.querySelectorAll("[style*='resize']"));
+  }
+
+  async function barriendo() {
+    responde("long_capture_start", { anadidas: 0, alto: 200, capturas: 1 });
+    const lienzo = await abrir();
+    arrastrar(lienzo, { x: 200, y: 300 }, { x: 500, y: 500 });
+    expect(recorte()).toBe("300 × 200");
+    fireEvent.click(screen.getByLabelText("Captura larga"));
+    await waitFor(() =>
+      expect(llamadas.some((l) => l.comando === "long_capture_start")).toBe(true),
+    );
+    return lienzo;
+  }
+
+  it("el recorte se queda quieto mientras se esta cosiendo", async () => {
+    const lienzo = await barriendo();
+    // Arrastrar por cualquier sitio, tambien dentro del recorte, que antes lo movia.
+    arrastrar(lienzo, { x: 50, y: 50 }, { x: 150, y: 150 });
+    arrastrar(lienzo, { x: 300, y: 400 }, { x: 320, y: 420 });
+    expect(recorte()).toBe("300 × 200");
+  });
+
+  it("y las asas de redimensionar se van, que ya no hay nada que redimensionar", async () => {
+    const lienzo = await barriendo();
+    // Antes de empezar habia ocho; mientras se cose no queda ninguna, porque el recorte
+    // esta cerrado y ensennar asas invita a tirar de ellas.
+    expect(asas(lienzo).length).toBe(0);
+  });
+});

@@ -711,17 +711,19 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
           return;
       }
       const key = e.key.toLowerCase();
+      // Barriendo, ninguna letra hace nada: lo unico que se puede pulsar es Escape, que
+      // cierra y se lleva lo cosido. Va ANTES que todo lo demas porque «Ctrl+S» y
+      // «Ctrl+Shift+S» tambien son letras: colandose por debajo guardarian un recorte de
+      // la pantalla congelada en vez del barrido entero, que son dos imagenes distintas
+      // detras de la misma tecla. Lo que cose es la rueda y lo que cierra es Escape.
+      if (accionLargaRef.current) return;
+
       if (key === "s" && e.ctrlKey && e.shiftKey) {
         e.preventDefault();
         void runStill("save_as");
       } else if (key === "s" && e.ctrlKey) {
         e.preventDefault();
         void runStill("save");
-      } else if (accionLargaRef.current) {
-        // Barriendo, ninguna letra hace nada: lo unico que se puede pulsar es Esc, que
-        // cierra, y la rueda, que cose. Cualquier otra tecla se come para que un golpe de
-        // raton encima del teclado no se lleve el barrido por delante.
-        return;
       } else if (key === "a" && e.ctrlKey) {
         e.preventDefault();
         const todo = { x: 0, y: 0, width: window.innerWidth, height: window.innerHeight };
@@ -944,6 +946,11 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
 
   const onPointerDown = (e: React.PointerEvent) => {
     if (busy) return;
+    // Barriendo, el recorte esta cerrado. La region que Rust esta cosiendo es la que se
+    // fijo al empezar, y el recuadro de la pantalla no puede moverse por su cuenta: quien
+    // arrastrase aqui veria el marco en un sitio y la imagen cosida en otro. Para cambiar
+    // de zona se cancela el barrido, que es un boton que esta a la vista.
+    if (accionLargaRef.current) return;
     // Lo que nace encima de la barra todavia no es nada: se apunta donde empezo y se
     // espera a ver si el puntero se mueve (recorte por debajo) o se suelta (clic del
     // boton). Ver `origenBarra`.
@@ -1074,10 +1081,14 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
             }}
             className="pointer-events-none absolute border border-blue-500/90"
           />
-          <SelectionHandles
-            rect={active}
-            onGrab={(handle) => setMode({ kind: "resizing", handle, base: active })}
-          />
+          {/* Las asas de redimensionar se van mientras se barre: el recorte esta cerrado
+              y el borde azul solo esta para ensennar por donde se esta cosiendo. */}
+          {!enLarga && (
+            <SelectionHandles
+              rect={active}
+              onGrab={(handle) => setMode({ kind: "resizing", handle, base: active })}
+            />
+          )}
           <DimensionBadge
             width={active.width * scale}
             height={active.height * scale}

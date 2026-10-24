@@ -50,6 +50,9 @@ pub struct Anotador {
     marcar_clics: bool,
     /// Y la pastilla con el atajo.
     marcar_teclas: bool,
+    /// Si suena un clic con cada tecla que se pulse. Va aparte de lo de arriba: la
+    /// pastilla es para quien ve el video despues, y esto es para quien lo graba ahora.
+    sonar_teclas: bool,
     raton: raton::Vigilante,
     teclado: teclas::Vigilante,
     /// Los aros que todavia se ven. Se olvidan enseguida; los de `anotaciones` no.
@@ -89,6 +92,7 @@ impl Anotador {
             ventana,
             marcar_clics,
             marcar_teclas,
+            sonar_teclas: false,
             raton: raton::Vigilante::default(),
             teclado: teclas::Vigilante::default(),
             aros: Vec::new(),
@@ -99,6 +103,17 @@ impl Anotador {
             ultimo_asa: 0,
             ids: HashMap::new(),
         }
+    }
+
+    /// Enciende el clic de tecla. Consume y devuelve el anotador para poder encadenarlo
+    /// al constructor, que es como se usa: `Anotador::con_ventana(..).sonar_teclas(si)`.
+    ///
+    /// Aparte y no en el constructor porque esto es lo unico que hace ruido de todo el
+    /// anotador, y una funcion que suena no deberia poder colarse por la puerta de las que
+    /// solo miran.
+    pub fn sonar_teclas(mut self, si: bool) -> Self {
+        self.sonar_teclas = si;
+        self
     }
 
     /// De donde se miden las coordenadas en este instante.
@@ -174,6 +189,16 @@ impl Anotador {
             });
             if self.marcar_teclas {
                 self.atajo = Some(nuevo);
+            }
+            // Suena aqui y no en el hilo de los fotogramas: el teclado se mira en el suyo,
+            // y es el unico sitio donde se sabe que se ha pulsado algo. Si esperase a que
+            // un fotograma lo llevase al escritor, el sonido llegaria con el retraso del
+            // fotograma y teclear sonaria a goteras.
+            //
+            // Suena tambien con la pastilla apagada, que es lo que se ha pedido: son dos
+            // ajustes distintos para dos publicos distintos.
+            if self.sonar_teclas {
+                crate::platform::sonido::tecla();
             }
         }
     }

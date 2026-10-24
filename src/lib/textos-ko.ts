@@ -152,6 +152,7 @@ export const KO: Record<string, string> = {
   // 录制时的点击与按键提示
   "Resaltar los clics": "클릭 강조",
   "Mostrar las teclas": "키 표시",
+  "Sonar al teclear": "타자속소리",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "스피커로 나오는 소리를 같은 영상에 담습니다. 통화 상대의 목소리, 영상의 오디오, 프로그램 알림음 등입니다. 마이크는 녹음하지 않으며, 그건 아래 항목입니다.",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "내 목소리를 시스템 소리와 같은 트랙에 섞습니다. 보여 주면서 설명할 때 필요한 기능이고, 녹화 전에만 정할 수 있습니다.",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.": "winshotx는 화면을 계속 녹화하면서 오래된 부분을 버리므로, 녹화 버튼을 누르지 않았어도 방금 전 상황이 남아 있습니다. 대가는 있습니다. 화면 3대 환경에서 60프레임·기본 해상도로 측정했을 때 바탕 화면이 정지 상태에서 코어 1개의 22%, 화면이 움직일 때 최대 60%를 씁니다. 끄면 winshotx 전체가 2.9%를 씁니다.",

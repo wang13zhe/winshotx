@@ -45,6 +45,7 @@ const AJUSTES: Settings = {
   recordMicrophone: false,
   highlightClicks: false,
   highlightKeys: false,
+  keySound: false,
   fps: 30,
   replayEnabled: false,
   replaySeconds: 30,
@@ -381,6 +382,26 @@ describe("los ultimos segundos, en «Grabar»", () => {
           settings: expect.objectContaining({ highlightClicks: true }),
         });
       });
+    });
+
+    it("el sonido de tecla va aparte, y tambien viaja", async () => {
+      await irAGrabar();
+      // Son dos interruptores para dos publicos: la pastilla la ve quien mira el video
+      // despues, y esto lo oye quien esta grabando. Se pueden querer las dos, o solo una.
+      const sonido = screen.getByRole("switch", { name: "Sonar al teclear" });
+      expect(sonido).toHaveAttribute("aria-checked", "false");
+      fireEvent.click(sonido);
+
+      await waitFor(() => {
+        const guardados = llamadas.filter((l) => l.comando === "set_settings");
+        expect(guardados.at(-1)?.args).toMatchObject({
+          settings: expect.objectContaining({ keySound: true }),
+        });
+      });
+      // Y encender el sonido no enciende la pastilla: son independientes de verdad.
+      expect(
+        screen.getByRole("switch", { name: "Mostrar las teclas" }),
+      ).toHaveAttribute("aria-checked", "false");
     });
   });
 });

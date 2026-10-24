@@ -101,6 +101,13 @@ pub struct Settings {
     /// Ensennar los atajos que se pulsan. Solo atajos, nunca una tecla suelta.
     #[serde(default)]
     pub highlight_keys: bool,
+    /// Sonar con cada tecla que se pulse mientras se graba.
+    ///
+    /// Va aparte de `highlight_keys` a proposito: la pastilla es para quien VE el video
+    /// despues, y esto es para quien lo esta grabando ahora. Se pueden querer las dos,
+    /// pero tambien solo una.
+    #[serde(default)]
+    pub key_sound: bool,
     pub fps: u32,
     /// Grabar siempre la pantalla en un anillo, para poder quedarse con lo ultimo que paso.
     ///
@@ -181,6 +188,7 @@ impl Default for Settings {
             record_microphone: false,
             highlight_clicks: false,
             highlight_keys: false,
+            key_sound: false,
             fps: 30,
             replay_enabled: false,
             replay_seconds: segundos_de_repeticion(),

@@ -27,6 +27,7 @@ const AJUSTES = {
   recordMicrophone: false,
   highlightClicks: false,
   highlightKeys: false,
+  keySound: false,
 } as unknown as Settings;
 
 const PAYLOAD: OverlayPayload = {

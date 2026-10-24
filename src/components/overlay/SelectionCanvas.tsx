@@ -605,6 +605,7 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
           microphone: payload.settings.recordMicrophone && format === "video",
           highlightClicks: payload.settings.highlightClicks,
           highlightKeys: payload.settings.highlightKeys,
+          keySound: payload.settings.keySound,
           window: ventana.hwnd,
         });
       } catch (e) {
@@ -633,6 +634,9 @@ export function SelectionCanvas({ monitorId }: { monitorId: number }) {
           // Los aros si valen igual en GIF: el fotograma es el mismo.
           highlightClicks: payload.settings.highlightClicks,
           highlightKeys: payload.settings.highlightKeys,
+          // El clic de tecla, en cambio, es para quien esta delante grabando. No se queda
+          // en el GIF, asi que da igual en que formato salga.
+          keySound: payload.settings.keySound,
         });
       } catch (e) {
         setError(String(e));

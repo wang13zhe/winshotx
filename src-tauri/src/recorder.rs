@@ -34,6 +34,10 @@ pub struct RecordOptions {
     /// suelta no sale nunca, para que una contrasenna escrita no acabe dentro del video.
     #[serde(default)]
     pub highlight_keys: bool,
+    /// Sonar con cada tecla mientras se graba. Es para quien graba, no para quien ve el
+    /// video despues: por eso va aparte de `highlight_keys`.
+    #[serde(default)]
+    pub key_sound: bool,
     /// La ventana que se graba, si se graba UNA ventana y no un trozo de pantalla.
     ///
     /// Con esto puesto se le pide a Windows esa ventana en concreto, asi que lo que pase
@@ -322,6 +326,7 @@ pub fn start(app: &AppHandle, region: Rect, options: RecordOptions) -> Result<Se
     let reciclados_escritor = reciclados.clone();
     let marcar_clics = options.highlight_clicks;
     let marcar_teclas = options.highlight_keys;
+    let sonar_teclas = options.key_sound;
     // El raton y el teclado se miran en su propio hilo, con el mismo reloj que los
     // fotogramas, y no una vez por fotograma: sin el cursor cocido, una pantalla quieta no
     // manda fotogramas aunque el raton se mueva, y el rastro se quedaba sin puntos.
@@ -329,7 +334,8 @@ pub fn start(app: &AppHandle, region: Rect, options: RecordOptions) -> Result<Se
         // Con una ventana, el anotador mide desde ELLA: si se mueve mientras se graba,
         // los aros de clic y el rastro del raton la siguen en vez de quedarse donde
         // estaba al empezar.
-        crate::record::anotador::Anotador::con_ventana(region, ventana, marcar_clics, marcar_teclas),
+        crate::record::anotador::Anotador::con_ventana(region, ventana, marcar_clics, marcar_teclas)
+            .sonar_teclas(sonar_teclas),
         crate::record::anotador::Reloj {
             start: reloj_inicio,
             paused_ms: paused_ms.clone(),

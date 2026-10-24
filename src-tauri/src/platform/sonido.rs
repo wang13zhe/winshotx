@@ -12,28 +12,50 @@
 /// El sonido, ya recortado a los tres golpes de un obturador de reflex.
 const CLIC: &[u8] = include_bytes!("../../assets/obturador.wav");
 
+/// El de la tecla. Sintetizado, no grabado de nada: un impulso de ruido con una
+/// envolvente que cae en unos milisegundos. Ver `hacer_tecla.py` en la raiz, que es de
+/// donde sale y que explica por que suena a tecla y no a papel.
+const TECLA: &[u8] = include_bytes!("../../assets/tecla.wav");
+
+/// Toca un WAV que ya esta en memoria, sin esperar a que acabe.
+///
+/// Igual para los dos sonidos, y por eso vive aqui y no en cada uno: lo unico que cambia
+/// es el buffer.
+#[cfg(windows)]
+fn tocar(wav: &'static [u8]) {
+    use windows::Win32::Media::Audio::{PlaySoundW, SND_ASYNC, SND_MEMORY, SND_NODEFAULT};
+    use windows::core::PCWSTR;
+
+    // SND_MEMORY hace que el primer parametro sea un puntero a los bytes del WAV y no
+    // una ruta. El buffer es `'static`, asi que sigue vivo mientras suena en su hilo.
+    unsafe {
+        let _ = PlaySoundW(
+            PCWSTR(wav.as_ptr() as *const u16),
+            None,
+            // NODEFAULT: si el WAV no se puede tocar, silencio. Sin esto Windows suelta
+            // su pitido de sistema, que es peor que no sonar nada.
+            SND_MEMORY | SND_ASYNC | SND_NODEFAULT,
+        );
+    }
+}
+
 /// Suena el obturador, sin esperar a que termine.
 ///
 /// No devuelve error a proposito: que no suene un clic no puede estropear una captura, y
 /// una captura que falla porque el audio esta ocupado seria mucho peor que el silencio.
 pub fn obturador() {
     #[cfg(windows)]
-    {
-        use windows::Win32::Media::Audio::{PlaySoundW, SND_ASYNC, SND_MEMORY, SND_NODEFAULT};
-        use windows::core::PCWSTR;
+    tocar(CLIC);
+}
 
-        // SND_MEMORY hace que el primer parametro sea un puntero a los bytes del WAV y no
-        // una ruta. El buffer es `'static`, asi que sigue vivo mientras suena en su hilo.
-        unsafe {
-            let _ = PlaySoundW(
-                PCWSTR(CLIC.as_ptr() as *const u16),
-                None,
-                // NODEFAULT: si el WAV no se puede tocar, silencio. Sin esto Windows suelta
-                // su pitido de sistema, que es peor que no sonar nada.
-                SND_MEMORY | SND_ASYNC | SND_NODEFAULT,
-            );
-        }
-    }
+/// Suena la tecla, sin esperar a que termine.
+///
+/// Misma filosofia que el obturador: si no suena, no pasa nada. Quien graba un tutorial
+/// con esto puesto quiere oirse teclear, pero un tutorial sin sonido de teclas sigue
+/// siendo un tutorial.
+pub fn tecla() {
+    #[cfg(windows)]
+    tocar(TECLA);
 }
 
 #[cfg(test)]
@@ -70,5 +92,32 @@ mod tests {
     fn suena() {
         obturador();
         std::thread::sleep(std::time::Duration::from_millis(400));
+    }
+
+    /// Lo mismo para la tecla, que es el otro sonido empaquetado.
+    ///
+    /// La comprobacion que importa no es la cabecera —esa la comparte con el obturador y
+    /// ya esta probada— sino la duracion. Una tecla que suene 300 ms se solapa con la
+    /// siguiente cuando alguien escribe rapido, y lo que se oye es un zumbido continuo en
+    /// vez de teclas.
+    #[test]
+    fn la_tecla_es_un_wav_pcm_que_windows_sabe_tocar() {
+        assert_eq!(&TECLA[0..4], b"RIFF", "no empieza por RIFF");
+        assert_eq!(&TECLA[8..12], b"WAVE", "no es un WAVE");
+
+        let leer16 = |i: usize| u16::from_le_bytes([TECLA[i], TECLA[i + 1]]);
+        assert_eq!(leer16(20), 1, "no es PCM sin comprimir");
+        assert_eq!(leer16(22), 1, "tiene que ser mono");
+
+        let ms = (TECLA.len() as u64 - 44) * 1000 / (44_100 * 2);
+        assert!((10..=60).contains(&ms), "dura {ms} ms, y eso no es una tecla");
+    }
+
+    /// Y que suene. Tambien ignorada, por lo mismo.
+    #[test]
+    #[ignore = "suena por los altavoces de quien lo corra"]
+    fn suena_la_tecla() {
+        tecla();
+        std::thread::sleep(std::time::Duration::from_millis(200));
     }
 }

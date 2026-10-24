@@ -152,6 +152,7 @@ export const ZH_TW: Record<string, string> = {
   // 录制时的点击与按键提示
   "Resaltar los clics": "凸顯點擊",
   "Mostrar las teclas": "顯示按鍵",
+  "Sonar al teclear": "打字時發出聲音",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "把喇叭播放的聲音一起錄進同一段影片：通話的聲音、影片的聲音、程式的提示音。不會錄你的麥克風，那是下面那一列。",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "你的聲音，和系統音效混在同一條音軌。要一邊示範一邊講解就靠這個，而且只能在錄影前決定。",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.": "winshotx 會一直錄著螢幕並丟掉舊的，所以即使你沒按錄影，剛剛發生的事還在。代價是：在三螢幕、60 影格、原生解析度的機器上實測，桌面靜止時佔用單核 22%，畫面移動時最高到 60%。關掉之後，整個 winshotx 只用 2.9%。",

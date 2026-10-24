@@ -154,6 +154,7 @@ export const PL: Record<string, string> = {
   // 录制时的点击与按键提示
   "Resaltar los clics": "Podświetl kliknięcia",
   "Mostrar las teclas": "Pokaż klawisze",
+  "Sonar al teclear": "Dźwięk podczas pisania",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "Nagrywa to, co grają głośniki, w tym samym wideo: głos z rozmowy, dźwięk z filmu, alert programu. Nie nagrywa mikrofonu — to wiersz poniżej.",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "Przydaje się, gdy trzeba coś objaśnić, pokazując to na ekranie, i można to ustawić tylko przed nagraniem.",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.": "winshotx nagrywa ekran przez cały czas i wyrzuca stare, więc to, co właśnie się stało, wciąż tam jest, nawet jeśli nie nacisnąłeś nagrywania. I to kosztuje: zmierzone na komputerze z trzema ekranami, przy 60 klatkach i natywnej rozdzielczości zajmuje 22% jednego rdzenia przy spokojnym pulpicie i do 60% przy ruchomym ekranie. Wyłączone, całe winshotx zużywa 2,9%.",

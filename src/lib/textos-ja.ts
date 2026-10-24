@@ -152,6 +152,7 @@ export const JA: Record<string, string> = {
   // 录制时的点击与按键提示
   "Resaltar los clics": "クリックを目立たせる",
   "Mostrar las teclas": "キーを表示する",
+  "Sonar al teclear": "タイプ時に音を出す",
   "Graba lo que suena por los altavoces, dentro del mismo vídeo: la voz de una llamada, el audio de un vídeo, la alerta de un programa. No graba tu micrófono, eso es la fila de abajo.": "スピーカーから出る音を同じ動画に入れます。通話の声、動画の音声、アプリの通知音など。マイクは録りません。それは下の行です。",
   "Tu voz, mezclada con el sonido del sistema en la misma pista. Es lo que hace falta para explicar algo mientras lo enseñas, y solo se puede decidir antes de grabar.": "あなたの声をシステム音と混ぜて同じトラックに入れます。見せながら説明するときに必要なもので、録画前にしか選べません。",
   "winshotx graba la pantalla todo el rato y va tirando lo viejo, así que lo que acaba de pasar sigue estando ahí aunque no le hubieras dado a grabar. Y cuesta: medido en un equipo con tres pantallas, a 60 fotogramas y resolución nativa se lleva un 22% de un núcleo con el escritorio quieto, y hasta el 60% con la pantalla en movimiento. Apagado, winshotx entera gasta el 2,9%.": "winshotx は常に画面を録り続けて古い部分を捨てるので、録画ボタンを押していなくても直近の出来事は残っています。ただしコストもあります。3 画面の環境で 60 フレーム・ネイティブ解像度の場合、静止したデスクトップで CPU 1 コアの 22%、画面が動くと最大 60% を占めました。オフなら winshotx 全体で 2.9% を使います。",

@@ -103,6 +103,8 @@ export interface RecordOptions {
   highlightClicks: boolean;
   /** Enseñar los atajos que se pulsan. Solo atajos, nunca una tecla suelta. */
   highlightKeys: boolean;
+  /** Sonar con cada tecla mientras se graba. Para quien graba, no para quien ve después. */
+  keySound: boolean;
   /**
    * La ventana que se graba, cuando se graba UNA ventana y no un trozo de pantalla.
    *
@@ -315,6 +317,13 @@ export interface Settings {
   highlightClicks: boolean;
   /** Enseñar los atajos que se pulsan. Solo atajos, nunca una tecla suelta. */
   highlightKeys: boolean;
+  /**
+   * Sonar con cada tecla que se pulse mientras se graba.
+   *
+   * Es para quien graba, no para quien ve el vídeo después: por eso va aparte de
+   * `highlightKeys`. Se pueden querer las dos, pero también solo una.
+   */
+  keySound: boolean;
   fps: number;
   /** Grabar siempre la pantalla en un anillo, para poder quedarse con lo último. */
   replayEnabled: boolean;
